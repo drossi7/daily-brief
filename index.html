@@ -1,193 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daily Creator Brief — frame & print</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #141414; color: #C8C2BA; font-family: 'Inter', sans-serif; font-weight: 400; line-height: 1.65; -webkit-font-smoothing: antialiased; padding-bottom: 80px; min-height: 100vh; }
-    .header { position: relative; padding: 52px 40px 44px; text-align: center; overflow: hidden; border-bottom: 1px solid #252525; background: #0E0E0E; }
-    .header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 55% at 50% -5%, rgba(255,100,40,0.22) 0%, transparent 65%), radial-gradient(ellipse 40% 35% at 85% 90%, rgba(120,75,160,0.14) 0%, transparent 55%); pointer-events: none; }
-    .header-brand { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1rem; color: rgba(255,255,255,0.38); letter-spacing: 0.12em; margin-bottom: 14px; }
-    .header-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #F0EAE0; line-height: 1.15; margin-bottom: 18px; letter-spacing: -0.01em; }
-    .header-date { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
-    .header-rule { width: 40px; height: 1px; background: rgba(255,100,40,0.55); margin: 20px auto 0; }
-    .page { width: 100%; max-width: 1400px; margin: 0 auto; padding: 36px 32px; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
-    .col-full { grid-column: 1 / -1; }
-    @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } .page { padding: 24px 16px; } }
-    .section { display: flex; flex-direction: column; gap: 12px; }
-    .section-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(255,255,255,0.22); display: flex; align-items: center; gap: 10px; margin-bottom: 2px; }
-    .section-label::after { content: ''; flex: 1; height: 1px; background: #252525; }
-    .card { background: #1C1C1C; border-radius: 14px; padding: 24px 26px; border: 1px solid #2A2A2A; position: relative; overflow: hidden; }
-    .card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; }
-    .card-orange::before { background: linear-gradient(180deg, #FF6B35, #FF3CAC); }
-    .card-amber::before  { background: linear-gradient(180deg, #F5A623, #FBBF24); }
-    .card-blue::before   { background: linear-gradient(180deg, #4A9EFF, #6366F1); }
-    .card-purple::before { background: linear-gradient(180deg, #9B72FF, #C084FC); }
-    .card-pink::before   { background: linear-gradient(180deg, #F472B6, #FB7185); }
-    .card-green::before  { background: linear-gradient(180deg, #34D399, #6EE7B7); }
-    .card-title { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 16px; }
-    .ct-orange { color: #FF8050; } .ct-amber { color: #F5BE45; } .ct-blue { color: #6AADFF; } .ct-purple { color: #B594FF; } .ct-pink { color: #F9A8C9; } .ct-green { color: #4ADBA8; }
-    .card p { font-size: 0.9rem; color: #A09890; line-height: 1.8; }
-    .card p + p { margin-top: 12px; }
-    .card strong { color: #D8D0C8; font-weight: 600; }
-    .card em { color: #FF8050; font-style: normal; font-weight: 600; }
-    .reel-steps { display: flex; flex-direction: column; gap: 8px; }
-    .reel-step { display: flex; gap: 16px; align-items: flex-start; padding: 14px 16px; background: #161616; border-radius: 9px; border: 1px solid #222; }
-    .reel-time { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #FF8050; flex-shrink: 0; width: 80px; padding-top: 2px; }
-    .reel-title { font-size: 0.88rem; font-weight: 600; color: #D8D0C8; margin-bottom: 3px; }
-    .reel-desc { font-size: 0.78rem; color: #706860; line-height: 1.55; }
-    .hook-list { display: flex; flex-direction: column; gap: 10px; }
-    .hook-item { background: #171410; border: 1px solid #2A2218; border-radius: 10px; padding: 16px 18px; }
-    .hook-tag { font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #8A6830; margin-bottom: 8px; }
-    .hook-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.05rem; color: #E8DFD0; line-height: 1.4; margin-bottom: 6px; }
-    .hook-note { font-size: 0.74rem; color: #706860; line-height: 1.55; }
-    .overlay-list { display: flex; flex-direction: column; gap: 10px; }
-    .overlay-row { display: flex; align-items: flex-start; gap: 14px; }
-    .overlay-time { background: #152030; color: #6AADFF; font-size: 0.6rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; flex-shrink: 0; letter-spacing: 0.08em; margin-top: 2px; border: 1px solid #1E3550; }
-    .overlay-text { font-size: 0.9rem; font-weight: 500; color: #90B8D8; line-height: 1.45; }
-    .caption-block { background: #130F1E; border: 1px solid #251C38; border-radius: 10px; padding: 22px 24px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1rem; color: #C4B8D8; line-height: 1.9; white-space: pre-line; }
-    .caption-hashtags { margin-top: 14px; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.74rem; font-weight: 600; color: #7860A8; letter-spacing: 0.02em; }
-    .audio-item { display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: #161016; border-radius: 10px; border: 1px solid #241828; margin-bottom: 8px; }
-    .audio-icon { font-size: 1.4rem; flex-shrink: 0; opacity: 0.75; }
-    .audio-name { font-size: 0.88rem; font-weight: 700; color: #D090B0; margin-bottom: 4px; }
-    .audio-why { font-size: 0.76rem; color: #706860; line-height: 1.6; }
-    .growth-inner { background: #0C1810; border: 1px solid #1A3020; border-radius: 10px; padding: 20px 22px; }
-    .growth-title { font-size: 0.96rem; font-weight: 700; color: #4ADBA8; margin-bottom: 8px; }
-    .growth-body { font-size: 0.84rem; color: #507060; line-height: 1.8; }
-    .growth-body strong { color: #3AAA80; }
-    .tip { border-left: 2px solid #352810; padding: 10px 14px; font-size: 0.78rem; color: #605040; line-height: 1.65; margin-top: 14px; }
-    .tip strong { color: #806830; }
-    .print-highlight { background: #140C00; border: 1px solid #2A1A00; border-radius: 9px; padding: 16px 18px; margin-top: 14px; }
-    .print-hl-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #804820; margin-bottom: 6px; }
-    .print-hl-text { font-size: 0.84rem; color: #705030; line-height: 1.65; font-style: italic; }
-    .footer { text-align: center; padding: 0 16px 24px; font-size: 0.62rem; color: #302A25; line-height: 2; letter-spacing: 0.1em; text-transform: uppercase; }
-    .footer-rule { width: 30px; height: 1px; background: #222; margin: 0 auto 20px; }
-  </style>
-</head>
-<body>
-  <div class="header">
-    <div class="header-brand">frame &amp; print</div>
-    <div class="header-title">Your Daily Creator Brief</div>
-    <div class="header-date">Friday, April 10, 2026</div>
-    <div class="header-rule"></div>
-  </div>
-  <div class="page">
-    <div class="grid">
-      <div class="col-full">
-        <div class="section">
-          <div class="section-label">&#9672; &nbsp;Today's Shoot</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-            <div class="card card-orange">
-              <div class="card-title ct-orange">What to Shoot Today</div>
-              <p>Today you introduce the whole concept. Show your morning — <strong>coffee, quiet light, your camera on the table</strong> — and end on the first print coming out of the Selphy. This is your origin story post. Shoot it like it matters.</p>
-              <p><strong>The moment:</strong> Coffee or tea near a window. Early spring morning light hitting sideways. Imperfect is perfect — steam, soft shadow, natural grain.</p>
-              <p><strong>Lens:</strong> <em>40mm f/2</em>, wide open. Get close. Let the background dissolve into blur.</p>
-              <p><strong>Lighting:</strong> Face a window. Natural side-light only. No flash. Calgary overcast days are ideal — soft, even, cinematic.</p>
-            </div>
-            <div class="card card-orange">
-              <div class="card-title ct-orange">Reel Structure</div>
-              <div class="reel-steps">
-                <div class="reel-step"><div class="reel-time">0:00 – 0:03</div><div><div class="reel-title">The Hook</div><div class="reel-desc">Close-up on coffee or light. Motion first. No talking. Pure mood. Text overlay appears here.</div></div></div>
-                <div class="reel-step"><div class="reel-time">0:03 – 0:12</div><div><div class="reel-title">The Moment</div><div class="reel-desc">You picking up the camera. The act of looking. Viewfinder, hands, the scene — whatever feels real.</div></div></div>
-                <div class="reel-step"><div class="reel-time">0:12 – 0:28</div><div><div class="reel-title">The Print Reveal</div><div class="reel-desc">Selphy printing in real-time. Film it close. The photo emerging. Hold it up. Be real.</div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="section">
-          <div class="section-label">&#9672; &nbsp;Scroll-Stopping Hooks</div>
-          <div class="card card-amber">
-            <div class="card-title ct-amber">3 Options — Pick One</div>
-            <div class="hook-list">
-              <div class="hook-item"><div class="hook-tag">&#9733; Recommended</div><div class="hook-text">"I'm going to print one photo every day."</div><div class="hook-note">Sets up your entire brand in one line. Creates curiosity. Perfect for a first post.</div></div>
-              <div class="hook-item"><div class="hook-tag">Emotional Hook</div><div class="hook-text">"Your phone is deleting your memories. I stopped letting that happen."</div><div class="hook-note">Bold problem statement. Speaks to something everyone's felt. High share rate.</div></div>
-              <div class="hook-item"><div class="hook-tag">Mystery Hook</div><div class="hook-text">"This moment almost didn't get noticed."</div><div class="hook-note">Curiosity gap — viewer watches to see what the moment was. Strong watch-through rate.</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="section">
-          <div class="section-label">&#9672; &nbsp;On-Screen Text Overlays</div>
-          <div class="card card-blue">
-            <div class="card-title ct-blue">What Appears on Screen &amp; When</div>
-            <p style="margin-bottom:16px;font-size:0.78rem;color:#405060;">85% of Reels are watched without sound. Your text carries the whole story.</p>
-            <div class="overlay-list">
-              <div class="overlay-row"><span class="overlay-time">0:00</span><span class="overlay-text">"I'm going to print one photo every day."</span></div>
-              <div class="overlay-row"><span class="overlay-time">0:08</span><span class="overlay-text">"Today's moment:"</span></div>
-              <div class="overlay-row"><span class="overlay-time">0:16</span><span class="overlay-text">"Hold it. Keep it. It's yours now."</span></div>
-              <div class="overlay-row"><span class="overlay-time">0:24</span><span class="overlay-text">"Follow along."</span></div>
-            </div>
-            <div class="tip"><strong>Font tip:</strong> Bold sans-serif in EDITS app. White on dark, dark on light. One consistent style = your brand.</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="section">
-          <div class="section-label">&#9672; &nbsp;Caption</div>
-          <div class="card card-purple">
-            <div class="card-title ct-purple">Ready to Post</div>
-            <div class="caption-block">I'm going to print one photo every day.
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Daily Creator Brief — frame & print</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#1A1B1E;--surface:#25262B;--surface2:#2C2E33;--border:#373A40;--border2:#454950;--text:#E8E3DC;--text2:#B8B0A6;--text3:#7A746E;--orange:#FF7A45;--amber:#F5C842;--blue:#5BA8FF;--purple:#AC82FF;--pink:#F77DBB;--green:#3DD68C}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh}
+.header{position:relative;padding:48px 40px 42px;text-align:center;background:#141416;border-bottom:1px solid var(--border);overflow:hidden}
+.header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% -10%,rgba(255,122,69,.2) 0%,transparent 60%),radial-gradient(ellipse 35% 30% at 90% 100%,rgba(172,130,255,.12) 0%,transparent 50%);pointer-events:none}
+.header-brand{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:var(--text3);letter-spacing:.1em;margin-bottom:10px}
+.header-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;color:var(--text);margin-bottom:14px}
+.header-date{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--text3)}
+.header-divider{width:36px;height:2px;background:var(--orange);margin:18px auto 0;border-radius:2px;opacity:.7}
+.page{max-width:1360px;margin:0 auto;padding:32px 28px 80px}
+.accordion{border:1px solid var(--border);border-radius:14px;background:var(--surface);margin-bottom:14px;overflow:hidden;transition:box-shadow .2s}
+.accordion:hover{box-shadow:0 4px 24px rgba(0,0,0,.25)}
+.accordion.open{box-shadow:0 4px 32px rgba(0,0,0,.3)}
+.acc-header{display:flex;align-items:center;gap:14px;padding:18px 22px;cursor:pointer;user-select:none;border-left:4px solid transparent;transition:background .15s}
+.acc-header:hover{background:rgba(255,255,255,.03)}
+.acc-header.c-orange{border-left-color:var(--orange)}.acc-header.c-amber{border-left-color:var(--amber)}.acc-header.c-blue{border-left-color:var(--blue)}.acc-header.c-purple{border-left-color:var(--purple)}.acc-header.c-pink{border-left-color:var(--pink)}.acc-header.c-green{border-left-color:var(--green)}
+.acc-icon{font-size:1.15rem;flex-shrink:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:var(--surface2)}
+.acc-label{flex:1}.acc-label-title{font-size:.95rem;font-weight:600;color:var(--text)}.acc-label-sub{font-size:.75rem;color:var(--text3);margin-top:1px}
+.acc-chevron{font-size:.75rem;color:var(--text3);transition:transform .25s;flex-shrink:0}
+.accordion.open .acc-chevron{transform:rotate(180deg)}
+.acc-body{display:none;padding:0 22px 22px}
+.accordion.open .acc-body{display:block}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.two-col{grid-template-columns:1fr}}
+.icard{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:18px 20px}
+.icard-label{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-bottom:12px}
+.icard p{font-size:.9rem;color:var(--text2);line-height:1.8}.icard p+p{margin-top:10px}.icard strong{color:var(--text);font-weight:600}.icard em{color:var(--orange);font-style:normal;font-weight:600}
+.reel-steps{display:flex;flex-direction:column;gap:8px}
+.reel-step{display:flex;gap:14px;align-items:flex-start;padding:13px 15px;background:var(--bg);border-radius:9px;border:1px solid var(--border)}
+.reel-time{font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);flex-shrink:0;width:82px;padding-top:2px}
+.reel-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:2px}.reel-desc{font-size:.78rem;color:var(--text3);line-height:1.5}
+.hook-list{display:flex;flex-direction:column;gap:10px}
+.hook-item{background:var(--bg);border:2px solid var(--border);border-radius:10px;padding:15px 18px;cursor:pointer;transition:border-color .15s,background .15s;position:relative}
+.hook-item:hover{border-color:var(--border2);background:#1E1F22}
+.hook-item.selected{border-color:var(--amber);background:rgba(245,200,66,.05)}
+.hook-item.selected::after{content:'✓ Selected';position:absolute;top:10px;right:14px;font-size:.6rem;font-weight:700;letter-spacing:.1em;color:var(--amber);text-transform:uppercase}
+.hook-tag{font-size:.57rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:7px}
+.hook-text{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:var(--text);line-height:1.4;margin-bottom:5px}
+.hook-note{font-size:.75rem;color:var(--text3);line-height:1.55}
+.overlay-list{display:flex;flex-direction:column;gap:10px}
+.overlay-row{display:flex;align-items:flex-start;gap:14px}
+.overlay-time{background:rgba(91,168,255,.12);color:var(--blue);font-size:.6rem;font-weight:700;padding:4px 10px;border-radius:6px;flex-shrink:0;letter-spacing:.06em;margin-top:2px;border:1px solid rgba(91,168,255,.25)}
+.overlay-text{font-size:.9rem;font-weight:500;color:var(--text2);line-height:1.45}
+.caption-block{background:var(--bg);border:1px solid rgba(172,130,255,.25);border-radius:10px;padding:20px 22px;font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:var(--text);line-height:1.9;white-space:pre-line}
+.caption-hashtags{margin-top:14px;font-family:'Inter',sans-serif;font-style:normal;font-size:.74rem;font-weight:600;color:var(--purple);letter-spacing:.02em}
+.audio-item{display:flex;gap:14px;align-items:flex-start;padding:15px;background:var(--bg);border-radius:10px;border:1px solid var(--border);margin-bottom:8px}
+.audio-icon{font-size:1.4rem;flex-shrink:0}.audio-name{font-size:.88rem;font-weight:700;color:var(--pink);margin-bottom:3px}.audio-why{font-size:.76rem;color:var(--text3);line-height:1.6}
+.growth-box{background:rgba(61,214,140,.07);border:1px solid rgba(61,214,140,.2);border-radius:10px;padding:18px 20px}
+.growth-title{font-size:.96rem;font-weight:700;color:var(--green);margin-bottom:8px}.growth-body{font-size:.86rem;color:var(--text2);line-height:1.8}.growth-body strong{color:var(--text)}
+.tip{border-left:2px solid var(--border2);padding:10px 14px;font-size:.79rem;color:var(--text3);line-height:1.65;margin-top:14px}.tip strong{color:var(--text2)}
+.print-highlight{background:rgba(255,122,69,.07);border:1px solid rgba(255,122,69,.2);border-radius:9px;padding:15px 18px;margin-top:14px}
+.print-hl-label{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:6px;opacity:.8}
+.print-hl-text{font-size:.85rem;color:var(--text2);line-height:1.65;font-style:italic}
+.notes-section{margin-top:14px}
+.notes-label{font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text3);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.notes-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.notes-area{width:100%;min-height:90px;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-family:'Inter',sans-serif;font-size:.88rem;color:var(--text);line-height:1.7;resize:vertical;outline:none;transition:border-color .15s}
+.notes-area:focus{border-color:var(--border2)}.notes-area::placeholder{color:var(--text3)}
+.notes-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:14px;overflow:hidden}
+.notes-panel-header{display:flex;align-items:center;gap:12px;padding:18px 22px;border-bottom:1px solid var(--border);cursor:pointer;border-left:4px solid var(--blue)}
+.notes-panel-header:hover{background:rgba(255,255,255,.02)}
+.notes-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:900px){.notes-grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.notes-grid{grid-template-columns:1fr}}
+.note-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.note-card-label{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3)}
+.note-card textarea{width:100%;min-height:80px;background:transparent;border:none;outline:none;font-family:'Inter',sans-serif;font-size:.85rem;color:var(--text);line-height:1.65;resize:vertical}
+.note-card textarea::placeholder{color:var(--text3);font-size:.82rem}
+.footer{text-align:center;margin-top:50px;padding-bottom:30px;font-size:.62rem;color:var(--text3);line-height:2;letter-spacing:.1em;text-transform:uppercase}
+.footer-line{width:28px;height:1px;background:var(--border);margin:0 auto 16px}
+</style>
+</head><body>
+<div class="header">
+  <div class="header-brand">frame &amp; print</div>
+  <div class="header-title">Your Daily Creator Brief</div>
+  <div class="header-date">Friday, April 10, 2026</div>
+  <div class="header-divider"></div>
+</div>
+<div class="page">
+
+<div class="accordion open" id="acc-shoot">
+<div class="acc-header c-orange" onclick="toggle('acc-shoot')"><div class="acc-icon">🎬</div><div class="acc-label"><div class="acc-label-title">Today's Shoot</div><div class="acc-label-sub">What to film today + reel structure</div></div><div class="acc-chevron">▼</div></div>
+<div class="acc-body">
+<div class="two-col">
+<div class="icard"><div class="icard-label">What to Shoot</div><p>Today you introduce the whole concept. Show your morning — <strong>coffee, quiet light, your camera on the table</strong> — and end on the first print coming out of the Selphy. This is your origin story post.</p><p><strong>The moment:</strong> Coffee or tea near a window. Early spring morning light hitting sideways. Imperfect is perfect — steam, soft shadow, natural grain.</p><p><strong>Lens:</strong> <em>40mm f/2</em>, wide open. Get close. Let the background blur.</p><p><strong>Lighting:</strong> Face a window. Natural side-light only. No flash. Calgary overcast = ideal cinematic light.</p></div>
+<div class="icard"><div class="icard-label">Reel Structure</div><div class="reel-steps"><div class="reel-step"><div class="reel-time">0:00–0:03</div><div><div class="reel-title">The Hook</div><div class="reel-desc">Close-up on coffee or light. Motion first. No talking. Pure mood. Text overlay here.</div></div></div><div class="reel-step"><div class="reel-time">0:03–0:12</div><div><div class="reel-title">The Moment</div><div class="reel-desc">You picking up the camera. The act of looking. Whatever feels real — viewfinder, hands, the scene.</div></div></div><div class="reel-step"><div class="reel-time">0:12–0:28</div><div><div class="reel-title">The Print Reveal</div><div class="reel-desc">Selphy printing in real-time. Film it close. The photo emerging. Hold it up. Be real.</div></div></div></div></div>
+</div>
+<div class="notes-section"><div class="notes-label">📝 Shoot Notes</div><textarea class="notes-area" placeholder="Jot down your shoot plan, location ideas, or what you want to capture today..."></textarea></div>
+</div></div>
+
+<div class="accordion open" id="acc-hooks">
+<div class="acc-header c-amber" onclick="toggle('acc-hooks')"><div class="acc-icon">🎣</div><div class="acc-label"><div class="acc-label-title">Scroll-Stopping Hooks</div><div class="acc-label-sub">Tap a hook to select it</div></div><div class="acc-chevron">▼</div></div>
+<div class="acc-body">
+<div class="hook-list">
+<div class="hook-item" onclick="selectHook(this)"><div class="hook-tag">⭐ Recommended — Origin Hook</div><div class="hook-text">"I'm going to print one photo every day."</div><div class="hook-note">Sets up your entire brand in one line. Creates curiosity about what comes next. Perfect for a first post.</div></div>
+<div class="hook-item" onclick="selectHook(this)"><div class="hook-tag">Emotional Hook</div><div class="hook-text">"Your phone is deleting your memories. I stopped letting that happen."</div><div class="hook-note">Bold problem statement. Speaks to something everyone's felt. High share-to-DM rate.</div></div>
+<div class="hook-item" onclick="selectHook(this)"><div class="hook-tag">Mystery Hook</div><div class="hook-text">"This moment almost didn't get noticed."</div><div class="hook-note">Curiosity gap — viewer watches to see what the moment was. Strong watch-through rate.</div></div>
+</div>
+</div></div>
+
+<div class="accordion" id="acc-text">
+<div class="acc-header c-blue" onclick="toggle('acc-text')"><div class="acc-icon">📱</div><div class="acc-label"><div class="acc-label-title">On-Screen Text Overlays</div><div class="acc-label-sub">What appears on screen &amp; when</div></div><div class="acc-chevron">▼</div></div>
+<div class="acc-body"><div class="icard" style="margin-bottom:12px"><p style="font-size:.8rem;color:var(--text3);margin-bottom:16px">85% of Reels are watched without sound. Your text carries the whole story.</p><div class="overlay-list"><div class="overlay-row"><span class="overlay-time">0:00</span><span class="overlay-text">"I'm going to print one photo every day."</span></div><div class="overlay-row"><span class="overlay-time">0:08</span><span class="overlay-text">"Today's moment:"</span></div><div class="overlay-row"><span class="overlay-time">0:16</span><span class="overlay-text">"Hold it. Keep it. It's yours now."</span></div><div class="overlay-row"><span class="overlay-time">0:24</span><span class="overlay-text">"Follow along."</span></div></div><div class="tip"><strong>Font tip:</strong> Bold sans-serif in the EDITS app. White on dark, dark on light. One consistent style across every post — that IS your brand.</div></div></div>
+</div>
+
+<div class="accordion" id="acc-caption">
+<div class="acc-header c-purple" onclick="toggle('acc-caption')"><div class="acc-icon">✍️</div><div class="acc-label"><div class="acc-label-title">Caption</div><div class="acc-label-sub">Ready-to-post copy with hashtags</div></div><div class="acc-chevron">▼</div></div>
+<div class="acc-body">
+<div class="caption-block">I'm going to print one photo every day.
 
 Not because I'm a photographer. Because I don't want my best moments living in a phone that gets lost or replaced.
 
 One moment a day. Photographed. Printed. Kept.
 
 Follow along if that sounds like something worth watching.
-              <div class="caption-hashtags">#DailyPhotography &nbsp; #PrintedPhotos &nbsp; #CinematicLifestyle &nbsp; #MoodyAesthetic &nbsp; #OnePhotoDaily</div>
-            </div>
-            <div class="tip"><strong>Why it works:</strong> Honest, clear concept, ends with a soft CTA. "Something worth watching" frames your feed as a series, not just posts.</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="section">
-          <div class="section-label">&#9672; &nbsp;Audio</div>
-          <div class="card card-pink">
-            <div class="card-title ct-pink">What to Use Today</div>
-            <div class="audio-item"><div class="audio-icon">&#127900;</div><div><div class="audio-name">Search "cinematic morning" in IG Reels audio</div><div class="audio-why">Find a slow orchestral or soft piano track with under 5,000 uses. Early-mover advantage — algorithm rewards sounds before they peak.</div></div></div>
-            <div class="audio-item"><div class="audio-icon">&#128200;</div><div><div class="audio-name">How to find trending audio before it peaks</div><div class="audio-why">Reels editor &rarr; music icon &rarr; "Trending" &rarr; upward arrows. Under 5K Reels = early adopter window. Watch TikTok — audio hits Instagram 1–2 weeks later.</div></div></div>
-            <div class="tip"><strong>70/30 rule:</strong> 70% trending audio (reach) &middot; 30% ambient/original sound (brand). Both matter.</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="section">
-          <div class="section-label">&#9672; &nbsp;Today's Growth Move</div>
-          <div class="card card-green">
-            <div class="card-title ct-green">One Action Beyond Posting</div>
-            <div class="growth-inner">
-              <div class="growth-title">Set up your bio before anything goes live.</div>
-              <div class="growth-body">Your bio needs to answer one question the moment someone lands: <strong>"What will I see if I follow you?"</strong><br><br><strong>&#128247; one moment a day &middot; &#128424; printed &amp; kept &middot; follow the project &darr; &middot; &#128205; calgary, ab</strong><br><br>After you post, reply to every comment in the first 60 minutes. The algorithm weights early engagement heavily.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-full">
-        <div class="section">
-          <div class="section-label">&#9672; &nbsp;The Print</div>
-          <div class="card card-orange">
-            <div class="card-title ct-orange">What to Print Today</div>
-            <p>Print today's shot — the coffee, the light, the moment. Film the Selphy printing in real-time (close up). Then hold the print in good light and film that too. Both clips are content gold.</p>
-            <div class="print-highlight">
-              <div class="print-hl-label">&#9670; Future Viral Post — Save This Idea</div>
-              <div class="print-hl-text">Once you have 30 prints, photograph them all laid out. Caption: "30 days. 30 moments I almost scrolled past." That single post will reach people who never saw your first — a self-contained viral piece built from your daily practice.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="footer">
-    <div class="footer-rule"></div>
-    frame &amp; print &nbsp;&middot;&nbsp; Daily Creator Brief<br>
-    Friday, April 10, 2026 &nbsp;&middot;&nbsp; Refreshes every morning at 7:00 AM MST
-  </div>
-</body>
-</html>
+<div class="caption-hashtags">#DailyPhotography &nbsp; #PrintedPhotos &nbsp; #CinematicLifestyle &nbsp; #MoodyAesthetic &nbsp; #OnePhotoDaily</div></div>
+<div class="tip"><strong>Why it works:</strong> Honest, clear concept, ends with a soft CTA. "Something worth watching" frames your feed as a series, not just posts.</div>
+<div class="notes-section"><div class="notes-label">📝 Caption Edits</div><textarea class="notes-area" placeholder="Tweak the caption here before you post it..."></textarea></div>
+</div></div>
+
+<div class="accordion" id="acc-audio">
+<div class="acc-header c-pink" onclick="toggle('acc-audio')"><div class="acc-icon">🎵</div><div class="acc-label"><div class="acc-label-title">Audio</div><div class="acc-label-sub">What to use + how to find trending sounds</div></div><div class="acc-chevron">▼</div></div>
+<div class="acc-body">
+<div class="audio-item"><div class="audio-icon">🎼</div><div><div class="audio-name">Search "cinematic morning" in IG Reels audio</div><div class="audio-why">Find a slow orchestral or soft piano track with under 5,000 uses. Early-mover sweet spot — the algorithm rewards you for using sounds before they peak.</div></div></div>
+<div class="audio-item"><div class="audio-icon">📈</div><div><div class="audio-name">How to find trending audio before it peaks</div><div class="audio-why">Reels editor → music icon → "Trending" → look for upward arrows. Under 5K Reels = early adopter advantage. Watch TikTok — audio hits Instagram 1–2 weeks later.</div></div></div>
+<div class="tip"><strong>70/30 rule:</strong> 70% trending audio (reach) · 30% ambient/original sound (brand). Both matter.</div>
+</div></div>
+
+<div class="accordion" id="acc-growth">
+<div class="acc-header c-green" onclick="toggle('acc-growth')"><div class="acc-icon">📈</div><div class="acc-label"><div class="acc-label-title">Today's Growth Move</div><div class="acc-label-sub">One action beyond posting</div></div><div class="acc-chevron">▼</div></div>
+<div class="acc-body"><div class="growth-box"><div class="growth-title">Set up your bio before anything goes live.</div><div class="growth-body">Your bio needs to answer one question the moment someone lands: <strong>"What will I see if I follow you?"</strong><br><br><strong>📷 one moment a day · 🖨️ printed &amp; kept · follow the project ↓ · 📍 calgary, ab</strong><br><br>After you post, reply to every comment in the first 60 minutes. The algorithm weights early engagement heavily — those first responders are your most valuable signal.</div></div></div>
+</div>
+
+<div class="accordion" id="acc-print">
+<div class="acc-header c-orange" onclick="toggle('acc-print')"><div class="acc-icon">🖨️</div><div class="acc-label"><div class="acc-label-title">The Print</div><div class="acc-label-sub">What to print today + future ideas</div></div><div class="acc-chevron">▼</div></div>
+<div class="acc-body"><div class="icard"><div class="icard-label">What to Print Today</div><p>Print today's shot — the coffee, the light, the moment. Film the Selphy printing in real-time (close up). Then hold the print in good light and film that too. Both clips are content.</p><div class="print-highlight"><div class="print-hl-label">◆ Future Viral Post — Save This Idea</div><div class="print-hl-text">Once you have 30 prints, photograph them all laid out. Caption: "30 days. 30 moments I almost scrolled past." That single post will reach people who never saw your first.</div></div></div></div>
+</div>
+
+<div class="notes-panel">
+<div class="notes-panel-header" onclick="toggleNotes()"><div class="acc-icon">📓</div><div class="acc-label"><div class="acc-label-title">My Notes</div><div class="acc-label-sub">Ideas, reminders, anything on your mind</div></div><div class="acc-chevron" id="notes-chevron" style="transform:rotate(180deg)">▼</div></div>
+<div id="notes-body" style="padding:18px 22px">
+<div class="notes-grid">
+<div class="note-card"><div class="note-card-label">💡 Ideas</div><textarea placeholder="Content ideas, concepts, things to try..."></textarea></div>
+<div class="note-card"><div class="note-card-label">✅ Today's Checklist</div><textarea placeholder="Film&#10;Edit&#10;Post&#10;Reply to comments"></textarea></div>
+<div class="note-card"><div class="note-card-label">🔗 Links &amp; References</div><textarea placeholder="Audio names, accounts to check, inspiration..."></textarea></div>
+</div>
+</div></div>
+
+</div>
+<div class="footer"><div class="footer-line"></div>frame &amp; print &nbsp;·&nbsp; Daily Creator Brief<br>Friday, April 10, 2026 &nbsp;·&nbsp; Refreshes every morning at 7:00 AM MST</div>
+<script>
+function toggle(id){const el=document.getElementById(id);if(el)el.classList.toggle('open')}
+function toggleNotes(){const b=document.getElementById('notes-body');const c=document.getElementById('notes-chevron');const open=b.style.display!=='none';b.style.display=open?'none':'block';c.style.transform=open?'':'rotate(180deg)'}
+function selectHook(el){document.querySelectorAll('.hook-item').forEach(h=>h.classList.remove('selected'));el.classList.add('selected')}
+</script>
+</body></html>
