@@ -1,8 +1,804 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Daily Creator Brief — frame & print</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet"/><style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}body{background:#22252D;color:#EAE6E0;font-family:'Inter',sans-serif;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh}.header{background:#1A1C22;border-bottom:1px solid #2F3240;padding:48px 32px 42px;text-align:center;position:relative;overflow:hidden}.header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 50% -5%,rgba(255,130,60,.25) 0%,transparent 65%),radial-gradient(ellipse 30% 30% at 90% 105%,rgba(180,140,255,.15) 0%,transparent 55%);pointer-events:none}.header-brand{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:#8A8490;letter-spacing:.1em;margin-bottom:10px}.header-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;color:#F5F1EB;margin-bottom:14px}.header-date{font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#6E6A72}.header-bar{width:36px;height:2px;background:#FF7A45;margin:18px auto 0;border-radius:2px}.page{max-width:1360px;margin:0 auto;padding:32px 28px 80px}.block{background:#2A2D36;border:1px solid #35384A;border-radius:16px;margin-bottom:16px;overflow:hidden}.block-header{display:flex;align-items:center;gap:14px;padding:16px 22px;cursor:pointer;border-left:4px solid transparent;transition:background .15s;user-select:none}.block-header:hover{background:rgba(255,255,255,.04)}.bh-orange{border-left-color:#FF7A45}.bh-amber{border-left-color:#F5C030}.bh-blue{border-left-color:#5BAAFF}.bh-purple{border-left-color:#A87EFF}.bh-pink{border-left-color:#F472B6}.bh-green{border-left-color:#3DD68C}.bh-emoji{font-size:1.2rem;width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:#31343F;border-radius:9px;flex-shrink:0}.bh-text{flex:1}.bh-title{font-size:.96rem;font-weight:600;color:#EAE6E0}.bh-sub{font-size:.73rem;color:#7A7680;margin-top:2px}.bh-arrow{font-size:.7rem;color:#7A7680;transition:transform .22s;flex-shrink:0}.block.open .bh-arrow{transform:rotate(180deg)}.block-body{display:none;padding:6px 22px 24px}.block.open .block-body{display:block}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:720px){.two-col{grid-template-columns:1fr}.page{padding:18px 14px 60px}}.ic{background:#31343F;border:1px solid #3C3F50;border-radius:12px;padding:20px}.ic-label{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#6E6A72;margin-bottom:12px}.ic p{font-size:.9rem;color:#C8C2BA;line-height:1.8}.ic p+p{margin-top:10px}.ic strong{color:#EAE6E0;font-weight:600}.ic em{color:#FF7A45;font-style:normal;font-weight:600}.reel-steps{display:flex;flex-direction:column;gap:8px}.reel-step{display:flex;gap:14px;align-items:flex-start;padding:13px 15px;background:#22252D;border-radius:10px;border:1px solid #2F3240}.reel-time{font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#FF7A45;flex-shrink:0;width:84px;padding-top:2px}.reel-title{font-size:.88rem;font-weight:600;color:#EAE6E0;margin-bottom:2px}.reel-desc{font-size:.78rem;color:#7A7680;line-height:1.5}.hook-list{display:flex;flex-direction:column;gap:10px}.hook-item{background:#22252D;border:2px solid #35384A;border-radius:12px;padding:16px 18px;cursor:pointer;transition:border-color .15s,background .15s;position:relative}.hook-item:hover{border-color:#50546A;background:#26292E}.hook-item.selected{border-color:#F5C030;background:rgba(245,192,48,.06)}.hook-item.selected::after{content:'✓ Selected';position:absolute;top:12px;right:16px;font-size:.6rem;font-weight:700;letter-spacing:.1em;color:#F5C030;text-transform:uppercase}.hook-tag{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A7680;margin-bottom:7px}.hook-text{font-family:'Playfair Display',serif;font-style:italic;font-size:1.08rem;color:#EAE6E0;line-height:1.4;margin-bottom:5px}.hook-note{font-size:.76rem;color:#9A9298;line-height:1.55}.overlay-list{display:flex;flex-direction:column;gap:10px}.overlay-row{display:flex;align-items:flex-start;gap:14px}.overlay-badge{background:rgba(91,170,255,.15);color:#5BAAFF;font-size:.6rem;font-weight:700;padding:4px 10px;border-radius:6px;flex-shrink:0;letter-spacing:.06em;margin-top:2px;border:1px solid rgba(91,170,255,.25)}.overlay-text{font-size:.92rem;font-weight:500;color:#C8C2BA;line-height:1.5}.caption-box{background:#22252D;border:1px solid rgba(168,126,255,.3);border-radius:12px;padding:22px 24px;font-family:'Playfair Display',serif;font-style:italic;font-size:1.02rem;color:#EAE6E0;line-height:1.9;white-space:pre-line}.caption-tags{margin-top:14px;font-family:'Inter',sans-serif;font-style:normal;font-size:.76rem;font-weight:600;color:#A87EFF;letter-spacing:.02em}.audio-item{display:flex;gap:14px;align-items:flex-start;padding:16px;background:#22252D;border-radius:10px;border:1px solid #2F3240;margin-bottom:10px}.audio-icon{font-size:1.4rem;flex-shrink:0}.audio-name{font-size:.9rem;font-weight:700;color:#F472B6;margin-bottom:4px}.audio-why{font-size:.77rem;color:#9A9298;line-height:1.6}.growth-box{background:rgba(61,214,140,.08);border:1px solid rgba(61,214,140,.22);border-radius:12px;padding:20px 22px}.growth-title{font-size:1rem;font-weight:700;color:#3DD68C;margin-bottom:10px}.growth-body{font-size:.88rem;color:#C8C2BA;line-height:1.85}.growth-body strong{color:#EAE6E0}.tip{border-left:2px solid #3C3F50;padding:10px 14px;font-size:.8rem;color:#9A9298;line-height:1.65;margin-top:14px}.tip strong{color:#C8C2BA}.print-hl{background:rgba(255,122,69,.09);border:1px solid rgba(255,122,69,.22);border-radius:10px;padding:16px 18px;margin-top:14px}.print-hl-label{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#FF7A45;margin-bottom:6px}.print-hl-text{font-size:.86rem;color:#C8C2BA;line-height:1.65;font-style:italic}.note-inline-label{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#6E6A72;margin:16px 0 8px;display:flex;align-items:center;gap:8px}.note-inline-label::after{content:'';flex:1;height:1px;background:#2F3240}.note-inline-ta{width:100%;min-height:88px;background:#22252D;border:1px solid #35384A;border-radius:10px;padding:14px 16px;font-family:'Inter',sans-serif;font-size:.88rem;color:#EAE6E0;line-height:1.7;resize:vertical;outline:none;transition:border-color .15s}.note-inline-ta:focus{border-color:#50546A}.note-inline-ta::placeholder{color:#5A565E}.notes-panel{background:#2A2D36;border:1px solid #35384A;border-radius:16px;margin-bottom:16px;overflow:hidden}.notes-panel-header{display:flex;align-items:center;gap:14px;padding:16px 22px;border-left:4px solid #38BDF8;border-bottom:1px solid #35384A}.notes-panel-body{padding:20px 22px}.notes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}@media(max-width:900px){.notes-grid{grid-template-columns:1fr 1fr}}@media(max-width:580px){.notes-grid{grid-template-columns:1fr}}.note-card{background:#31343F;border:1px solid #3C3F50;border-radius:12px;padding:16px}.note-card-label{font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#7A7680;margin-bottom:10px}.note-card textarea{width:100%;min-height:90px;background:#22252D;border:1px solid #35384A;border-radius:8px;padding:10px 12px;font-family:'Inter',sans-serif;font-size:.86rem;color:#EAE6E0;line-height:1.65;resize:vertical;outline:none}.note-card textarea::placeholder{color:#5A565E}.footer{text-align:center;margin-top:40px;padding-bottom:30px;font-size:.62rem;color:#5A565E;line-height:2;letter-spacing:.1em;text-transform:uppercase}.footer-line{width:28px;height:1px;background:#35384A;margin:0 auto 16px}</style></head><body><div class="header"><div class="header-brand">frame &amp; print</div><div class="header-title">Your Daily Creator Brief</div><div class="header-date">Sunday, April 12, 2026</div><div class="header-bar"></div></div><div class="page"><div class="block open" id="b-shoot"><div class="block-header bh-orange" onclick="tog('b-shoot')"><div class="bh-emoji">🎬</div><div class="bh-text"><div class="bh-title">Today's Shoot</div><div class="bh-sub">Sunday morning — the best light of the week</div></div><div class="bh-arrow">▼</div></div><div class="block-body"><div class="two-col"><div class="ic"><div class="ic-label">What to Shoot Today</div><p>Sunday morning in Calgary — this is your best shooting window of the week. <strong>Slow, unhurried light. Nobody on the streets. The city is quiet.</strong> That stillness is the whole mood.</p><p><strong>The moment:</strong> A window with early spring light — maybe a plant, a book, your coffee. April in Calgary means the light is finally getting warm and directional. Use it.</p><p><strong>Lens:</strong> <em>40mm f/2</em> wide open. Stay close. Let the background fall away. Good window light is all you need.</p><p><strong>Tip:</strong> Film 3–4 angles of the same moment. You'll only use 20 seconds — but you want options in the edit.</p></div><div class="ic"><div class="ic-label">Reel Structure</div><div class="reel-steps"><div class="reel-step"><div class="reel-time">0:00–0:03</div><div><div class="reel-title">The Hook</div><div class="reel-desc">Slow close-up. Sunday morning stillness. No talking. Text overlay hits immediately.</div></div></div><div class="reel-step"><div class="reel-time">0:03–0:10</div><div><div class="reel-title">The Moment</div><div class="reel-desc">You finding the shot — looking through the viewfinder, adjusting the frame. Show the process.</div></div></div><div class="reel-step"><div class="reel-time">0:10–0:22</div><div><div class="reel-title">The Print</div><div class="reel-desc">Selphy printing slowly. Film it close — paper feeding out. ASMR energy. Most watchable part.</div></div></div><div class="reel-step"><div class="reel-time">0:22–0:28</div><div><div class="reel-title">The Reveal</div><div class="reel-desc">Hold the print up near the window. Same light as the moment you captured. Let it land.</div></div></div></div></div></div><div class="note-inline-label">📝 Shoot Notes</div><textarea class="note-inline-ta" placeholder="Your shoot plan, location, what you want to capture this morning..."></textarea></div></div><div class="block open" id="b-hooks"><div class="block-header bh-amber" onclick="tog('b-hooks')"><div class="bh-emoji">🎣</div><div class="bh-text"><div class="bh-title">Scroll-Stopping Hooks</div><div class="bh-sub">Tap one to select — trending formats this week</div></div><div class="bh-arrow">▼</div></div><div class="block-body"><div class="hook-list"><div class="hook-item" onclick="pickHook(this)"><div class="hook-tag">⭐ Trending Now — Stop Scrolling Format</div><div class="hook-text">"Stop scrolling if your best photos are trapped in your phone."</div><div class="hook-note">Adapts the dominant hook format on Reels right now. Direct, calls out a real pain point, stops the thumb instantly.</div></div><div class="hook-item" onclick="pickHook(this)"><div class="hook-tag">Origin Hook — Brand Builder</div><div class="hook-text">"I decided to print one photo every single day. Here's why."</div><div class="hook-note">"Here's why" creates a completion loop — viewers watch through to find the reason. Great for watch-time signals.</div></div><div class="hook-item" onclick="pickHook(this)"><div class="hook-tag">Curiosity Hook — High Replay</div><div class="hook-text">"This moment would have disappeared forever. I almost let it."</div><div class="hook-note">Emotional scarcity. Drives curiosity and replays while reinforcing the entire point of your brand.</div></div></div></div></div><div class="block" id="b-text"><div class="block-header bh-blue" onclick="tog('b-text')"><div class="bh-emoji">📱</div><div class="bh-text"><div class="bh-title">On-Screen Text Overlays</div><div class="bh-sub">What to type on screen and when</div></div><div class="bh-arrow">▼</div></div><div class="block-body"><div class="ic"><p style="font-size:.8rem;color:#7A7680;margin-bottom:16px">85% of Reels play on mute. Every word on screen has to earn its place.</p><div class="overlay-list"><div class="overlay-row"><span class="overlay-badge">0:00</span><span class="overlay-text">"Stop scrolling if your best photos are trapped in your phone."</span></div><div class="overlay-row"><span class="overlay-badge">0:06</span><span class="overlay-text">"Sunday morning. One moment."</span></div><div class="overlay-row"><span class="overlay-badge">0:14</span><span class="overlay-text">"Printed. Kept. Real."</span></div><div class="overlay-row"><span class="overlay-badge">0:22</span><span class="overlay-text">"Follow along — one photo every day."</span></div></div><div class="tip"><strong>Trending in April:</strong> Keep text 4–6 words max per frame. Bold weight, centred, same placement every video. Consistency = brand recognition.</div></div></div></div><div class="block" id="b-caption"><div class="block-header bh-purple" onclick="tog('b-caption')"><div class="bh-emoji">✍️</div><div class="bh-text"><div class="bh-title">Caption</div><div class="bh-sub">Ready-to-post — written for today</div></div><div class="bh-arrow">▼</div></div><div class="block-body"><div class="caption-box">Sunday mornings hit differently when you're actually paying attention.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>frame &amp; print · Daily Creator Brief · April 13, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0C0C0C; --surface:#141414; --card:#1A1A1A;
+  --border:#272727; --border-light:#2E2E2E;
+  --body:#A8A09A; --strong:#D4CCC4; --muted:#585250;
+  --orange:#FF7143; --amber:#F5A623; --green:#3ECF8E;
+  --blue:#5B9CF6; --purple:#9B72FF; --pink:#F472B6;
+  --teal:#38BDF8; --red:#F87171;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--body);font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;}
 
-I used to scroll through them. Now I photograph one thing — just one — and print it before the day starts.
+/* HEADER */
+.site-header{background:#090909;text-align:center;padding:36px 0 28px;border-bottom:1px solid var(--border);}
+.dateline{font-family:'Outfit',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.24em;color:var(--muted);margin-bottom:12px;}
+.brand-title{font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(50px,7.5vw,76px);color:var(--strong);line-height:1;margin-bottom:10px;}
+.brand-title span{color:var(--orange);font-weight:700;}
+.brand-subtitle{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);}
 
-It takes about four minutes. The photo is real. The morning actually happened.
+/* WEATHER PANEL */
+.weather-panel{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;background:var(--surface);border-bottom:1px solid var(--border);}
+.wx-cell{padding:20px 22px;border-right:1px solid var(--border);}
+.wx-cell:last-child{border-right:none;}
+.wx-label{font-size:9.5px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-bottom:14px;}
+.wx-top{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.wx-icon-bubble{width:54px;height:54px;background:#1E1C1A;border-radius:14px;border:1px solid var(--border-light);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.wx-condition-title{font-family:'Outfit',sans-serif;font-size:17px;font-weight:700;color:var(--strong);}
+.wx-temp-line{font-size:13px;color:var(--body);margin-top:3px;}
+.wx-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px;}
+.wx-metric-card{background:rgba(255,255,255,0.025);border:1px solid var(--border);border-radius:7px;padding:7px 6px;text-align:center;}
+.wx-metric-val{font-family:'Outfit',sans-serif;font-size:13.5px;font-weight:700;color:var(--strong);}
+.wx-metric-lbl{font-size:9px;text-transform:uppercase;color:var(--muted);margin-top:2px;letter-spacing:0.08em;}
+.wx-detail{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.badge{display:inline-flex;align-items:center;font-size:10.5px;padding:3px 9px;border-radius:20px;font-weight:500;gap:4px;}
+.badge-amber{background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.3);color:var(--amber);}
+.badge-green{background:rgba(62,207,142,0.08);border:1px solid rgba(62,207,142,0.25);color:var(--green);}
+.badge-red{background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.3);color:var(--red);}
+.badge-blue{background:rgba(91,156,246,0.1);border:1px solid rgba(91,156,246,0.25);color:var(--blue);}
 
-That's the whole project. One moment. Every day.
-<div class="caption-tags">#SundayMorning &nbsp; #DailyPhotography &nbsp; #PrintedPhotos &nbsp; #CinematicLifestyle &nbsp; #CanonSelphy &nbsp; #OnePhotoDaily &nbsp; #MoodyAesthetic</div></div><div class="tip"><strong>Why it works:</strong> "Hit differently when you're actually paying attention" hooks the reader. "Four minutes" makes it feel real and achievable.</div><div class="note-inline-label">📝 Caption Edits</div><textarea class="note-inline-ta" placeholder="Tweak it here before you copy into Instagram..."></textarea></div></div><div class="block" id="b-audio"><div class="block-header bh-pink" onclick="tog('b-audio')"><div class="bh-emoji">🎵</div><div class="bh-text"><div class="bh-title">Audio</div><div class="bh-sub">What's actually trending right now</div></div><div class="bh-arrow">▼</div></div><div class="block-body"><div class="audio-item"><div class="audio-icon">⭐</div><div><div class="audio-name">"DAISIES" — Justin Bieber</div><div class="audio-why">Trending hard for lifestyle and aesthetic content right now. Chill, warm, unhurried — perfect for a Sunday morning print Reel. Search it directly in the Reels audio tab.</div></div></div><div class="audio-item"><div class="audio-icon">🌸</div><div><div class="audio-name">"Loving Life Again" — Ella Langley</div><div class="audio-why">April's breakout spring anthem. Emotional, fresh-start energy. Pairs perfectly with the one-moment-a-day concept. Still in the early window — under 50K Reels.</div></div></div><div class="audio-item"><div class="audio-icon">🎬</div><div><div class="audio-name">"Self Aware" — search Reels Trending tab</div><div class="audio-why">Cinematic and introspective. Used for reflective storytelling content exactly like yours. If it has an upward arrow in Trending, you're still early — use it.</div></div></div><div class="tip"><strong>Rule:</strong> Music note → Trending → upward ↑ arrows + under 10K Reels = early adopter window. First in wins.</div></div></div><div class="block" id="b-growth"><div class="block-header bh-green" onclick="tog('b-growth')"><div class="bh-emoji">📈</div><div class="bh-text"><div class="bh-title">Today's Growth Move</div><div class="bh-sub">One action that compounds over time</div></div><div class="bh-arrow">▼</div></div><div class="block-body"><div class="growth-box"><div class="growth-title">Cross-post to TikTok — same video, zero extra work.</div><div class="growth-body">Selphy printing ASMR is <strong>performing extremely well on TikTok right now</strong>. The sound of the printer, the photo emerging slowly — satisfying content that loops and gets shared.<br><br>Post the identical Reel to TikTok with the same caption. <strong>One video. Two platforms. Double the reach. Zero extra filming.</strong><br><br>Sunday is a top-performing day on both platforms. Post before 11am or between 7–9pm MST for peak reach.</div></div></div></div><div class="block" id="b-print"><div class="block-header bh-orange" onclick="tog('b-print')"><div class="bh-emoji">🖨️</div><div class="bh-text"><div class="bh-title">The Print</div><div class="bh-sub">What to print + your next milestone</div></div><div class="bh-arrow">▼</div></div><div class="block-body"><div class="ic"><div class="ic-label">What to Print Today</div><p>Print your Sunday morning shot right after filming — while the moment is fresh. Then place the finished print next to whatever you photographed and get a side-by-side shot of the real thing next to its printed version. <strong>That side-by-side is a standalone post on its own.</strong></p><div class="print-hl"><div class="print-hl-label">◆ Your Next Milestone Post</div><div class="print-hl-text">Save every print in one spot. Once you hit 10 prints, photograph them laid out together. Caption: "10 moments I almost scrolled past." This is your first momentum piece — it will reach people who never saw your first video and give them a reason to follow the whole story.</div></div></div></div></div><div class="notes-panel"><div class="notes-panel-header"><div class="bh-emoji">📓</div><div class="bh-text"><div class="bh-title">My Notes</div><div class="bh-sub">Ideas, checklist, links — always here</div></div></div><div class="notes-panel-body"><div class="notes-grid"><div class="note-card"><div class="note-card-label">💡 Ideas &amp; Concepts</div><textarea placeholder="Content ideas, future series, things to try..."></textarea></div><div class="note-card"><div class="note-card-label">✅ Today's Checklist</div><textarea placeholder="☐ Film&#10;☐ Edit in EDITS&#10;☐ Post to Instagram&#10;☐ Post to TikTok&#10;☐ Reply to comments (60 min)"></textarea></div><div class="note-card"><div class="note-card-label">🔗 Audio &amp; Links</div><textarea placeholder="DAISIES - Justin Bieber&#10;Loving Life Again - Ella Langley&#10;Self Aware - search Trending tab"></textarea></div></div></div></div></div><div class="footer"><div class="footer-line"></div>frame &amp; print &nbsp;·&nbsp; Daily Creator Brief<br>Sunday, April 12, 2026 &nbsp;·&nbsp; Auto-refreshes every morning at 7:00 AM MST</div><script>function tog(id){document.getElementById(id).classList.toggle('open')}function pickHook(el){document.querySelectorAll('.hook-item').forEach(h=>h.classList.remove('selected'));el.classList.add('selected')}</script></body></html>
+/* SHOOT WINDOW */
+.sw-title-row{display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+.sw-dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 6px var(--amber);flex-shrink:0;}
+.sw-title{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--strong);}
+.sw-window{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;margin-bottom:8px;}
+.sw-window.morning{background:rgba(245,166,35,0.05);border:1px solid rgba(245,166,35,0.18);}
+.sw-window.evening{background:rgba(62,207,142,0.05);border:1px solid rgba(62,207,142,0.18);}
+.sw-window-icon{font-size:18px;}
+.sw-window-time{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--strong);}
+.sw-window-lbl{font-size:11px;color:var(--muted);margin-top:1px;}
+
+/* LIGHT TIMES */
+.lt-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #1C1C1C;}
+.lt-row:last-child{border-bottom:none;}
+.lt-icon{font-size:20px;}
+.lt-time{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;min-width:72px;}
+.lt-event{font-size:11.5px;color:var(--muted);}
+
+/* POST TIMING BAR */
+.post-timing-bar{display:grid;grid-template-columns:120px 1fr 1fr 1fr;background:var(--surface);border-bottom:1px solid var(--border);}
+.pt-label-cell{padding:16px 20px;border-right:1px solid var(--border);}
+.pt-tiny{font-size:9px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-bottom:4px;}
+.pt-title{font-size:12px;color:var(--body);}
+.pt-pick-cell{padding:14px 20px;border-right:1px solid var(--border);}
+.pt-pick-cell:last-child{border-right:none;}
+.pt-chip{display:inline-flex;background:rgba(91,156,246,0.12);border:1px solid rgba(91,156,246,0.25);color:var(--blue);font-size:9.5px;padding:2px 7px;border-radius:20px;margin-bottom:4px;letter-spacing:0.06em;}
+.pt-time{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;color:var(--strong);line-height:1.1;}
+.pt-sublabel{font-size:9.5px;text-transform:uppercase;color:var(--muted);letter-spacing:0.1em;margin-top:3px;}
+.pt-desc{font-size:12px;color:var(--body);margin-top:4px;}
+.pt-note{padding:14px 20px;font-size:12px;color:var(--muted);}
+
+/* MAIN CONTENT */
+.main-content{max-width:1400px;margin:0 auto;padding:28px 24px 80px;display:flex;flex-direction:column;gap:10px;}
+
+/* ACCORDION */
+.acc{border:1px solid var(--border);border-radius:10px;background:var(--surface);overflow:hidden;}
+.acc-header{display:flex;gap:14px;align-items:center;padding:15px 18px;cursor:pointer;user-select:none;}
+.acc-header:hover{background:rgba(255,255,255,0.02);}
+.acc-icon-bubble{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.acc-meta{flex:1;}
+.acc-label{font-size:9.5px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-bottom:3px;}
+.acc-title{font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:600;color:var(--strong);}
+.acc-right{display:flex;align-items:center;gap:10px;}
+.chevron{font-size:12px;color:var(--muted);transition:transform 0.2s;display:inline-block;}
+.acc.open .chevron{transform:rotate(180deg);}
+.acc-body{display:none;border-top:1px solid var(--border);}
+.acc.open .acc-body{display:block;}
+
+/* NOTES WRAPPER */
+.notes-wrapper{border-top:1px solid var(--border);padding:10px 18px 14px;}
+.notes-toggle{background:none;border:none;font-size:12px;color:var(--muted);cursor:pointer;padding:0;}
+.notes-toggle:hover{color:var(--body);}
+.notes-area{display:none;width:100%;min-height:72px;background:var(--card);border:1px solid var(--border);border-radius:7px;font-size:13px;font-family:'Inter',sans-serif;color:var(--body);padding:10px 12px;margin-top:8px;resize:vertical;}
+.notes-area:focus{outline:none;border-color:var(--orange);}
+.notes-area.open{display:block;}
+
+/* GEAR */
+.gear-chip{display:inline-flex;background:rgba(255,113,67,0.1);border:1px solid rgba(255,113,67,0.25);color:var(--orange);font-size:10.5px;padding:3px 10px;border-radius:20px;font-weight:500;}
+.gear-chip.done{background:rgba(62,207,142,0.1);border-color:rgba(62,207,142,0.3);color:var(--green);}
+.gear-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:20px 18px 4px;}
+.gear-col-header{font-size:9.5px;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);padding:0 8px 10px;}
+.gear-items{padding:0 0 12px;}
+.gear-item{display:flex;align-items:flex-start;gap:9px;padding:7px 8px;border-radius:6px;cursor:pointer;}
+.gear-item:hover{background:rgba(255,255,255,0.03);}
+.gc{appearance:none;-webkit-appearance:none;width:15px;height:15px;border:1.5px solid var(--border-light);border-radius:4px;background:transparent;cursor:pointer;flex-shrink:0;margin-top:1px;position:relative;}
+.gc:checked{background:var(--orange);border-color:var(--orange);}
+.gc:checked::after{content:'✓';position:absolute;color:white;font-size:10px;top:-1px;left:1px;}
+.gear-name{font-size:13px;font-weight:600;color:var(--strong);line-height:1.3;}
+.gear-sub{font-size:11px;color:var(--muted);}
+
+/* SHOOT */
+.shoot-grid{display:grid;grid-template-columns:1fr 1fr;}
+.shoot-col{padding:22px 22px;}
+.shoot-col:first-child{border-right:1px solid var(--border);}
+.tag{display:inline-flex;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;padding:3px 8px;border-radius:4px;margin-bottom:12px;font-weight:600;}
+.tag-orange{background:rgba(255,113,67,0.12);color:var(--orange);border:1px solid rgba(255,113,67,0.25);}
+.tag-blue{background:rgba(91,156,246,0.1);color:var(--blue);border:1px solid rgba(91,156,246,0.25);}
+.shoot-concept-title{font-family:'Outfit',sans-serif;font-size:17px;font-weight:700;color:var(--strong);margin-bottom:12px;}
+.shoot-concept p{font-size:13.5px;line-height:1.75;color:var(--body);margin-bottom:12px;}
+.recipe-title{font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:var(--strong);margin-bottom:14px;}
+.recipe-row{margin-bottom:12px;}
+.recipe-lbl{font-size:9.5px;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:3px;}
+.recipe-body{font-size:13.5px;color:var(--body);line-height:1.5;}
+
+/* REEL BEATS */
+.beats-grid{display:flex;flex-direction:column;gap:10px;padding:20px 18px;}
+.beat-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 16px;display:flex;gap:14px;}
+.beat-num{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;min-width:28px;}
+.beat-meta{flex:1;}
+.beat-label{font-size:9.5px;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2px;}
+.beat-timing{font-size:11px;color:var(--muted);margin-bottom:6px;}
+.beat-desc{font-size:13.5px;color:var(--body);margin-bottom:8px;}
+.beat-overlay{background:#0D0D0D;border:1px solid var(--border);border-radius:6px;padding:7px 10px;font-size:12.5px;font-style:italic;color:#6E6660;}
+
+/* HOOKS */
+.hooks-list{display:flex;flex-direction:column;gap:10px;padding:20px 18px;}
+.hook-row{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:13px 15px;display:flex;gap:13px;}
+.hook-num{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:var(--orange);min-width:24px;}
+.hook-text{font-size:14px;font-style:italic;color:var(--strong);display:block;margin-bottom:5px;}
+.hook-note{font-size:12px;color:var(--muted);}
+
+/* AUDIO */
+.audio-list{display:flex;flex-direction:column;gap:14px;padding:20px 18px;}
+.audio-row{display:flex;align-items:center;gap:14px;}
+.audio-bubble{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.audio-info{flex:1;}
+.audio-track{font-size:13.5px;font-weight:600;color:var(--strong);}
+.audio-artist{font-size:11.5px;color:var(--muted);}
+.audio-use{font-size:12px;color:var(--body);margin-top:3px;}
+
+/* OVERLAYS */
+.overlays-list{display:flex;flex-direction:column;gap:8px;padding:20px 18px;}
+.overlay-row{background:var(--card);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;padding:9px 15px;}
+.overlay-ts{font-size:10.5px;text-transform:uppercase;color:var(--muted);min-width:82px;letter-spacing:0.08em;}
+.overlay-divider{width:1px;background:var(--border);align-self:stretch;margin:0 14px;}
+.overlay-text{font-size:13.5px;font-style:italic;color:var(--strong);}
+
+/* GROWTH */
+.growth-list{display:flex;flex-direction:column;gap:14px;padding:20px 18px;}
+.growth-row{display:flex;gap:14px;}
+.growth-dot{width:27px;height:27px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;flex-shrink:0;}
+.growth-content{flex:1;}
+.growth-title{font-size:13.5px;font-weight:600;color:var(--strong);margin-bottom:4px;}
+.growth-body{font-size:13px;color:var(--body);line-height:1.6;}
+
+/* CAPTION */
+.caption-block{font-size:14px;font-style:italic;line-height:1.85;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 18px;margin:18px 18px 10px;color:var(--body);}
+.hashtag-line{font-size:12.5px;color:var(--blue);opacity:0.65;line-height:1.85;padding:0 18px 18px;}
+
+/* PRINT */
+.print-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:20px 18px 0;}
+.print-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 16px;}
+.print-card-lbl{font-size:9.5px;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:8px;}
+.print-card-val{font-size:14px;font-weight:600;color:var(--strong);}
+.print-card-sub{font-size:12px;color:var(--body);margin-top:4px;}
+.print-note-block{margin:14px 18px 18px;background:rgba(245,166,35,0.04);border:1px solid rgba(245,166,35,0.15);border-radius:8px;padding:14px 16px;}
+.print-note-title{font-size:12px;font-style:italic;color:var(--amber);margin-bottom:8px;font-weight:500;}
+.print-note-body{font-size:13px;color:var(--body);line-height:1.7;}
+
+/* FOOTER */
+.site-footer{background:#090909;border-top:1px solid var(--border);padding:16px 24px;text-align:center;font-size:12px;color:var(--muted);}
+.site-footer em{color:var(--orange);font-family:'Outfit',sans-serif;}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="dateline">Monday · April 13, 2026 · Calgary, Alberta</div>
+  <div class="brand-title">frame &amp; <span>print</span></div>
+  <div class="brand-subtitle">Daily Creator Brief &nbsp;·&nbsp; @frameandprint &nbsp;·&nbsp; Lumix S9 &nbsp;·&nbsp; Canon Selphy CP1500</div>
+</header>
+
+<!-- WEATHER PANEL -->
+<div class="weather-panel">
+
+  <!-- Cell A: Today's Conditions -->
+  <div class="wx-cell">
+    <div class="wx-label">Today's Conditions</div>
+    <div class="wx-top">
+      <div class="wx-icon-bubble">🌫️</div>
+      <div>
+        <div class="wx-condition-title">Fog Clearing by Noon</div>
+        <div class="wx-temp-line">Dense morning fog → partly cloudy afternoon</div>
+      </div>
+    </div>
+    <div class="wx-metrics">
+      <div class="wx-metric-card"><div class="wx-metric-val">15°</div><div class="wx-metric-lbl">High °C</div></div>
+      <div class="wx-metric-card"><div class="wx-metric-val">1°</div><div class="wx-metric-lbl">Low °C</div></div>
+      <div class="wx-metric-card"><div class="wx-metric-val">50</div><div class="wx-metric-lbl">Wind km/h</div></div>
+      <div class="wx-metric-card"><div class="wx-metric-val">30%</div><div class="wx-metric-lbl">Rain %</div></div>
+    </div>
+    <div class="wx-detail">Dense fog reducing visibility to near zero early this morning with a 30% chance of drizzle — fog lifts by late morning. SW winds build to 30 gusting 50 km/h near noon, pleasant high of 15°C by afternoon.</div>
+    <span class="badge badge-amber">⚠ Fog Advisory</span>
+  </div>
+
+  <!-- Cell B: Best Shoot Window -->
+  <div class="wx-cell">
+    <div class="wx-label">Best Shoot Window</div>
+    <div class="sw-title-row">
+      <div class="sw-dot"></div>
+      <div class="sw-title">Two Windows Today</div>
+    </div>
+    <div class="sw-window morning">
+      <div class="sw-window-icon">🌫️</div>
+      <div>
+        <div class="sw-window-time">6:24 – 8:00 AM</div>
+        <div class="sw-window-lbl">Morning fog drama before lift</div>
+      </div>
+    </div>
+    <div class="sw-window evening">
+      <div class="sw-window-icon">🌅</div>
+      <div>
+        <div class="sw-window-time">7:16 – 8:46 PM</div>
+        <div class="sw-window-lbl">Prime evening golden hour + blue hour</div>
+      </div>
+    </div>
+    <span class="badge badge-amber" style="margin-top:8px">⚠ Morning = Peak Fog Drama</span>
+  </div>
+
+  <!-- Cell C: Morning Light -->
+  <div class="wx-cell">
+    <div class="wx-label">🌅 Morning Light</div>
+    <div class="lt-row">
+      <div class="lt-icon">🌑</div>
+      <div class="lt-time" style="color:rgba(91,156,246,0.7)">6:24 AM</div>
+      <div class="lt-event">Blue Hour Begins</div>
+    </div>
+    <div class="lt-row">
+      <div class="lt-icon">☀️</div>
+      <div class="lt-time" style="color:#D4B896">6:54 AM</div>
+      <div class="lt-event">Sunrise</div>
+    </div>
+    <div class="lt-row">
+      <div class="lt-icon">✨</div>
+      <div class="lt-time" style="color:var(--amber)">7:54 AM</div>
+      <div class="lt-event">Golden Hour Ends</div>
+    </div>
+    <span class="badge badge-amber" style="margin-top:12px">⚠ Fog-Limited · Go Early</span>
+  </div>
+
+  <!-- Cell D: Evening Light -->
+  <div class="wx-cell">
+    <div class="wx-label">🌇 Evening Light</div>
+    <div class="lt-row">
+      <div class="lt-icon">✨</div>
+      <div class="lt-time" style="color:var(--amber)">7:16 PM</div>
+      <div class="lt-event">Golden Hour Begins</div>
+    </div>
+    <div class="lt-row">
+      <div class="lt-icon">🌅</div>
+      <div class="lt-time" style="color:#D4B896">8:16 PM</div>
+      <div class="lt-event">Sunset</div>
+    </div>
+    <div class="lt-row">
+      <div class="lt-icon">🌑</div>
+      <div class="lt-time" style="color:rgba(91,156,246,0.7)">8:46 PM</div>
+      <div class="lt-event">Blue Hour Ends</div>
+    </div>
+    <span class="badge badge-green" style="margin-top:12px">✓ Prime Evening Window</span>
+  </div>
+
+</div><!-- end weather-panel -->
+
+<!-- POST TIMING BAR -->
+<div class="post-timing-bar">
+  <div class="pt-label-cell">
+    <div class="pt-tiny">Best Time</div>
+    <div class="pt-title">To Post Today</div>
+  </div>
+  <div class="pt-pick-cell">
+    <div class="pt-chip">PICK 1</div>
+    <div class="pt-time">11:00 AM</div>
+    <div class="pt-sublabel">Morning Window</div>
+    <div class="pt-desc">Peak Monday morning scroll session</div>
+  </div>
+  <div class="pt-pick-cell">
+    <div class="pt-chip">PICK 2</div>
+    <div class="pt-time">7:00 PM</div>
+    <div class="pt-sublabel">Evening Prime</div>
+    <div class="pt-desc">Highest Monday engagement window</div>
+  </div>
+  <div class="pt-note">Reply to every comment within 60 min of posting — engagement velocity in the first hour tells the algorithm to push your Reel to non-followers.</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+  <!-- SECTION 1: GEAR CHECKLIST (OPEN) -->
+  <div class="acc open" style="border-left:3px solid var(--orange)">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon-bubble" style="background:rgba(255,113,67,0.12)">🎒</div>
+      <div class="acc-meta">
+        <div class="acc-label">Pre-Shoot</div>
+        <div class="acc-title">Gear Checklist</div>
+      </div>
+      <div class="acc-right">
+        <span class="gear-chip" id="gear-count">0 / 11 packed</span>
+        <span class="chevron">▲</span>
+      </div>
+    </div>
+    <div class="acc-body">
+      <div class="gear-grid">
+        <div>
+          <div class="gear-col-header">Bag</div>
+          <div class="gear-items">
+            <label class="gear-item">
+              <input type="checkbox" class="gc" onchange="updateGear()">
+              <div><div class="gear-name">Backpack</div><div class="gear-sub">Packed &amp; ready</div></div>
+            </label>
+          </div>
+        </div>
+        <div>
+          <div class="gear-col-header">Camera</div>
+          <div class="gear-items">
+            <label class="gear-item">
+              <input type="checkbox" class="gc" onchange="updateGear()">
+              <div><div class="gear-name">Lumix S9</div><div class="gear-sub">Fully charged</div></div>
+            </label>
+          </div>
+        </div>
+        <div>
+          <div class="gear-col-header">Lenses</div>
+          <div class="gear-items">
+            <label class="gear-item">
+              <input type="checkbox" class="gc" onchange="updateGear()">
+              <div><div class="gear-name">TTArtisan 40mm f/2</div><div class="gear-sub">Primary · today's pick</div></div>
+            </label>
+            <label class="gear-item">
+              <input type="checkbox" class="gc" onchange="updateGear()">
+              <div><div class="gear-name">TTArtisan 75mm f/2</div><div class="gear-sub">Compression lens</div></div>
+            </label>
+            <label class="gear-item">
+              <input type="checkbox" class="gc" onchange="updateGear()">
+              <div><div class="gear-name">TTArtisan 21mm f/1.5</div><div class="gear-sub">Wide &amp; landscape</div></div>
+            </label>
+          </div>
+        </div>
+        <div>
+          <div class="gear-col-header">Printer</div>
+          <div class="gear-items">
+            <label class="gear-item">
+              <input type="checkbox" class="gc" onchange="updateGear()">
+              <div><div class="gear-name">Canon Selphy CP1500</div><div class="gear-sub">Tray inserted</div></div>
+            </label>
+            <label class="gear-item">
+              <input type="checkbox" class="gc" onchange="updateGear()">
+              <div><div class="gear-name">KP-108IP Paper Pack</div><div class="gear-sub">4×6 Selphy pack</div></div>
+            </label>
+            <label class="gear-item">
+              <input type="checkbox" class="gc" onchange="updateGear()">
+              <div><div class="gear-name">Selphy Battery</div><div class="gear-sub">Fully charged</div></div>
+            </label>
+            <label class="gear-item">
+              <input type="checkbox" class="gc" onchange="updateGear()">
+              <div><div class="gear-name">Printer Tray</div><div class="gear-sub">Loaded &amp; seated</div></div>
+            </label>
+          </div>
+        </div>
+        <div>
+          <div class="gear-col-header">Tripods</div>
+          <div class="gear-items">
+            <label class="gear-item">
+              <input type="checkbox" class="gc" onchange="updateGear()">
+              <div><div class="gear-name">Compact Tripod</div><div class="gear-sub">Low-angle &amp; tabletop</div></div>
+            </label>
+            <label class="gear-item">
+              <input type="checkbox" class="gc" onchange="updateGear()">
+              <div><div class="gear-name">Full-Height Tripod</div><div class="gear-sub">BTS rig</div></div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="notes-wrapper">
+        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
+        <textarea class="notes-area" placeholder="Add gear notes here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: TODAY'S SHOOT (OPEN) -->
+  <div class="acc open" style="border-left:3px solid var(--orange)">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon-bubble" style="background:rgba(255,113,67,0.12)">📍</div>
+      <div class="acc-meta">
+        <div class="acc-label">Today's Shoot</div>
+        <div class="acc-title">Fog Breaks Over Princes Island Bow</div>
+      </div>
+      <div class="acc-right">
+        <span class="chevron">▲</span>
+      </div>
+    </div>
+    <div class="acc-body">
+      <div class="shoot-grid">
+        <div class="shoot-col">
+          <span class="tag tag-orange">Scene &amp; Location</span>
+          <div class="shoot-concept-title">The Concept</div>
+          <div class="shoot-concept">
+            <p>Head to the east footbridge at Princes Island Park before 7 AM while the fog advisory is still active. Position at the mid-point of the footbridge looking west toward the RiverWalk pavilion — water-level fog will sit low between the banks, and the leafless early-spring cottonwoods will read as dark silhouettes cutting through silver-grey murk. The Bow is just beginning its spring melt: the current is high and dark, the banks still winter-bare. This is a scene of pure tone and texture with zero colour distraction.</p>
+            <p>Work the 21mm wide at f/4 for deep fog layers and maximum depth, from the railing cables to the far bank. The tension is in the horizontal fog layer — keep your horizon low in the frame, two-thirds sky, so the fog band reads as a thick grey stripe separating pale sky from near-black water below. One frame: the one where a bridge cable runs diagonally corner to corner, and the cottonwood silhouettes are just barely distinct through the haze. If fog is still dense at 7:54 AM golden hour, stay — diffused light through fog is rarely this clean in April.</p>
+          </div>
+        </div>
+        <div class="shoot-col">
+          <span class="tag tag-blue">Settings</span>
+          <div class="recipe-title">Camera Recipe</div>
+          <div class="recipe-row">
+            <div class="recipe-lbl">Primary Lens</div>
+            <div class="recipe-body">TTArtisan 21mm f/1.5 — wide captures the full fog layer bank to bank; the diagonal of the bridge cable creates natural leading lines through the mist. Fog flattens contrast so you need the geometry.</div>
+          </div>
+          <div class="recipe-row">
+            <div class="recipe-lbl">Secondary Option</div>
+            <div class="recipe-body">TTArtisan 75mm f/2 — from the riverbank path, compress a single cottonwood trunk emerging from fog; shallow depth turns the fog into a soft silver wash behind the bark texture.</div>
+          </div>
+          <div class="recipe-row">
+            <div class="recipe-lbl">Exposure Settings</div>
+            <div class="recipe-body">f/4 · ISO 800 · 1/250s (morning fog) — expose for the sky to keep fog tones cool and grey; let foreground go dark for contrast. Evening: f/2 · ISO 400 · 1/1000s for warm golden hour.</div>
+          </div>
+          <div class="recipe-row">
+            <div class="recipe-lbl">BTS Filming Note</div>
+            <div class="recipe-body">Full-height tripod 1.5m behind and slightly right of shooting position — frame Dario composing at the railing, hands on lens, then the EVF moment before shutter. Use 120fps slow-mo for the shutter-fire beat.</div>
+          </div>
+        </div>
+      </div>
+      <div class="notes-wrapper">
+        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
+        <textarea class="notes-area" placeholder="Add shoot notes here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: REEL STRUCTURE (OPEN) -->
+  <div class="acc open" style="border-left:3px solid var(--blue)">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon-bubble" style="background:rgba(91,156,246,0.1)">🎬</div>
+      <div class="acc-meta">
+        <div class="acc-label">Reel Structure</div>
+        <div class="acc-title">Beat-by-Beat Sequence</div>
+      </div>
+      <div class="acc-right">
+        <span class="chevron">▲</span>
+      </div>
+    </div>
+    <div class="acc-body">
+      <div class="beats-grid">
+        <div class="beat-card">
+          <div class="beat-num" style="color:var(--orange)">01</div>
+          <div class="beat-meta">
+            <div class="beat-label" style="color:var(--orange)">Hook</div>
+            <div class="beat-timing">0–2s · Extreme close-up · Hard cut · Music drops</div>
+            <div class="beat-desc">Macro on a single dew drop clinging to the bridge railing cable — fog completely fills the background, zero context, zero horizon. Hard cut to near-black frame, then the music drops on the downbeat.</div>
+            <div class="beat-overlay">"I photographed 2 inches of visibility this morning"</div>
+          </div>
+        </div>
+        <div class="beat-card">
+          <div class="beat-num" style="color:var(--green)">02</div>
+          <div class="beat-meta">
+            <div class="beat-label" style="color:var(--green)">Location Reveal</div>
+            <div class="beat-timing">3–7s · Wide establishing shot · You in frame</div>
+            <div class="beat-desc">Wide 21mm shot from the east end of the footbridge — Dario walks slowly into frame from the left, stops at the railing, looks west. The fog is so thick the far bank is invisible. The camera holds on the scale and silence of it.</div>
+            <div class="beat-overlay">"Princes Island Park · 6:47 AM · April"</div>
+          </div>
+        </div>
+        <div class="beat-card">
+          <div class="beat-num" style="color:var(--blue)">03</div>
+          <div class="beat-meta">
+            <div class="beat-label" style="color:var(--blue)">The Shot</div>
+            <div class="beat-timing">8–18s · BTS composing + shutter fires + LCD reveal</div>
+            <div class="beat-desc">BTS tripod catches Dario adjusting the 21mm manually at the railing, fine-tuning the cable diagonal in frame, eye to EVF. Hold on the silence of composition. Shutter fires — 120fps slow-mo — then snap to the LCD screen showing the captured frame. No words.</div>
+            <div class="beat-overlay">"today's frame"</div>
+          </div>
+        </div>
+        <div class="beat-card">
+          <div class="beat-num" style="color:var(--amber)">04</div>
+          <div class="beat-meta">
+            <div class="beat-label" style="color:var(--amber)">Print Process</div>
+            <div class="beat-timing">19–30s · Camera → Selphy display → paper emerging slow-mo · Duck music</div>
+            <div class="beat-desc">Cut to the Selphy CP1500 flat on a surface — fog image appears on the small screen. Music ducks to 20%. Paper begins emerging from the feed slot — 120fps slow-mo captures every millimetre. Ambient printer hum fills the audio underneath.</div>
+            <div class="beat-overlay">"selphy cp1500 · canon kp-108ip · 4×6 · natural"</div>
+          </div>
+        </div>
+        <div class="beat-card">
+          <div class="beat-num" style="color:var(--purple)">05</div>
+          <div class="beat-meta">
+            <div class="beat-label" style="color:var(--purple)">Print to World</div>
+            <div class="beat-timing">31–38s · Print held over its reflection · Hard cut black</div>
+            <div class="beat-desc">At the bridge railing, hold the 4×6 print horizontal at arm's length over the fog-grey Bow below. Lower it slowly until the print's reflection appears in the dark water. The moment the reflection sharpens into a recognizable duplicate of the fog scene — hard cut to black. No fade.</div>
+            <div class="beat-overlay">"it happened. it's printed. it's real."</div>
+          </div>
+        </div>
+      </div>
+      <div class="notes-wrapper">
+        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
+        <textarea class="notes-area" placeholder="Add reel notes here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: HOOKS (CLOSED) -->
+  <div class="acc" style="border-left:3px solid var(--orange)">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon-bubble" style="background:rgba(255,113,67,0.1)">✏️</div>
+      <div class="acc-meta">
+        <div class="acc-label">Copy</div>
+        <div class="acc-title">Scroll-Stopping Hooks</div>
+      </div>
+      <div class="acc-right">
+        <span class="chevron">▲</span>
+      </div>
+    </div>
+    <div class="acc-body">
+      <div class="hooks-list">
+        <div class="hook-row">
+          <div class="hook-num">1</div>
+          <div>
+            <span class="hook-text">"I photographed 2 inches of visibility at 7am this morning"</span>
+            <div class="hook-note">Hyper-specific measurement ("2 inches") creates instant curiosity because it's concrete and strange. Pairs perfectly with the extreme close-up dew drop opening visual. The first 3 words + a number stop the scroll cold in 2026 — specificity beats vague every time.</div>
+          </div>
+        </div>
+        <div class="hook-row">
+          <div class="hook-num">2</div>
+          <div>
+            <span class="hook-text">"Calgary was invisible today — I printed it anyway"</span>
+            <div class="hook-note">The contradiction is the hook: something "invisible" being printed creates tension the viewer needs to resolve. "I printed it anyway" is brand voice in four words — stubborn, routine, daily. Strong as the caption first line or as opening on-screen text.</div>
+          </div>
+        </div>
+        <div class="hook-row">
+          <div class="hook-num">3</div>
+          <div>
+            <span class="hook-text">"Most people drove through this fog. I photographed it."</span>
+            <div class="hook-note">Classic contrast hook — positions you as someone who sees differently without being preachy. "Most people" creates instant relatability before the pivot. Works best as on-screen text overlaid on the wide establishing shot in Beat 02.</div>
+          </div>
+        </div>
+      </div>
+      <div class="notes-wrapper">
+        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
+        <textarea class="notes-area" placeholder="Add hook notes here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: AUDIO (CLOSED) -->
+  <div class="acc" style="border-left:3px solid var(--purple)">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon-bubble" style="background:rgba(155,114,255,0.1)">🎵</div>
+      <div class="acc-meta">
+        <div class="acc-label">Trending Sounds</div>
+        <div class="acc-title">Audio Picks</div>
+      </div>
+      <div class="acc-right">
+        <span class="chevron">▲</span>
+      </div>
+    </div>
+    <div class="acc-body">
+      <div class="audio-list">
+        <div class="audio-row">
+          <div class="audio-bubble" style="background:rgba(56,189,248,0.12);color:var(--teal)">♪</div>
+          <div class="audio-info">
+            <div class="audio-track">Seaside Eyes (Instrumental)</div>
+            <div class="audio-artist">Bertie Newman</div>
+            <div class="audio-use">Reflective understated piano — perfectly paced for a fog scene. Let it carry the full sequence; duck to 20% at 0:19 for the print process ambient sound. Trending for reflective carousel content in April 2026. Ideal mood match for silver-grey mornings.</div>
+          </div>
+          <span class="badge badge-blue" style="white-space:nowrap">🎯 Top Pick</span>
+        </div>
+        <div class="audio-row">
+          <div class="audio-bubble" style="background:rgba(155,114,255,0.12);color:var(--purple)">♪</div>
+          <div class="audio-info">
+            <div class="audio-track">Ring Ring Ring</div>
+            <div class="audio-artist">Tyler, The Creator</div>
+            <div class="audio-use">Smooth retro-funk energy — drop it hard on Beat 01 for maximum hook impact. The groove carries the walk reveal in Beat 02 naturally. High use rate in April 2026 for process-style and transformation content. High energy contrast with the quiet fog scene = interesting tension.</div>
+          </div>
+          <span class="badge badge-amber" style="white-space:nowrap">🔥 Trending</span>
+        </div>
+        <div class="audio-row">
+          <div class="audio-bubble" style="background:rgba(244,114,182,0.12);color:var(--pink)">♪</div>
+          <div class="audio-info">
+            <div class="audio-track">DAISIES</div>
+            <div class="audio-artist">Justin Bieber</div>
+            <div class="audio-use">Chill, textured ambient feel — pairs with the fog's soft monochrome palette. Lower energy but higher saves rate on reflective content. Use if targeting the cozy/quiet niche rather than maximum reach. Strong for a contemplative caption pairing.</div>
+          </div>
+          <span class="badge badge-green" style="white-space:nowrap">✓ High Saves</span>
+        </div>
+      </div>
+      <div class="notes-wrapper">
+        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
+        <textarea class="notes-area" placeholder="Add audio notes here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: TEXT OVERLAYS (CLOSED) -->
+  <div class="acc" style="border-left:3px solid var(--teal)">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon-bubble" style="background:rgba(56,189,248,0.1)">💬</div>
+      <div class="acc-meta">
+        <div class="acc-label">On-Screen Text</div>
+        <div class="acc-title">Text Overlays</div>
+      </div>
+      <div class="acc-right">
+        <span class="chevron">▲</span>
+      </div>
+    </div>
+    <div class="acc-body">
+      <div class="overlays-list">
+        <div class="overlay-row">
+          <div class="overlay-ts">0:02</div>
+          <div class="overlay-divider"></div>
+          <div class="overlay-text">"6:47 AM · Princes Island Park · fog advisory in effect"</div>
+        </div>
+        <div class="overlay-row">
+          <div class="overlay-ts">0:06</div>
+          <div class="overlay-divider"></div>
+          <div class="overlay-text">"visibility: 50 metres"</div>
+        </div>
+        <div class="overlay-row">
+          <div class="overlay-ts">0:14</div>
+          <div class="overlay-divider"></div>
+          <div class="overlay-text">"today's frame"</div>
+        </div>
+        <div class="overlay-row">
+          <div class="overlay-ts">0:25</div>
+          <div class="overlay-divider"></div>
+          <div class="overlay-text">"selphy cp1500 · canon kp-108ip · 4×6 · natural"</div>
+        </div>
+        <div class="overlay-row">
+          <div class="overlay-ts">0:34</div>
+          <div class="overlay-divider"></div>
+          <div class="overlay-text">"it happened. it's printed. it's real."</div>
+        </div>
+      </div>
+      <div class="notes-wrapper">
+        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
+        <textarea class="notes-area" placeholder="Add overlay notes here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7: GROWTH (CLOSED) -->
+  <div class="acc" style="border-left:3px solid var(--green)">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon-bubble" style="background:rgba(62,207,142,0.1)">📈</div>
+      <div class="acc-meta">
+        <div class="acc-label">Strategy</div>
+        <div class="acc-title">Growth Move of the Day</div>
+      </div>
+      <div class="acc-right">
+        <span class="chevron">▲</span>
+      </div>
+    </div>
+    <div class="acc-body">
+      <div class="growth-list">
+        <div class="growth-row">
+          <div class="growth-dot" style="background:rgba(62,207,142,0.15);color:var(--green)">1</div>
+          <div class="growth-content">
+            <div class="growth-title">Reply to every comment within 60 minutes of posting</div>
+            <div class="growth-body">Instagram's algorithm tracks engagement velocity in the first hour after a Reel goes live. Responding to comments quickly signals real two-way interaction — which triggers broader distribution to non-followers. Set a 60-minute alarm when you post and clear every comment, even a word or an emoji counts as a signal.</div>
+          </div>
+        </div>
+        <div class="growth-row">
+          <div class="growth-dot" style="background:rgba(155,114,255,0.15);color:var(--purple)">2</div>
+          <div class="growth-content">
+            <div class="growth-title">Embed location keywords in caption prose — not just hashtags</div>
+            <div class="growth-body">Instagram's 2026 search now indexes caption text directly, so writing "Princes Island Park" and "Bow River fog" and "Calgary" in full sentences drives discovery from local users searching those terms. Hashtags no longer support follows — keywords in natural prose now outperform them for organic reach and follower conversion.</div>
+          </div>
+        </div>
+        <div class="growth-row">
+          <div class="growth-dot" style="background:rgba(245,166,35,0.15);color:var(--amber)">3</div>
+          <div class="growth-content">
+            <div class="growth-title">Post a Story immediately after your Reel goes live</div>
+            <div class="growth-body">Use "Add Reel to Story" with a single sticker or just the text "just posted ↑" — this sends existing followers directly to the new Reel. Existing-follower views in the first 30 minutes tell the algorithm the content has pull, and it extends distribution to cold audiences. Keep the Story completely simple — the Reel does all the work.</div>
+          </div>
+        </div>
+      </div>
+      <div class="notes-wrapper">
+        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
+        <textarea class="notes-area" placeholder="Add strategy notes here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 8: CAPTION & HASHTAGS (CLOSED) -->
+  <div class="acc" style="border-left:3px solid var(--pink)">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon-bubble" style="background:rgba(244,114,182,0.1)">🐾</div>
+      <div class="acc-meta">
+        <div class="acc-label">Post Copy</div>
+        <div class="acc-title">Caption &amp; Hashtags</div>
+      </div>
+      <div class="acc-right">
+        <span class="chevron">▲</span>
+      </div>
+    </div>
+    <div class="acc-body">
+      <div class="caption-block">
+        The fog came in so thick this morning that the far bank of the Bow just disappeared. You could hear the river before you could see it — that low, cold rush against the Princes Island Park bridge pilings. There's something about standing at the edge of that footbridge in April fog that makes Calgary feel like a city you're discovering for the first time.<br><br>
+        I set up the 21mm and worked the railing, trying to catch the layer where water-level fog met the silhouettes of the cottonwoods just beginning to bud after the melt. The light was flat and completely even — no shadows at all, just this quiet silver-grey gradient from dark Bow River water to pale sky. One frame. The one where the bridge cable runs diagonal through the mist and the far bank is still nothing but white.<br><br>
+        Back home, the Selphy printed it in Natural mode — cool, desaturated, almost monochrome on the 4×6. It looks like a memory you almost lost. ⬜
+      </div>
+      <div class="hashtag-line">
+        #FrameAndPrint #CalgaryPhotography #LumixS9 #TTArtisan21mm #PhotoPrint #PrintedPhoto #CanonSelphy #FogPhotography #BowRiver #PrincesIslandPark #FilmLook #MorningLight #AnalogVibes #InstantPrint
+      </div>
+      <div class="notes-wrapper">
+        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
+        <textarea class="notes-area" placeholder="Add caption notes here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 9: THE PRINT (CLOSED) -->
+  <div class="acc" style="border-left:3px solid var(--amber)">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-icon-bubble" style="background:rgba(245,166,35,0.1)">🖨️</div>
+      <div class="acc-meta">
+        <div class="acc-label">Canon Selphy CP1500</div>
+        <div class="acc-title">The Print — Filming Guide</div>
+      </div>
+      <div class="acc-right">
+        <span class="chevron">▲</span>
+      </div>
+    </div>
+    <div class="acc-body">
+      <div class="print-grid">
+        <div class="print-card">
+          <div class="print-card-lbl">Paper &amp; Size</div>
+          <div class="print-card-val">Canon KP-108IP</div>
+          <div class="print-card-sub">4×6" · Standard dye-sublimation · 108-sheet pack</div>
+        </div>
+        <div class="print-card">
+          <div class="print-card-lbl">Color Profile</div>
+          <div class="print-card-val">Natural</div>
+          <div class="print-card-sub">Avoid Vivid — fog scene benefits from neutral, desaturated tones. Natural preserves the cool silver-grey palette.</div>
+        </div>
+        <div class="print-card">
+          <div class="print-card-lbl">Mode &amp; Finish</div>
+          <div class="print-card-val">Standard · Glossy</div>
+          <div class="print-card-sub">Glossy surface catches light when held over the river in Beat 05 — the reflection works better with gloss than matte.</div>
+        </div>
+      </div>
+      <div class="print-note-block">
+        <div class="print-note-title">Filming Beats 04–05: Step-by-Step</div>
+        <div class="print-note-body">
+          <strong style="color:var(--strong);font-size:12px;">Beat 04</strong> — Place the Selphy on a flat, clean surface (kitchen counter or table). Position your filming camera at roughly 45° to the printer's feed slot so both the Selphy display screen and the emerging paper are in frame simultaneously. Record at 120fps for slow-mo — the full print cycle is about 90 seconds, but 20 seconds of slow-mo paper emerging is all you need. Duck your music to 20% at the 0:19 mark; bring up light ambient room tone underneath for texture and presence.<br><br>
+          <strong style="color:var(--strong);font-size:12px;">Beat 05</strong> — Carry the still-warm 4×6 print back to the Princes Island footbridge railing (or any location with dark, moving water visible below). Hold the print horizontal at arm's length over the railing, glossy side facing down toward the water. Lower it slowly and steadily — at roughly 1 metre above the water the reflection will begin to appear in the current below. The moment the reflection sharpens into a recognizable duplicate of the fog scene on the print surface — hard cut to black. Do not fade. Cut immediately.
+        </div>
+      </div>
+      <div class="notes-wrapper">
+        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
+        <textarea class="notes-area" placeholder="Add print notes here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end main-content -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <em>frame &amp; print</em> &nbsp;·&nbsp; Daily Creator Brief &nbsp;·&nbsp; April 13, 2026 &nbsp;·&nbsp; Refreshes every morning at 7:00 AM MST
+</footer>
+
+<script>
+function toggleAcc(header) {
+  header.closest('.acc').classList.toggle('open');
+}
+function updateGear() {
+  const all = document.querySelectorAll('.gc');
+  const done = Array.from(all).filter(c => c.checked).length;
+  const el = document.getElementById('gear-count');
+  el.textContent = done + ' / ' + all.length + ' packed';
+  el.className = 'gear-chip' + (done === all.length ? ' done' : '');
+}
+function toggleNotes(btn) {
+  const open = btn.nextElementSibling.classList.toggle('open');
+  btn.textContent = open ? '\u2715\u00a0 Close notes' : '\u270e\u00a0 Add notes';
+}
+</script>
+
+</body>
+</html>
