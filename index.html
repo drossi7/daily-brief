@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>frame &amp; print · Daily Creator Brief · April 15, 2026</title>
+<title>keep this frame · Daily Creator Brief · April 15, 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -788,8 +788,8 @@
 <!-- ══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
 <header class="site-header">
   <div class="dateline">Wednesday · April 15, 2026 · Calgary, Alberta</div>
-  <div class="brand">frame &amp; <span>print</span></div>
-  <div class="sub">Daily Creator Brief · @frameandprint · Lumix S9 · Canon Selphy CP1500</div>
+  <div class="brand">keep this <span>frame</span></div>
+  <div class="sub">Daily Creator Brief · @keepthisframe · Lumix S9 · Canon Selphy CP1500</div>
 </header>
 
 <!-- ══════════════════════════════════════ WEATHER PANEL ══════════════════════════════════════ -->
@@ -936,7 +936,7 @@
         <div class="acc-title">Gear Checklist</div>
       </div>
       <div class="acc-right">
-        <span class="gear-chip" id="gear-count">0 / 11 packed</span>
+        <span class="gear-chip" id="gear-count">0 / 10 packed</span>
         <span class="chevron">▲</span>
       </div>
     </div>
@@ -945,7 +945,7 @@
         <!-- Column headers -->
         <div class="gear-col-header">Bag</div>
         <div class="gear-col-header">Camera</div>
-        <div class="gear-col-header">Lenses</div>
+        <div class="gear-col-header">Lenses (2)</div>
         <div class="gear-col-header">Printer</div>
         <div class="gear-col-header">Tripods</div>
 
@@ -1000,12 +1000,9 @@
           <span><span class="gear-name">Full-Height Tripod</span><span class="gear-sub">BTS rig</span></span>
         </label>
 
-        <!-- Lenses row 3 — spans appropriately -->
+        <!-- Lenses row 3 placeholder -->
         <div style="grid-column:1/3"></div>
-        <label class="gear-item" style="grid-column:3">
-          <input type="checkbox" class="gc" onchange="updateGear()">
-          <span><span class="gear-name">TTArtisan 21mm f/1.5</span><span class="gear-sub">Wide &amp; landscape</span></span>
-        </label>
+        <div style="grid-column:3"></div>
 
         <!-- Printer rows 3+4 -->
         <label class="gear-item" style="grid-column:4">
@@ -1058,7 +1055,7 @@
           </div>
           <div class="recipe-row">
             <span class="recipe-lbl">Secondary Option</span>
-            <span class="recipe-val">TTArtisan 21mm f/1.5 · Ultra-wide for full reflection pool with bridge and skyline in frame</span>
+            <span class="recipe-val">TTArtisan 75mm f/2 · Compression lens for isolating the puddle reflection detail against the blurred RiverWalk</span>
           </div>
           <div class="recipe-row">
             <span class="recipe-lbl">Exposure Settings</span>
@@ -1342,7 +1339,7 @@ April in Calgary doesn't give you golden hour. It gives you puddles. So this mor
 This is the TTArtisan 40mm at f/2.8, almost at ground level. Overcast sky is the best softbox you'll ever find, and spring rain is just the city telling you it's ready to be seen differently. I composed for the reflection first and let the real world fall into background.
 
 Then I walked home and printed it. Four inches by six inches of the city, upside down, in my hand. That's all this is. Every day. One moment. One print. ⬜</div>
-        <div class="hashtag-line">#FrameAndPrint #CalgaryPhotography #LumixS9 #TTArtisan #PhotoPrint #GoldenHour #SpringPhotography #CanonSelphy #PrintPhotography #CalgaryStreet #EastVillage #BowRiver #FilmLook #PhotoOfTheDay</div>
+        <div class="hashtag-line">#KeepThisFrame #CalgaryPhotography #LumixS9 #TTArtisan #PhotoPrint #GoldenHour #SpringPhotography #CanonSelphy #PrintPhotography #CalgaryStreet #EastVillage #BowRiver #FilmLook #PhotoOfTheDay</div>
       </div>
       <div class="notes-wrapper">
         <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
@@ -1395,7 +1392,7 @@ For Beat 05 (Print to World): Walk to the nearest puddle on the RiverWalk (or us
 
 <!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
 <footer class="site-footer">
-  <span class="brand-ft">frame &amp; print</span> · Daily Creator Brief · April 15, 2026 · Refreshes every morning at 7:00 AM MST
+  <span class="brand-ft">keep this frame</span> · Daily Creator Brief · April 15, 2026 · Refreshes every morning at 7:00 AM MST
 </footer>
 
 <script>
@@ -1407,7 +1404,7 @@ For Beat 05 (Print to World): Walk to the nearest puddle on the RiverWalk (or us
     const all = document.querySelectorAll('.gc');
     const done = Array.from(all).filter(c => c.checked).length;
     const el = document.getElementById('gear-count');
-    el.textContent = done + ' / ' + all.length + ' packed';
+    el.textContent = done + ' / 10 packed';
     el.className = 'gear-chip' + (done === all.length ? ' done' : '');
   }
 
