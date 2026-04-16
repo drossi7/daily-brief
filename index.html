@@ -3,934 +3,391 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>keep this frame · Daily Creator Brief · April 15, 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>keep this frame · Daily Creator Brief · April 16, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg:#0C0C0C; --surface:#141414; --card:#1A1A1A;
-    --border:#272727; --border-light:#2E2E2E;
-    --body:#A8A09A; --strong:#D4CCC4; --muted:#585250;
-    --orange:#FF7143; --amber:#F5A623; --green:#3ECF8E;
-    --blue:#5B9CF6; --purple:#9B72FF; --pink:#F472B6;
-    --teal:#38BDF8; --red:#F87171;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { font-size: 14px; }
-  body {
-    background: var(--bg);
-    color: var(--body);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    min-height: 100vh;
-  }
+:root {
+  --bg:#0C0C0C;
+  --surface:#141414;
+  --card:#1A1A1A;
+  --border:#272727;
+  --border-light:#2E2E2E;
+  --body:#A8A09A;
+  --strong:#D4CCC4;
+  --muted:#585250;
+  --orange:#FF7143;
+  --amber:#F5A623;
+  --green:#3ECF8E;
+  --blue:#5B9CF6;
+  --purple:#9B72FF;
+  --pink:#F472B6;
+  --teal:#38BDF8;
+  --red:#F87171;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:14px;scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--body);font-family:'Inter',sans-serif;line-height:1.6;min-height:100vh;}
 
-  /* ── HEADER ── */
-  .site-header {
-    background: #090909;
-    text-align: center;
-    padding: 36px 0 28px;
-    border-bottom: 1px solid var(--border);
-  }
-  .site-header .dateline {
-    font-family: 'Outfit', sans-serif;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.24em;
-    color: var(--muted);
-    margin-bottom: 10px;
-  }
-  .site-header .brand {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 300;
-    font-size: clamp(50px, 7.5vw, 76px);
-    color: var(--strong);
-    line-height: 1;
-    margin-bottom: 10px;
-  }
-  .site-header .brand span { color: var(--orange); font-weight: 700; }
-  .site-header .sub {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    color: var(--muted);
-  }
+/* HEADER */
+.site-header{background:#090909;text-align:center;padding:36px 0 28px;border-bottom:1px solid var(--border);}
+.site-header .dateline{font-family:'Outfit',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.24em;color:var(--muted);margin-bottom:12px;}
+.site-header .brand{font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(50px,7.5vw,76px);color:var(--strong);line-height:1;}
+.site-header .brand span{color:var(--orange);font-weight:700;}
+.site-header .subtitle{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);margin-top:10px;letter-spacing:0.04em;}
 
-  /* ── WEATHER PANEL ── */
-  .weather-panel {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-  }
-  .wx-cell {
-    padding: 20px 18px 18px;
-    border-right: 1px solid var(--border);
-  }
-  .wx-cell:last-child { border-right: none; }
-  .wx-label {
-    font-size: 9.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    color: var(--muted);
-    margin-bottom: 12px;
-    font-family: 'Outfit', sans-serif;
-  }
-  .wx-top {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 14px;
-  }
-  .wx-icon-bubble {
-    width: 54px;
-    height: 54px;
-    background: #1E1C1A;
-    border-radius: 14px;
-    border: 1px solid var(--border-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    flex-shrink: 0;
-  }
-  .wx-condition-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--strong);
-    line-height: 1.2;
-  }
-  .wx-temp-line {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 3px;
-  }
-  .wx-metrics {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 5px;
-    margin-bottom: 12px;
-  }
-  .wx-metric-card {
-    background: rgba(255,255,255,0.025);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 7px 6px;
-    text-align: center;
-  }
-  .wx-metric-val {
-    font-family: 'Outfit', sans-serif;
-    font-size: 13.5px;
-    font-weight: 700;
-    color: var(--strong);
-    display: block;
-  }
-  .wx-metric-lbl {
-    font-size: 9px;
-    text-transform: uppercase;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-  }
-  .wx-detail {
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 10px;
-  }
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 10.5px;
-    font-weight: 600;
-    border-radius: 20px;
-    padding: 3px 10px;
-    letter-spacing: 0.04em;
-  }
-  .badge-red { background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.35); color: var(--red); }
-  .badge-amber { background: rgba(245,166,35,0.1); border: 1px solid rgba(245,166,35,0.35); color: var(--amber); }
-  .badge-green { background: rgba(62,207,142,0.1); border: 1px solid rgba(62,207,142,0.35); color: var(--green); }
-  .badge-blue { background: rgba(91,156,246,0.1); border: 1px solid rgba(91,156,246,0.35); color: var(--blue); }
+/* WEATHER PANEL */
+.weather-panel{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;background:var(--surface);border-bottom:1px solid var(--border);}
+.wx-cell{padding:20px;border-right:1px solid var(--border);}
+.wx-cell:last-child{border-right:none;}
+.cell-label{font-size:9.5px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);margin-bottom:12px;font-family:'Outfit',sans-serif;}
+.wx-top{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.wx-icon-bubble{width:54px;height:54px;background:#1E1C1A;border-radius:14px;border:1px solid var(--border-light);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
+.wx-condition-title{font-family:'Outfit',sans-serif;font-size:17px;font-weight:700;color:var(--strong);line-height:1.2;}
+.wx-temp-line{font-size:12px;color:var(--muted);margin-top:4px;}
+.wx-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px;}
+.wx-metric-card{background:rgba(255,255,255,0.025);border:1px solid var(--border);border-radius:6px;padding:7px 6px;text-align:center;}
+.wx-metric-val{font-family:'Outfit',sans-serif;font-size:13.5px;font-weight:700;color:var(--strong);}
+.wx-metric-lbl{font-size:9px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-top:2px;}
+.wx-detail{font-size:12px;color:var(--muted);line-height:1.65;}
+.wx-badge{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:500;border-radius:6px;padding:4px 9px;margin-top:10px;}
+.badge-red{color:var(--red);border:1px solid rgba(248,113,113,0.35);background:rgba(248,113,113,0.08);}
+.badge-amber{color:var(--amber);border:1px solid rgba(245,166,35,0.35);background:rgba(245,166,35,0.08);}
+.badge-green{color:var(--green);border:1px solid rgba(62,207,142,0.35);background:rgba(62,207,142,0.08);}
+.badge-blue{color:var(--blue);border:1px solid rgba(91,156,246,0.35);background:rgba(91,156,246,0.08);}
 
-  /* Shoot Window */
-  .sw-header { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
-  .sw-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--amber);
-    box-shadow: 0 0 6px rgba(245,166,35,0.7);
-    flex-shrink: 0;
-  }
-  .sw-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--strong);
-  }
-  .sw-block {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-radius: 7px;
-    padding: 9px 10px;
-    margin-bottom: 8px;
-  }
-  .sw-block.morning {
-    background: rgba(245,166,35,0.05);
-    border: 1px solid rgba(245,166,35,0.18);
-  }
-  .sw-block.evening {
-    background: rgba(62,207,142,0.05);
-    border: 1px solid rgba(62,207,142,0.18);
-  }
-  .sw-icon { font-size: 16px; }
-  .sw-time {
-    font-family: 'Outfit', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--strong);
-  }
-  .sw-lbl { font-size: 11px; color: var(--muted); }
+/* Shoot window */
+.sw-title-row{display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+.sw-dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 3px rgba(245,166,35,0.2);}
+.sw-title{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--strong);}
+.sw-window{border-radius:8px;padding:10px 12px;margin-bottom:8px;}
+.sw-window.morning{background:rgba(245,166,35,0.05);border:1px solid rgba(245,166,35,0.18);}
+.sw-window.afternoon{background:rgba(91,156,246,0.05);border:1px solid rgba(91,156,246,0.18);}
+.sw-window-inner{display:flex;align-items:center;gap:8px;}
+.sw-icon{font-size:16px;}
+.sw-time{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--strong);}
+.sw-lbl{font-size:11px;color:var(--muted);display:block;margin-top:2px;}
 
-  /* Light times */
-  .lt-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 0;
-    border-bottom: 1px solid #1C1C1C;
-  }
-  .lt-row:last-of-type { border-bottom: none; }
-  .lt-icon { font-size: 20px; width: 24px; text-align: center; }
-  .lt-time {
-    font-family: 'Outfit', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    min-width: 68px;
-  }
-  .lt-event { font-size: 11.5px; color: var(--muted); }
-  .lt-blue { color: rgba(91,156,246,0.7); }
-  .lt-sunrise { color: #D4B896; }
-  .lt-amber { color: var(--amber); }
-  .lt-green { color: var(--green); }
-  .lt-badge-wrap { margin-top: 12px; }
+/* Light rows */
+.lt-row{display:flex;align-items:center;gap:10px;padding:9px 0;}
+.lt-row + .lt-row{border-top:1px solid #1C1C1C;}
+.lt-icon{font-size:20px;flex-shrink:0;}
+.lt-time{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;}
+.lt-event{font-size:11.5px;color:var(--muted);}
+.lt-blue{color:rgba(91,156,246,0.7);}
+.lt-gold{color:#D4B896;}
+.lt-amber{color:var(--amber);}
 
-  /* ── POST TIMING BAR ── */
-  .post-bar {
-    display: grid;
-    grid-template-columns: 120px 1fr 1fr 1fr;
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-  }
-  .post-bar-label {
-    padding: 16px 20px;
-    border-right: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .post-bar-label .tiny { font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
-  .post-bar-label .label-title { font-size: 12px; color: var(--strong); font-weight: 500; margin-top: 2px; }
-  .post-pick {
-    padding: 14px 18px;
-    border-right: 1px solid var(--border);
-  }
-  .post-pick:last-child { border-right: none; }
-  .pick-chip {
-    display: inline-block;
-    font-size: 9.5px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--blue);
-    background: rgba(91,156,246,0.1);
-    border: 1px solid rgba(91,156,246,0.25);
-    border-radius: 20px;
-    padding: 2px 8px;
-    margin-bottom: 5px;
-  }
-  .post-time {
-    font-family: 'Outfit', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--strong);
-    display: block;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .post-sublabel {
-    font-size: 9.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    display: block;
-    margin-bottom: 4px;
-  }
-  .post-desc { font-size: 12px; color: var(--muted); }
-  .post-note {
-    padding: 14px 18px;
-    font-size: 12px;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    border-left: 1px solid var(--border);
-  }
+/* POST TIMING BAR */
+.timing-bar{display:grid;grid-template-columns:120px 1fr 1fr 1fr;background:var(--surface);border-bottom:1px solid var(--border);}
+.timing-label-cell{padding:16px 20px;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;}
+.timing-label-cell .tl-small{font-size:9px;text-transform:uppercase;letter-spacing:0.18em;color:var(--muted);margin-bottom:4px;font-family:'Outfit',sans-serif;}
+.timing-label-cell .tl-title{font-size:12px;color:var(--strong);}
+.timing-pick{padding:14px 18px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:4px;}
+.timing-pick:last-child{border-right:none;}
+.pick-chip{display:inline-flex;width:fit-content;font-size:9.5px;font-weight:600;color:var(--blue);border:1px solid rgba(91,156,246,0.3);background:rgba(91,156,246,0.08);border-radius:5px;padding:2px 7px;letter-spacing:0.06em;margin-bottom:2px;}
+.pick-time{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;color:var(--strong);line-height:1.1;}
+.pick-sublabel{font-size:9.5px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);}
+.pick-desc{font-size:12px;color:var(--body);}
+.timing-note{padding:14px 18px;display:flex;align-items:center;}
+.timing-note p{font-size:12px;color:var(--muted);line-height:1.65;}
 
-  /* ── MAIN CONTENT ── */
-  .main-wrap {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 28px 24px 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+/* MAIN */
+.main{max-width:1400px;margin:0 auto;padding:28px 24px 80px;display:flex;flex-direction:column;gap:10px;}
 
-  /* ── ACCORDION ── */
-  .acc {
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background: var(--surface);
-    overflow: hidden;
-  }
-  .acc.orange-accent { border-left: 3px solid var(--orange); }
-  .acc.blue-accent { border-left: 3px solid var(--blue); }
-  .acc.purple-accent { border-left: 3px solid var(--purple); }
-  .acc.teal-accent { border-left: 3px solid var(--teal); }
-  .acc.green-accent { border-left: 3px solid var(--green); }
-  .acc.pink-accent { border-left: 3px solid var(--pink); }
-  .acc.amber-accent { border-left: 3px solid var(--amber); }
+/* ACCORDION */
+.acc{border:1px solid var(--border);border-radius:10px;background:var(--surface);overflow:hidden;}
+.acc-header{display:flex;align-items:center;gap:14px;padding:15px 18px;cursor:pointer;user-select:none;}
+.acc-header:hover{background:rgba(255,255,255,0.02);}
+.acc-icon-bubble{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.acc-meta{flex:1;}
+.acc-label{font-size:9.5px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);font-family:'Outfit',sans-serif;}
+.acc-title{font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:600;color:var(--strong);line-height:1.2;}
+.acc-right{display:flex;align-items:center;gap:10px;}
+.gear-chip{font-size:11px;color:var(--muted);border:1px solid var(--border);border-radius:5px;padding:3px 9px;font-family:'Outfit',sans-serif;font-weight:600;transition:all 0.2s;}
+.gear-chip.done{color:var(--green);border-color:rgba(62,207,142,0.4);background:rgba(62,207,142,0.08);}
+.chevron{font-size:13px;color:var(--muted);transition:transform 0.2s;}
+.acc.open .chevron{transform:rotate(180deg);}
+.acc-body{display:none;border-top:1px solid var(--border);}
+.acc.open .acc-body{display:block;}
 
-  .acc-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 15px 18px;
-    cursor: pointer;
-    user-select: none;
-  }
-  .acc-header:hover { background: rgba(255,255,255,0.02); }
+/* NOTES */
+.notes-wrapper{border-top:1px solid var(--border);padding:10px 18px 14px;}
+.notes-toggle{background:none;border:none;font-size:12px;color:var(--muted);cursor:pointer;padding:0;font-family:'Inter',sans-serif;}
+.notes-toggle:hover{color:var(--body);}
+.notes-area{display:none;width:100%;min-height:72px;background:var(--card);border:1px solid var(--border);border-radius:7px;padding:10px;margin-top:8px;font-size:13px;font-family:'Inter',sans-serif;color:var(--strong);resize:vertical;outline:none;transition:border-color 0.2s;}
+.notes-area.open{display:block;}
+.notes-area:focus{border-color:var(--orange);}
 
-  .acc-icon-bubble {
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-  .bubble-orange { background: rgba(255,113,67,0.12); }
-  .bubble-blue { background: rgba(91,156,246,0.12); }
-  .bubble-purple { background: rgba(155,114,255,0.12); }
-  .bubble-teal { background: rgba(56,189,248,0.12); }
-  .bubble-green { background: rgba(62,207,142,0.12); }
-  .bubble-pink { background: rgba(244,114,182,0.12); }
-  .bubble-amber { background: rgba(245,166,35,0.12); }
+/* GEAR GRID */
+.gear-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:20px 18px 4px;}
+.gear-col-header{font-size:9.5px;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);padding:0 8px 10px;font-family:'Outfit',sans-serif;}
+.gear-item{display:flex;align-items:flex-start;gap:9px;padding:7px 8px;border-radius:6px;cursor:pointer;transition:background 0.15s;}
+.gear-item:hover{background:rgba(255,255,255,0.03);}
+.gc{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--border-light);background:transparent;cursor:pointer;flex-shrink:0;margin-top:1px;appearance:none;-webkit-appearance:none;transition:all 0.15s;position:relative;}
+.gc:checked{background:var(--orange);border-color:var(--orange);}
+.gc:checked::after{content:'✓';position:absolute;top:-1px;left:2px;font-size:11px;color:#fff;font-weight:700;}
+.gear-name{font-size:13px;font-weight:600;color:var(--strong);line-height:1.3;}
+.gear-sub{font-size:11px;color:var(--muted);display:block;}
 
-  .acc-meta { flex: 1; }
-  .acc-meta .acc-label {
-    font-size: 9.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    color: var(--muted);
-    font-family: 'Outfit', sans-serif;
-  }
-  .acc-meta .acc-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 15.5px;
-    font-weight: 600;
-    color: var(--strong);
-  }
-  .acc-right { display: flex; align-items: center; gap: 10px; }
-  .chevron {
-    color: var(--muted);
-    font-size: 12px;
-    transition: transform 0.2s ease;
-    display: inline-block;
-  }
-  .acc.open .chevron { transform: rotate(180deg); }
-  .acc-body {
-    display: none;
-    border-top: 1px solid var(--border);
-  }
-  .acc.open .acc-body { display: block; }
+/* SHOOT SECTION */
+.shoot-layout{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.shoot-left{padding:20px 22px;border-right:1px solid var(--border);}
+.shoot-right{padding:20px 22px;}
+.shoot-tag{display:inline-flex;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;border-radius:5px;padding:3px 9px;margin-bottom:14px;font-family:'Outfit',sans-serif;font-weight:600;}
+.tag-orange{color:var(--orange);background:rgba(255,113,67,0.1);border:1px solid rgba(255,113,67,0.25);}
+.tag-blue{color:var(--blue);background:rgba(91,156,246,0.1);border:1px solid rgba(91,156,246,0.25);}
+.shoot-concept-title{font-family:'Outfit',sans-serif;font-size:17px;font-weight:700;color:var(--strong);margin-bottom:14px;}
+.shoot-concept p{font-size:13.5px;color:var(--body);line-height:1.75;margin-bottom:12px;}
+.recipe-title{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--strong);margin-bottom:14px;}
+.recipe-row{padding:10px 0;border-bottom:1px solid var(--border);}
+.recipe-row:last-child{border-bottom:none;}
+.recipe-lbl{font-size:9.5px;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);font-family:'Outfit',sans-serif;margin-bottom:4px;}
+.recipe-val{font-size:13.5px;color:var(--body);}
 
-  /* Gear chip */
-  .gear-chip {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 20px;
-    background: rgba(255,113,67,0.1);
-    border: 1px solid rgba(255,113,67,0.3);
-    color: var(--orange);
-    transition: all 0.2s;
-  }
-  .gear-chip.done {
-    background: rgba(62,207,142,0.1);
-    border-color: rgba(62,207,142,0.3);
-    color: var(--green);
-  }
+/* BEAT CARDS */
+.beats-list{display:flex;flex-direction:column;gap:8px;padding:18px;}
+.beat-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 16px;display:flex;gap:14px;}
+.beat-num{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;flex-shrink:0;width:32px;}
+.beat-num.c-orange{color:var(--orange);}
+.beat-num.c-green{color:var(--green);}
+.beat-num.c-blue{color:var(--blue);}
+.beat-num.c-amber{color:var(--amber);}
+.beat-num.c-purple{color:var(--purple);}
+.beat-content{flex:1;}
+.beat-label-row{display:flex;align-items:center;gap:8px;margin-bottom:4px;}
+.beat-label{font-size:9.5px;text-transform:uppercase;letter-spacing:0.14em;font-family:'Outfit',sans-serif;font-weight:600;}
+.bl-orange{color:var(--orange);}
+.bl-green{color:var(--green);}
+.bl-blue{color:var(--blue);}
+.bl-amber{color:var(--amber);}
+.bl-purple{color:var(--purple);}
+.beat-timing{font-size:11px;color:var(--muted);}
+.beat-desc{font-size:13.5px;color:var(--body);margin-bottom:8px;}
+.beat-overlay{background:#0D0D0D;border:1px solid var(--border);border-radius:6px;padding:7px 11px;font-size:12.5px;font-style:italic;color:#6E6660;}
 
-  /* Gear grid */
-  .gear-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0;
-    padding: 20px 18px 4px;
-  }
-  .gear-col-header {
-    font-size: 9.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-    padding: 0 8px 8px;
-    font-family: 'Outfit', sans-serif;
-  }
-  label.gear-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 9px;
-    padding: 7px 8px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  label.gear-item:hover { background: rgba(255,255,255,0.03); }
-  .gc {
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    border: 1.5px solid var(--border-light);
-    border-radius: 4px;
-    flex-shrink: 0;
-    margin-top: 1px;
-    cursor: pointer;
-    transition: all 0.15s;
-    position: relative;
-  }
-  .gc:checked {
-    background: var(--orange);
-    border-color: var(--orange);
-  }
-  .gc:checked::after {
-    content: '✓';
-    position: absolute;
-    top: -1px;
-    left: 2px;
-    font-size: 11px;
-    color: white;
-    font-weight: 700;
-  }
-  .gear-name {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--strong);
-    display: block;
-    line-height: 1.3;
-  }
-  .gear-sub {
-    font-size: 11px;
-    color: var(--muted);
-    display: block;
-  }
+/* HOOKS */
+.hooks-list{display:flex;flex-direction:column;gap:8px;padding:18px;}
+.hook-row{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:13px 15px;display:flex;gap:13px;}
+.hook-num{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:var(--orange);flex-shrink:0;width:28px;}
+.hook-content{flex:1;}
+.hook-text{font-size:14px;font-style:italic;color:var(--strong);display:block;margin-bottom:5px;}
+.hook-note{font-size:12px;color:var(--muted);}
 
-  /* Shoot section */
-  .shoot-two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-top: none;
-  }
-  .shoot-col {
-    padding: 20px 20px 18px;
-  }
-  .shoot-col:first-child {
-    border-right: 1px solid var(--border);
-  }
-  .section-tag {
-    display: inline-block;
-    font-size: 9.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-weight: 700;
-    border-radius: 4px;
-    padding: 2px 8px;
-    margin-bottom: 10px;
-  }
-  .tag-orange { background: rgba(255,113,67,0.12); color: var(--orange); }
-  .tag-blue { background: rgba(91,156,246,0.12); color: var(--blue); }
-  .shoot-concept-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--strong);
-    margin-bottom: 12px;
-  }
-  .shoot-concept-title span { font-style: italic; font-weight: 400; font-size: 14px; color: var(--muted); }
-  .shoot-para { font-size: 13.5px; line-height: 1.75; color: var(--body); margin-bottom: 12px; }
-  .shoot-para:last-child { margin-bottom: 0; }
+/* AUDIO */
+.audio-list{display:flex;flex-direction:column;gap:8px;padding:18px;}
+.audio-row{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 15px;}
+.audio-bubble{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.audio-info{flex:1;}
+.audio-track{font-size:13.5px;font-weight:600;color:var(--strong);}
+.audio-artist{font-size:12px;color:var(--muted);margin-bottom:3px;}
+.audio-use{font-size:12px;color:var(--body);}
+.audio-badge{margin-left:auto;}
+.abadge-trending{font-size:10px;color:var(--green);border:1px solid rgba(62,207,142,0.35);background:rgba(62,207,142,0.08);border-radius:5px;padding:3px 8px;font-weight:600;white-space:nowrap;}
+.abadge-niche{font-size:10px;color:var(--purple);border:1px solid rgba(155,114,255,0.35);background:rgba(155,114,255,0.08);border-radius:5px;padding:3px 8px;font-weight:600;white-space:nowrap;}
+.abadge-top{font-size:10px;color:var(--amber);border:1px solid rgba(245,166,35,0.35);background:rgba(245,166,35,0.08);border-radius:5px;padding:3px 8px;font-weight:600;white-space:nowrap;}
 
-  .recipe-row {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 0;
-    border-bottom: 1px solid #1C1C1C;
-  }
-  .recipe-row:last-child { border-bottom: none; }
-  .recipe-lbl {
-    font-size: 9.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-    margin-bottom: 3px;
-    font-family: 'Outfit', sans-serif;
-  }
-  .recipe-val { font-size: 13.5px; color: var(--strong); font-weight: 500; line-height: 1.4; }
-  .camera-recipe-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--strong);
-    margin-bottom: 12px;
-  }
+/* OVERLAYS */
+.overlays-list{display:flex;flex-direction:column;gap:6px;padding:18px;}
+.overlay-row{background:var(--card);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;padding:9px 15px;gap:0;}
+.ov-ts{font-size:10.5px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);min-width:82px;font-family:'Outfit',sans-serif;}
+.ov-divider{width:1px;height:22px;background:var(--border-light);margin:0 14px;flex-shrink:0;}
+.ov-text{font-size:13.5px;font-style:italic;color:var(--strong);}
 
-  /* Reel beats */
-  .beats-wrap { display: flex; flex-direction: column; gap: 8px; padding: 18px 18px 8px; }
-  .beat-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 14px 16px;
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-  }
-  .beat-num {
-    font-family: 'Outfit', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    flex-shrink: 0;
-    width: 30px;
-  }
-  .beat-num.c-orange { color: var(--orange); }
-  .beat-num.c-green { color: var(--green); }
-  .beat-num.c-blue { color: var(--blue); }
-  .beat-num.c-amber { color: var(--amber); }
-  .beat-num.c-purple { color: var(--purple); }
-  .beat-info { flex: 1; }
-  .beat-label {
-    font-size: 9.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-weight: 700;
-  }
-  .beat-label.c-orange { color: var(--orange); }
-  .beat-label.c-green { color: var(--green); }
-  .beat-label.c-blue { color: var(--blue); }
-  .beat-label.c-amber { color: var(--amber); }
-  .beat-label.c-purple { color: var(--purple); }
-  .beat-timing { font-size: 11px; color: var(--muted); margin-left: 6px; }
-  .beat-desc { font-size: 13.5px; color: var(--body); margin-top: 4px; line-height: 1.55; }
-  .beat-overlay {
-    background: #0D0D0D;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 6px 10px;
-    font-size: 12.5px;
-    font-style: italic;
-    color: #6E6660;
-    margin-top: 8px;
-    display: inline-block;
-  }
+/* GROWTH */
+.growth-list{display:flex;flex-direction:column;gap:10px;padding:18px;}
+.growth-row{display:flex;gap:14px;align-items:flex-start;}
+.growth-dot{width:27px;height:27px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:'Outfit',sans-serif;flex-shrink:0;}
+.gd1{background:rgba(62,207,142,0.15);color:var(--green);}
+.gd2{background:rgba(155,114,255,0.15);color:var(--purple);}
+.gd3{background:rgba(245,166,35,0.15);color:var(--amber);}
+.growth-body{flex:1;}
+.growth-title{font-size:13.5px;font-weight:600;color:var(--strong);margin-bottom:3px;}
+.growth-text{font-size:13px;color:var(--body);line-height:1.65;}
 
-  /* Hooks */
-  .hooks-wrap { display: flex; flex-direction: column; gap: 8px; padding: 18px 18px 8px; }
-  .hook-row {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 13px 15px;
-    display: flex;
-    gap: 13px;
-    align-items: flex-start;
-  }
-  .hook-num {
-    font-family: 'Outfit', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--orange);
-    flex-shrink: 0;
-    width: 24px;
-  }
-  .hook-text {
-    font-size: 14px;
-    color: var(--strong);
-    font-style: italic;
-    line-height: 1.4;
-    margin-bottom: 5px;
-  }
-  .hook-note { font-size: 12px; color: var(--muted); }
+/* CAPTION */
+.caption-block{font-size:14px;font-style:italic;line-height:1.85;color:var(--body);background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 18px;margin:18px 18px 10px;}
+.hashtag-line{font-size:12.5px;color:rgba(91,156,246,0.65);line-height:1.85;padding:0 18px 18px;}
 
-  /* Audio */
-  .audio-wrap { display: flex; flex-direction: column; gap: 8px; padding: 18px 18px 8px; }
-  .audio-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 14px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-  }
-  .audio-bubble {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    flex-shrink: 0;
-    font-weight: 700;
-    color: white;
-  }
-  .audio-info { flex: 1; }
-  .audio-track { font-size: 13.5px; font-weight: 600; color: var(--strong); }
-  .audio-artist { font-size: 11.5px; color: var(--muted); }
-  .audio-use { font-size: 12px; color: var(--body); margin-top: 3px; }
+/* PRINT */
+.print-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:18px 18px 12px;}
+.print-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 16px;}
+.print-card-lbl{font-size:9.5px;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);font-family:'Outfit',sans-serif;margin-bottom:8px;}
+.print-card-val{font-size:14px;font-weight:600;color:var(--strong);margin-bottom:4px;}
+.print-card-sub{font-size:12px;color:var(--muted);}
+.print-note{margin:0 18px 18px;background:rgba(245,166,35,0.05);border:1px solid rgba(245,166,35,0.18);border-radius:8px;padding:14px 16px;}
+.print-note-title{font-size:12px;font-style:italic;font-weight:600;color:var(--amber);margin-bottom:6px;}
+.print-note-body{font-size:13px;color:var(--body);line-height:1.7;}
 
-  /* Overlays */
-  .overlays-wrap { display: flex; flex-direction: column; gap: 6px; padding: 18px 18px 8px; }
-  .overlay-row {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    display: flex;
-    align-items: center;
-    padding: 9px 15px;
-    gap: 0;
-  }
-  .overlay-ts {
-    font-size: 10.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    min-width: 82px;
-    flex-shrink: 0;
-  }
-  .overlay-divider {
-    width: 1px;
-    height: 20px;
-    background: var(--border);
-    margin: 0 14px;
-    flex-shrink: 0;
-  }
-  .overlay-text { font-size: 13.5px; color: var(--strong); font-style: italic; }
+/* FOOTER */
+.site-footer{background:#090909;border-top:1px solid var(--border);padding:16px 24px;text-align:center;}
+.site-footer p{font-size:11.5px;color:var(--muted);}
+.site-footer em{font-family:'Outfit',sans-serif;font-style:italic;color:var(--orange);}
 
-  /* Growth */
-  .growth-wrap { display: flex; flex-direction: column; gap: 10px; padding: 18px 18px 8px; }
-  .growth-row { display: flex; gap: 14px; align-items: flex-start; }
-  .growth-dot {
-    width: 27px;
-    height: 27px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Outfit', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    flex-shrink: 0;
-    color: white;
-  }
-  .dot-green { background: rgba(62,207,142,0.2); color: var(--green); }
-  .dot-purple { background: rgba(155,114,255,0.2); color: var(--purple); }
-  .dot-amber { background: rgba(245,166,35,0.2); color: var(--amber); }
-  .growth-info {}
-  .growth-title { font-size: 13.5px; font-weight: 700; color: var(--strong); margin-bottom: 3px; }
-  .growth-body { font-size: 13px; color: var(--body); line-height: 1.6; }
+/* LEFT BORDER ACCENTS */
+.acc-orange{border-left:3px solid var(--orange);}
+.acc-blue{border-left:3px solid var(--blue);}
+.acc-purple{border-left:3px solid var(--purple);}
+.acc-teal{border-left:3px solid var(--teal);}
+.acc-green{border-left:3px solid var(--green);}
+.acc-pink{border-left:3px solid var(--pink);}
+.acc-amber{border-left:3px solid var(--amber);}
 
-  /* Caption */
-  .caption-wrap { padding: 18px 18px 8px; }
-  .caption-block {
-    font-size: 14px;
-    font-style: italic;
-    line-height: 1.85;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px 18px;
-    margin-bottom: 10px;
-    color: var(--strong);
-    white-space: pre-wrap;
-  }
-  .hashtag-line {
-    font-size: 12.5px;
-    color: var(--blue);
-    opacity: 0.65;
-    line-height: 1.85;
-  }
-
-  /* Print */
-  .print-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px;
-    padding: 18px 18px 0;
-  }
-  .print-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 14px 14px;
-  }
-  .print-card-lbl {
-    font-size: 9.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-    margin-bottom: 6px;
-    font-family: 'Outfit', sans-serif;
-  }
-  .print-card-val {
-    font-family: 'Outfit', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--strong);
-  }
-  .print-note-block {
-    margin: 12px 18px 8px;
-    background: rgba(245,166,35,0.05);
-    border: 1px solid rgba(245,166,35,0.15);
-    border-radius: 8px;
-    padding: 13px 15px;
-  }
-  .print-note-title {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--amber);
-    font-style: italic;
-    margin-bottom: 6px;
-  }
-  .print-note-body { font-size: 13px; color: var(--body); line-height: 1.65; }
-
-  /* Notes wrapper */
-  .notes-wrapper {
-    border-top: 1px solid var(--border);
-    padding: 10px 18px 14px;
-  }
-  .notes-toggle {
-    font-size: 12px;
-    color: var(--muted);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    transition: color 0.15s;
-  }
-  .notes-toggle:hover { color: var(--body); }
-  .notes-area {
-    display: none;
-    width: 100%;
-    min-height: 72px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    font-size: 13px;
-    font-family: 'Inter', sans-serif;
-    color: var(--strong);
-    padding: 10px 12px;
-    resize: vertical;
-    outline: none;
-    margin-top: 8px;
-    transition: border-color 0.15s;
-  }
-  .notes-area.open { display: block; }
-  .notes-area:focus { border-color: var(--orange); }
-
-  /* ── FOOTER ── */
-  .site-footer {
-    background: #090909;
-    border-top: 1px solid var(--border);
-    padding: 16px 24px;
-    text-align: center;
-    font-size: 12px;
-    color: var(--muted);
-  }
-  .site-footer .brand-ft {
-    font-family: 'Outfit', sans-serif;
-    font-style: italic;
-    color: var(--orange);
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 1100px) {
-    .weather-panel { grid-template-columns: 1fr 1fr; }
-    .wx-cell:nth-child(2) { border-right: none; }
-    .wx-cell:nth-child(3) { border-right: 1px solid var(--border); }
-    .post-bar { grid-template-columns: 110px 1fr 1fr; }
-    .post-note { display: none; }
-    .gear-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-  @media (max-width: 768px) {
-    .weather-panel { grid-template-columns: 1fr; }
-    .wx-cell { border-right: none; border-bottom: 1px solid var(--border); }
-    .post-bar { grid-template-columns: 1fr 1fr; }
-    .shoot-two-col { grid-template-columns: 1fr; }
-    .shoot-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
-    .gear-grid { grid-template-columns: repeat(2, 1fr); }
-    .print-grid { grid-template-columns: 1fr; }
-  }
+/* icon bubble colors */
+.ib-orange{background:rgba(255,113,67,0.12);}
+.ib-blue{background:rgba(91,156,246,0.12);}
+.ib-purple{background:rgba(155,114,255,0.12);}
+.ib-teal{background:rgba(56,189,248,0.12);}
+.ib-green{background:rgba(62,207,142,0.12);}
+.ib-pink{background:rgba(244,114,182,0.12);}
+.ib-amber{background:rgba(245,166,35,0.12);}
 </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
+<!-- HEADER -->
 <header class="site-header">
-  <div class="dateline">Wednesday · April 15, 2026 · Calgary, Alberta</div>
+  <div class="dateline">Thursday · April 16, 2026 · Calgary, Alberta</div>
   <div class="brand">keep this <span>frame</span></div>
-  <div class="sub">Daily Creator Brief · @keepthisframe · Lumix S9 · Canon Selphy CP1500</div>
+  <div class="subtitle">Daily Creator Brief &nbsp;·&nbsp; @keepthisframe &nbsp;·&nbsp; Lumix S9 &nbsp;·&nbsp; Canon Selphy CP1500</div>
 </header>
 
-<!-- ══════════════════════════════════════ WEATHER PANEL ══════════════════════════════════════ -->
+<!-- WEATHER PANEL -->
 <div class="weather-panel">
 
-  <!-- Cell A: Today's Conditions -->
+  <!-- Cell A: Conditions -->
   <div class="wx-cell">
-    <div class="wx-label">Today's Conditions</div>
+    <div class="cell-label">Today's Conditions</div>
     <div class="wx-top">
-      <div class="wx-icon-bubble">🌧</div>
+      <div class="wx-icon-bubble">❄️</div>
       <div>
-        <div class="wx-condition-title">Showers with Snow Tonight</div>
-        <div class="wx-temp-line">High 4°C &nbsp;·&nbsp; Low −7°C</div>
+        <div class="wx-condition-title">April Snow Squall</div>
+        <div class="wx-temp-line">High –5°C &nbsp;/&nbsp; Low –8°C</div>
       </div>
     </div>
     <div class="wx-metrics">
-      <div class="wx-metric-card">
-        <span class="wx-metric-val">4°C</span>
-        <span class="wx-metric-lbl">High</span>
-      </div>
-      <div class="wx-metric-card">
-        <span class="wx-metric-val">−7°C</span>
-        <span class="wx-metric-lbl">Low</span>
-      </div>
-      <div class="wx-metric-card">
-        <span class="wx-metric-val">35</span>
-        <span class="wx-metric-lbl">Wind km/h</span>
-      </div>
-      <div class="wx-metric-card">
-        <span class="wx-metric-val">80%</span>
-        <span class="wx-metric-lbl">Rain %</span>
-      </div>
+      <div class="wx-metric-card"><div class="wx-metric-val">–5°</div><div class="wx-metric-lbl">High °C</div></div>
+      <div class="wx-metric-card"><div class="wx-metric-val">–8°</div><div class="wx-metric-lbl">Low °C</div></div>
+      <div class="wx-metric-card"><div class="wx-metric-val">50</div><div class="wx-metric-lbl">Wind km/h</div></div>
+      <div class="wx-metric-card"><div class="wx-metric-val">70%</div><div class="wx-metric-lbl">Rain %</div></div>
     </div>
-    <div class="wx-detail">
-      April showers push through Calgary today, with temperatures hovering near 4°C through the afternoon and a persistent easterly wind. An overnight flip to snow expected as temperatures plunge to −7°C — a textbook Calgary spring whipsaw.
-    </div>
-    <span class="badge badge-red">🌧 Rain Risk</span>
+    <div class="wx-detail">Heavy snow squalls persist through the morning with 3–5 cm accumulation expected. Gusty northerly winds to 50 km/h create blowing snow and reduced visibility — temperatures remain well below seasonal norms all day.</div>
+    <div class="wx-badge badge-red">❄️ Snow Advisory</div>
   </div>
 
-  <!-- Cell B: Best Shoot Window -->
+  <!-- Cell B: Shoot Window -->
   <div class="wx-cell">
-    <div class="wx-label">Best Shoot Window</div>
-    <div class="sw-header">
+    <div class="cell-label">Best Shoot Window</div>
+    <div class="sw-title-row">
       <div class="sw-dot"></div>
-      <div class="sw-title">Two Windows Today</div>
+      <div class="sw-title">Limited — Snow All Day</div>
     </div>
-    <div class="sw-block morning">
-      <span class="sw-icon">🌫️</span>
-      <div>
-        <div class="sw-time">7:00 – 9:00 AM</div>
-        <div class="sw-lbl">Morning · Rain lull · Moody overcast</div>
+    <div class="sw-window morning">
+      <div class="sw-window-inner">
+        <span class="sw-icon">🌨</span>
+        <div>
+          <div class="sw-time">8:00 – 10:30 AM</div>
+          <span class="sw-lbl">Morning snow drama — covered walkways &amp; sheltered spots</span>
+        </div>
       </div>
     </div>
-    <div class="sw-block evening">
-      <span class="sw-icon">🌇</span>
-      <div>
-        <div class="sw-time">7:00 – 8:30 PM</div>
-        <div class="sw-lbl">Evening · Possible clearing · Soft drama</div>
+    <div class="sw-window afternoon">
+      <div class="sw-window-inner">
+        <span class="sw-icon">☁️</span>
+        <div>
+          <div class="sw-time">2:00 – 4:30 PM</div>
+          <span class="sw-lbl">Possible clearing breaks — diffused silver light</span>
+        </div>
       </div>
     </div>
-    <span class="badge badge-amber" style="margin-top:10px; display:inline-flex;">⚠ Rain-Limited Windows</span>
+    <div class="wx-badge badge-amber">⚠ Shoot Under Cover — Embrace the Moody</div>
   </div>
 
   <!-- Cell C: Morning Light -->
   <div class="wx-cell">
-    <div class="wx-label">🌅 Morning Light</div>
+    <div class="cell-label">🌅 Morning Light</div>
     <div class="lt-row">
-      <span class="lt-icon">🌑</span>
-      <span class="lt-time lt-blue">6:17 AM</span>
-      <span class="lt-event">Blue Hour Begins</span>
-    </div>
-    <div class="lt-row">
-      <span class="lt-icon">🌄</span>
-      <span class="lt-time lt-sunrise">6:47 AM</span>
-      <span class="lt-event">Sunrise</span>
+      <span class="lt-icon">🌫️</span>
+      <div>
+        <div class="lt-time lt-blue">6:13 AM</div>
+        <div class="lt-event">Blue Hour Begins</div>
+      </div>
     </div>
     <div class="lt-row">
-      <span class="lt-icon">✨</span>
-      <span class="lt-time lt-amber">7:47 AM</span>
-      <span class="lt-event">Golden Hour Ends</span>
+      <span class="lt-icon">☀️</span>
+      <div>
+        <div class="lt-time lt-gold">6:43 AM</div>
+        <div class="lt-event">Sunrise (MDT)</div>
+      </div>
     </div>
-    <div class="lt-badge-wrap">
-      <span class="badge badge-amber">⚠ Fog-Limited Light</span>
+    <div class="lt-row">
+      <span class="lt-icon">🌤</span>
+      <div>
+        <div class="lt-time lt-amber">7:43 AM</div>
+        <div class="lt-event">Golden Hour Ends</div>
+      </div>
     </div>
+    <div class="wx-badge badge-amber">⚠ Fog-Limited — Diffused Only</div>
   </div>
 
   <!-- Cell D: Evening Light -->
   <div class="wx-cell">
-    <div class="wx-label">🌇 Evening Light</div>
+    <div class="cell-label">🌇 Evening Light</div>
     <div class="lt-row">
-      <span class="lt-icon">✨</span>
-      <span class="lt-time lt-amber">7:24 PM</span>
-      <span class="lt-event">Golden Hour Starts</span>
+      <span class="lt-icon">🌤</span>
+      <div>
+        <div class="lt-time lt-amber">7:27 PM</div>
+        <div class="lt-event">Golden Hour Begins</div>
+      </div>
     </div>
     <div class="lt-row">
       <span class="lt-icon">🌅</span>
-      <span class="lt-time lt-sunrise">8:24 PM</span>
-      <span class="lt-event">Sunset</span>
+      <div>
+        <div class="lt-time lt-gold">8:27 PM</div>
+        <div class="lt-event">Sunset (MDT)</div>
+      </div>
     </div>
     <div class="lt-row">
       <span class="lt-icon">🌑</span>
-      <span class="lt-time lt-blue">8:54 PM</span>
-      <span class="lt-event">Blue Hour Ends</span>
+      <div>
+        <div class="lt-time lt-blue">8:57 PM</div>
+        <div class="lt-event">Blue Hour Ends</div>
+      </div>
     </div>
-    <div class="lt-badge-wrap">
-      <span class="badge badge-green">✓ Prime Evening Window</span>
-    </div>
+    <div class="wx-badge badge-green">✓ Prime Evening Window If Clearing</div>
   </div>
 
+</div><!-- /weather-panel -->
+
+<!-- POST TIMING BAR -->
+<div class="timing-bar">
+  <div class="timing-label-cell">
+    <div class="tl-small">Best Time</div>
+    <div class="tl-title">To Post Today</div>
+  </div>
+  <div class="timing-pick">
+    <div class="pick-chip">PICK 1</div>
+    <div class="pick-time">10:00 AM</div>
+    <div class="pick-sublabel">Thursday Morning</div>
+    <div class="pick-desc">Audience waking up — high scroll velocity</div>
+  </div>
+  <div class="timing-pick">
+    <div class="pick-chip">PICK 2</div>
+    <div class="pick-time">7:00 PM</div>
+    <div class="pick-sublabel">Thursday Evening</div>
+    <div class="pick-desc">Post-work browsing peak — strong save rates</div>
+  </div>
+  <div class="timing-note">
+    <p>Reply to every comment within 60 minutes of posting — early engagement velocity is the #1 factor in Instagram's 2026 reach algorithm.</p>
+  </div>
 </div>
 
-<!-- ══════════════════════════════════════ POST TIMING BAR ══════════════════════════════════════ -->
-<div class="post-bar">
-  <div class="post-bar-label">
-    <span class="tiny">Best Time</span>
-    <span class="label-title">To Post Today</span>
-  </div>
-  <div class="post-pick">
-    <span class="pick-chip">PICK 1</span>
-    <span class="post-time">11:00 AM</span>
-    <span class="post-sublabel">Morning Window · MST</span>
-    <span class="post-desc">Peak mid-morning audience, strong reach window on Wednesdays</span>
-  </div>
-  <div class="post-pick">
-    <span class="pick-chip">PICK 2</span>
-    <span class="post-time">8:00 PM</span>
-    <span class="post-sublabel">Evening Window · MST</span>
-    <span class="post-desc">Wednesday prime-time — highest engagement rate of the day</span>
-  </div>
-  <div class="post-note">
-    💬 Reply to every comment within 60 min of posting — the algorithm heavily weights early engagement signals for Reel distribution in 2026.
-  </div>
-</div>
+<!-- MAIN CONTENT -->
+<main class="main">
 
-<!-- ══════════════════════════════════════ MAIN CONTENT ══════════════════════════════════════ -->
-<div class="main-wrap">
-
-  <!-- ── SECTION 1: Gear Checklist (OPEN) ── -->
-  <div class="acc orange-accent open" id="acc-gear">
+  <!-- SECTION 1: Gear Checklist (OPEN) -->
+  <div class="acc acc-orange open" id="acc-gear">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble bubble-orange">🎒</div>
+      <div class="acc-icon-bubble ib-orange">🎒</div>
       <div class="acc-meta">
         <div class="acc-label">Pre-Shoot</div>
         <div class="acc-title">Gear Checklist</div>
@@ -942,142 +399,123 @@
     </div>
     <div class="acc-body">
       <div class="gear-grid">
-        <!-- Column headers -->
-        <div class="gear-col-header">Bag</div>
-        <div class="gear-col-header">Camera</div>
-        <div class="gear-col-header">Lenses (2)</div>
-        <div class="gear-col-header">Printer</div>
-        <div class="gear-col-header">Tripods</div>
-
-        <!-- Bag -->
-        <label class="gear-item">
-          <input type="checkbox" class="gc" onchange="updateGear()">
-          <span><span class="gear-name">Backpack</span><span class="gear-sub">Packed &amp; ready</span></span>
-        </label>
-
-        <!-- Camera -->
-        <label class="gear-item">
-          <input type="checkbox" class="gc" onchange="updateGear()">
-          <span><span class="gear-name">Lumix S9</span><span class="gear-sub">Fully charged</span></span>
-        </label>
-
-        <!-- Lenses -->
-        <label class="gear-item">
-          <input type="checkbox" class="gc" onchange="updateGear()">
-          <span><span class="gear-name">TTArtisan 40mm f/2</span><span class="gear-sub">Primary · today's pick</span></span>
-        </label>
-
-        <!-- Printer -->
-        <label class="gear-item">
-          <input type="checkbox" class="gc" onchange="updateGear()">
-          <span><span class="gear-name">Canon Selphy CP1500</span><span class="gear-sub">Tray inserted</span></span>
-        </label>
-
-        <!-- Tripods -->
-        <label class="gear-item">
-          <input type="checkbox" class="gc" onchange="updateGear()">
-          <span><span class="gear-name">Compact Tripod</span><span class="gear-sub">Low-angle &amp; tabletop</span></span>
-        </label>
-
-        <!-- spacer / Camera col empty -->
-        <div></div>
-
-        <!-- Lenses row 2 -->
-        <label class="gear-item" style="grid-column:3">
-          <input type="checkbox" class="gc" onchange="updateGear()">
-          <span><span class="gear-name">TTArtisan 75mm f/2</span><span class="gear-sub">Compression lens</span></span>
-        </label>
-
-        <!-- Printer row 2 -->
-        <label class="gear-item" style="grid-column:4">
-          <input type="checkbox" class="gc" onchange="updateGear()">
-          <span><span class="gear-name">KP-108IP Paper Pack</span><span class="gear-sub">4×6 Selphy pack</span></span>
-        </label>
-
-        <!-- Tripods row 2 -->
-        <label class="gear-item" style="grid-column:5">
-          <input type="checkbox" class="gc" onchange="updateGear()">
-          <span><span class="gear-name">Full-Height Tripod</span><span class="gear-sub">BTS rig</span></span>
-        </label>
-
-        <!-- Lenses row 3 placeholder -->
-        <div style="grid-column:1/3"></div>
-        <div style="grid-column:3"></div>
-
-        <!-- Printer rows 3+4 -->
-        <label class="gear-item" style="grid-column:4">
-          <input type="checkbox" class="gc" onchange="updateGear()">
-          <span><span class="gear-name">Selphy Battery</span><span class="gear-sub">Fully charged</span></span>
-        </label>
-        <div style="grid-column:5"></div>
-
-        <div style="grid-column:1/4"></div>
-        <label class="gear-item" style="grid-column:4">
-          <input type="checkbox" class="gc" onchange="updateGear()">
-          <span><span class="gear-name">Printer Tray</span><span class="gear-sub">Loaded &amp; seated</span></span>
-        </label>
-        <div style="grid-column:5"></div>
+        <div>
+          <div class="gear-col-header">Bag</div>
+          <label class="gear-item">
+            <input type="checkbox" class="gc" onchange="updateGear()">
+            <div><div class="gear-name">Backpack</div><span class="gear-sub">Packed &amp; ready</span></div>
+          </label>
+        </div>
+        <div>
+          <div class="gear-col-header">Camera</div>
+          <label class="gear-item">
+            <input type="checkbox" class="gc" onchange="updateGear()">
+            <div><div class="gear-name">Lumix S9</div><span class="gear-sub">Fully charged</span></div>
+          </label>
+        </div>
+        <div>
+          <div class="gear-col-header">Lenses</div>
+          <label class="gear-item">
+            <input type="checkbox" class="gc" onchange="updateGear()">
+            <div><div class="gear-name">TTArtisan 40mm f/2</div><span class="gear-sub">Primary · today's pick</span></div>
+          </label>
+          <label class="gear-item">
+            <input type="checkbox" class="gc" onchange="updateGear()">
+            <div><div class="gear-name">TTArtisan 75mm f/2</div><span class="gear-sub">Compression lens</span></div>
+          </label>
+        </div>
+        <div>
+          <div class="gear-col-header">Printer</div>
+          <label class="gear-item">
+            <input type="checkbox" class="gc" onchange="updateGear()">
+            <div><div class="gear-name">Canon Selphy CP1500</div><span class="gear-sub">Tray inserted</span></div>
+          </label>
+          <label class="gear-item">
+            <input type="checkbox" class="gc" onchange="updateGear()">
+            <div><div class="gear-name">KP-108IP Paper Pack</div><span class="gear-sub">4×6 Selphy pack</span></div>
+          </label>
+          <label class="gear-item">
+            <input type="checkbox" class="gc" onchange="updateGear()">
+            <div><div class="gear-name">Selphy Battery</div><span class="gear-sub">Fully charged</span></div>
+          </label>
+          <label class="gear-item">
+            <input type="checkbox" class="gc" onchange="updateGear()">
+            <div><div class="gear-name">Printer Tray</div><span class="gear-sub">Loaded &amp; seated</span></div>
+          </label>
+        </div>
+        <div>
+          <div class="gear-col-header">Tripods</div>
+          <label class="gear-item">
+            <input type="checkbox" class="gc" onchange="updateGear()">
+            <div><div class="gear-name">Compact Tripod</div><span class="gear-sub">Low-angle &amp; tabletop</span></div>
+          </label>
+          <label class="gear-item">
+            <input type="checkbox" class="gc" onchange="updateGear()">
+            <div><div class="gear-name">Full-Height Tripod</div><span class="gear-sub">BTS rig</span></div>
+          </label>
+        </div>
       </div>
-      <div style="padding-bottom:8px;"></div>
       <div class="notes-wrapper">
         <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Gear notes..."></textarea>
+        <textarea class="notes-area" placeholder="Gear notes…"></textarea>
       </div>
     </div>
   </div>
 
-  <!-- ── SECTION 2: Today's Shoot (OPEN) ── -->
-  <div class="acc orange-accent open" id="acc-shoot">
+  <!-- SECTION 2: Today's Shoot (OPEN) -->
+  <div class="acc acc-orange open" id="acc-shoot">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble bubble-orange">📍</div>
+      <div class="acc-icon-bubble ib-orange">📍</div>
       <div class="acc-meta">
         <div class="acc-label">Today's Shoot</div>
-        <div class="acc-title">RiverWalk Reflections in April Rain</div>
+        <div class="acc-title">Spring Snow Settles on the RiverWalk</div>
       </div>
       <div class="acc-right">
         <span class="chevron">▲</span>
       </div>
     </div>
     <div class="acc-body">
-      <div class="shoot-two-col">
-        <div class="shoot-col">
-          <span class="section-tag tag-orange">Scene &amp; Location</span>
-          <div class="shoot-concept-title">The Concept <span>· East Village RiverWalk, Bow River Path</span></div>
-          <p class="shoot-para">Head to the East Village RiverWalk at the bend where the Bow River pathway meets the St. Patrick's Island bridge. April rain transforms the smooth concrete walkway into a mirror — puddles pool between the pavers, reflecting bare cottonwoods and a steel-grey sky. Position yourself low, almost at ground level, with the TTArtisan 40mm f/2 aimed down the walkway so that a foreground puddle frames the full composition. The soft, even overcast light eliminates harsh shadows and renders every wet surface luminous.</p>
-          <p class="shoot-para">Arrive during the morning lull (aim for 8–9 AM). The bridge architecture at St. Patrick's Island creates natural leading lines; let them guide the eye through the puddle's reflection below. Look for lone details — a single cottonwood leaf floating in still water, a cyclist blurring past in the background, the faint yellow stripe of a wet-pavement warning sign. This is the quintessential Calgary spring moment: cold, wet, and quietly beautiful. Your subject is the reflection itself — the city seen upside-down through two centimetres of water.</p>
+      <div class="shoot-layout">
+        <div class="shoot-left">
+          <div class="shoot-tag tag-orange">Scene &amp; Location</div>
+          <div class="shoot-concept-title">East Village RiverWalk, Calgary AB</div>
+          <div class="shoot-concept">
+            <p>The East Village RiverWalk stretches between the Bow River and 9 Avenue SE — a quiet concrete promenade that transforms completely under fresh snow. Position yourself at the bend near 5 Street SE where the modern balustrades frame the dark, still-flowing Bow beneath a white-dusted sky. The contrasts are stark today: black river water against white banks, leafless trees catching new snow, the glass towers of East Village dissolving softly in the grey. Get low — a ground-level composition looking west toward the Centre Street Bridge puts fresh snowfall on the railing in the foreground, with the city ghosting behind.</p>
+            <p>There's no golden hour to chase today, and that's the point. The overcast turns the sky into an enormous diffusion panel — zero harsh shadows, a delicate luminosity across every surface. The TTArtisan 40mm at f/5.6 handles this beautifully. Set your exposure +1 to +1.3 stops above meter reading so the snow renders white, not grey. Move slowly. A single bare branch bent under snow weight against the river's far bank is a better frame than a wide landscape today — the restraint is the story.</p>
+          </div>
         </div>
-        <div class="shoot-col">
-          <span class="section-tag tag-blue">Settings</span>
-          <div class="camera-recipe-title">Camera Recipe</div>
+        <div class="shoot-right">
+          <div class="shoot-tag tag-blue">Settings</div>
+          <div class="recipe-title">Camera Recipe</div>
           <div class="recipe-row">
-            <span class="recipe-lbl">Primary Lens</span>
-            <span class="recipe-val">TTArtisan 40mm f/2 · Intimate &amp; expansive — perfect puddle-to-sky compression at ground level</span>
+            <div class="recipe-lbl">Primary Lens</div>
+            <div class="recipe-val">TTArtisan 40mm f/2 — classic perspective, sharp at f/5.6, ideal for the RiverWalk's geometry</div>
           </div>
           <div class="recipe-row">
-            <span class="recipe-lbl">Secondary Option</span>
-            <span class="recipe-val">TTArtisan 75mm f/2 · Compression lens for isolating the puddle reflection detail against the blurred RiverWalk</span>
+            <div class="recipe-lbl">Secondary Option</div>
+            <div class="recipe-val">TTArtisan 75mm f/2 — compression between snowy foreground railing and far river bank</div>
           </div>
           <div class="recipe-row">
-            <span class="recipe-lbl">Exposure Settings</span>
-            <span class="recipe-val">f/2.8–f/4 · 1/250s–1/500s · ISO 400–800 · Cloudy WB 6200K · Shoot RAW</span>
+            <div class="recipe-lbl">Exposure Settings</div>
+            <div class="recipe-val">f/5.6 · ISO 400 · 1/400s · EV +1.2 to keep snow white — shoot RAW for latitude in post</div>
           </div>
           <div class="recipe-row">
-            <span class="recipe-lbl">BTS Filming Note</span>
-            <span class="recipe-val">Compact tripod low to ground for reflection angle; full-height tripod at eye level for contrast composition cut</span>
+            <div class="recipe-lbl">BTS Filming</div>
+            <div class="recipe-val">Full-height tripod behind and to the right, phone at 4K capturing composing moment + LCD reveal</div>
           </div>
         </div>
       </div>
       <div class="notes-wrapper">
         <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Shoot notes..."></textarea>
+        <textarea class="notes-area" placeholder="Shoot notes…"></textarea>
       </div>
     </div>
   </div>
 
-  <!-- ── SECTION 3: Reel Structure (OPEN) ── -->
-  <div class="acc blue-accent open" id="acc-reel">
+  <!-- SECTION 3: Reel Structure (OPEN) -->
+  <div class="acc acc-blue open" id="acc-reel">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble bubble-blue">🎬</div>
+      <div class="acc-icon-bubble ib-blue">🎬</div>
       <div class="acc-meta">
         <div class="acc-label">Reel Structure</div>
         <div class="acc-title">Beat-by-Beat Sequence</div>
@@ -1087,59 +525,59 @@
       </div>
     </div>
     <div class="acc-body">
-      <div class="beats-wrap">
+      <div class="beats-list">
         <div class="beat-card">
           <div class="beat-num c-orange">01</div>
-          <div class="beat-info">
-            <span class="beat-label c-orange">Hook</span><span class="beat-timing">0–2s</span>
-            <div class="beat-desc">Camera drops to wet pavement — edge of a rain puddle fills the frame, the upside-down city skyline shimmering inside it. Hard cut. Music drops on the first beat.</div>
-            <span class="beat-overlay">"Calgary in April hits different 🌧"</span>
+          <div class="beat-content">
+            <div class="beat-label-row"><span class="beat-label bl-orange">Hook</span><span class="beat-timing">0–2s</span></div>
+            <div class="beat-desc">Extreme close-up — gloved finger slowly traces a line through fresh snow on the RiverWalk railing. Hard cut on music drop. Zero context. Full mystery.</div>
+            <div class="beat-overlay">"–5° in April. Going out anyway."</div>
           </div>
         </div>
         <div class="beat-card">
           <div class="beat-num c-green">02</div>
-          <div class="beat-info">
-            <span class="beat-label c-green">Location Reveal</span><span class="beat-timing">3–7s</span>
-            <div class="beat-desc">Wide establishing shot from the St. Patrick's Island bridge — East Village skyline behind, Dario walking into the wet RiverWalk carrying the Lumix. You're in the frame.</div>
-            <span class="beat-overlay">"East Village RiverWalk · 8 AM · 4°C"</span>
+          <div class="beat-content">
+            <div class="beat-label-row"><span class="beat-label bl-green">Location Reveal</span><span class="beat-timing">3–7s</span></div>
+            <div class="beat-desc">Wide pull-back to the full RiverWalk stretch with snow still falling. Dario in frame turning toward camera with Lumix S9 raised. City behind him, river to his left.</div>
+            <div class="beat-overlay">"East Village RiverWalk · Calgary, AB"</div>
           </div>
         </div>
         <div class="beat-card">
           <div class="beat-num c-blue">03</div>
-          <div class="beat-info">
-            <span class="beat-label c-blue">The Shot</span><span class="beat-timing">8–18s</span>
-            <div class="beat-desc">BTS of Dario crouched low over the puddle, composing. Rack focus from your eye to the puddle reflection. Shutter fires. Immediate LCD reveal: the upside-down city, captured.</div>
-            <span class="beat-overlay">"TTArtisan 40mm · f/2.8 · 1/250s"</span>
+          <div class="beat-content">
+            <div class="beat-label-row"><span class="beat-label bl-blue">The Shot</span><span class="beat-timing">8–18s</span></div>
+            <div class="beat-desc">BTS footage of composing at the river's edge — adjusting focal point on the railing, stillness, pause, shutter fires. Immediate pan to Lumix LCD revealing the final frame.</div>
+            <div class="beat-overlay">"The one shot I came for"</div>
           </div>
         </div>
         <div class="beat-card">
           <div class="beat-num c-amber">04</div>
-          <div class="beat-info">
-            <span class="beat-label c-amber">Print Process</span><span class="beat-timing">19–30s</span>
-            <div class="beat-desc">Camera transfer to Selphy display. Selphy preview glows. Paper feeds in slow-motion — the puddle reflection image emerging line by line. Duck the music under the printer hum.</div>
-            <span class="beat-overlay">"Canon Selphy CP1500 · KP-108IP 4×6""</span>
+          <div class="beat-content">
+            <div class="beat-label-row"><span class="beat-label bl-amber">Print Process</span><span class="beat-timing">19–30s</span></div>
+            <div class="beat-desc">Cut to desk: camera on left, Selphy CP1500 on right. Selphy display lights up — paper begins emerging. Duck original audio; slow-motion the paper sliding out (4K 120fps).</div>
+            <div class="beat-overlay">"Canon Selphy CP1500 · KP-108IP 4×6\""</div>
           </div>
         </div>
         <div class="beat-card">
           <div class="beat-num c-purple">05</div>
-          <div class="beat-info">
-            <span class="beat-label c-purple">Print to World</span><span class="beat-timing">31–38s</span>
-            <div class="beat-desc">The finished print held face-down 2cm above the actual puddle — the printed image and the live reflection align in perfect symmetry for one frame. Hard cut to black.</div>
-            <span class="beat-overlay">"printed. kept. ⬜"</span>
+          <div class="beat-content">
+            <div class="beat-label-row"><span class="beat-label bl-purple">Print to World</span><span class="beat-timing">31–38s</span></div>
+            <div class="beat-desc">Back outside — hold print horizontally over a dark snowmelt puddle on the RiverWalk. The wet surface mirrors the print back. Hold still. Hard cut to black.</div>
+            <div class="beat-overlay">"keep this frame"</div>
           </div>
         </div>
       </div>
       <div class="notes-wrapper">
         <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Reel structure notes..."></textarea>
+        <textarea class="notes-area" placeholder="Reel notes…"></textarea>
       </div>
     </div>
   </div>
 
-  <!-- ── SECTION 4: Hooks (CLOSED) ── -->
-  <div class="acc orange-accent" id="acc-hooks">
+  <!-- SECTION 4: Hooks (CLOSED) -->
+  <div class="acc acc-orange" id="acc-hooks">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble bubble-orange">✏️</div>
+      <div class="acc-icon-bubble ib-orange">✏️</div>
       <div class="acc-meta">
         <div class="acc-label">Copy</div>
         <div class="acc-title">Scroll-Stopping Hooks</div>
@@ -1149,40 +587,40 @@
       </div>
     </div>
     <div class="acc-body">
-      <div class="hooks-wrap">
+      <div class="hooks-list">
         <div class="hook-row">
           <div class="hook-num">1</div>
-          <div>
-            <div class="hook-text">"The whole city was upside-down this morning 🌧"</div>
-            <div class="hook-note">Curiosity gap + visual contrast — forces the viewer to ask "how?" which locks watch time immediately. Short, punchy, no wasted words.</div>
+          <div class="hook-content">
+            <span class="hook-text">"–5° in April. Everyone's inside. I'm at the river."</span>
+            <span class="hook-note">Creates implied determination + curiosity. Positions you as the creator who shows up regardless. Strong contrast hook — works best with the glove close-up visual opener.</span>
           </div>
         </div>
         <div class="hook-row">
           <div class="hook-num">2</div>
-          <div>
-            <div class="hook-text">"Nobody photographs April rain in Calgary. That's exactly why I had to."</div>
-            <div class="hook-note">Contrarian positioning — signals a unique POV that separates you from fair-weather shooters. Strong niche authority signal in the first five words.</div>
+          <div class="hook-content">
+            <span class="hook-text">"You could see this every morning. Most people drive right past it."</span>
+            <span class="hook-note">Classic FOMO-curiosity gap. Invites the viewer to reconsider their own commute and daily environment. High save rate potential — people tag their city-dwelling friends.</span>
           </div>
         </div>
         <div class="hook-row">
           <div class="hook-num">3</div>
-          <div>
-            <div class="hook-text">"POV: you're flat on wet concrete at 8 AM and it's the best decision you've made all week"</div>
-            <div class="hook-note">POV format + relatable sacrifice + unexpected payoff — the contrast between discomfort and reward drives shares. Disguised advice in scenario format.</div>
+          <div class="hook-content">
+            <span class="hook-text">"I don't wait for golden hour. I shoot whatever light shows up."</span>
+            <span class="hook-note">Subverts the #goldenhour creator trope — positions @keepthisframe as adaptive and authentic. Resonates with beginner photographers who feel "conditions aren't right." High comment bait.</span>
           </div>
         </div>
       </div>
       <div class="notes-wrapper">
         <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Hook notes..."></textarea>
+        <textarea class="notes-area" placeholder="Hook notes…"></textarea>
       </div>
     </div>
   </div>
 
-  <!-- ── SECTION 5: Audio Picks (CLOSED) ── -->
-  <div class="acc purple-accent" id="acc-audio">
+  <!-- SECTION 5: Audio (CLOSED) -->
+  <div class="acc acc-purple" id="acc-audio">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble bubble-purple">🎵</div>
+      <div class="acc-icon-bubble ib-purple">🎵</div>
       <div class="acc-meta">
         <div class="acc-label">Trending Sounds</div>
         <div class="acc-title">Audio Picks</div>
@@ -1192,46 +630,46 @@
       </div>
     </div>
     <div class="acc-body">
-      <div class="audio-wrap">
+      <div class="audio-list">
         <div class="audio-row">
-          <div class="audio-bubble" style="background:rgba(155,114,255,0.2); color:var(--purple);">♪</div>
+          <div class="audio-bubble ib-green">♪</div>
           <div class="audio-info">
             <div class="audio-track">Ring Ring Ring</div>
             <div class="audio-artist">Tyler, The Creator</div>
-            <div class="audio-use">Smooth retro-funk groove — use during the walk, location reveal, and composing sequence. The laid-back energy matches cold morning pacing perfectly.</div>
+            <div class="audio-use">Retro-funk groove — pairs perfectly with slow, deliberate creative edits. The cool-grey urban aesthetic and the track's laid-back confidence are an exact match for snowy city streets.</div>
           </div>
-          <span class="badge badge-amber" style="flex-shrink:0">TRENDING</span>
+          <div class="audio-badge"><span class="abadge-trending">TRENDING</span></div>
         </div>
         <div class="audio-row">
-          <div class="audio-bubble" style="background:rgba(91,156,246,0.2); color:var(--blue);">♪</div>
+          <div class="audio-bubble ib-purple">♪</div>
+          <div class="audio-info">
+            <div class="audio-track">Seaside Eyes (Instrumental)</div>
+            <div class="audio-artist">Bertie Newman</div>
+            <div class="audio-use">Quiet and reflective instrumental — mirrors the silver silence of fresh snow on the riverbank. Best for a slower, more meditative edit pace. Underused in this niche right now.</div>
+          </div>
+          <div class="audio-badge"><span class="abadge-niche">NICHE PICK</span></div>
+        </div>
+        <div class="audio-row">
+          <div class="audio-bubble ib-amber">♪</div>
           <div class="audio-info">
             <div class="audio-track">DAISIES</div>
             <div class="audio-artist">Justin Bieber</div>
-            <div class="audio-use">Chill, ambient warmth — use for the print slow-mo sequence in beats 04–05. The gentle vibe creates beautiful contrast against cold, wet April visuals.</div>
+            <div class="audio-use">Warm and gentle — creates emotional contrast with the harsh cold conditions, making the final print reveal feel unexpectedly tender. Currently Top 10 on Reels audio charts.</div>
           </div>
-          <span class="badge badge-blue" style="flex-shrink:0">VIRAL</span>
-        </div>
-        <div class="audio-row">
-          <div class="audio-bubble" style="background:rgba(244,114,182,0.2); color:var(--pink);">♪</div>
-          <div class="audio-info">
-            <div class="audio-track">Pretty Little Baby</div>
-            <div class="audio-artist">Trending IG Audio · 1.5M+ Reels</div>
-            <div class="audio-use">Universally loved reel audio — pair with the final print-to-world reveal for maximum shareability. Used in lifestyle and art content with consistently strong performance.</div>
-          </div>
-          <span class="badge badge-red" style="flex-shrink:0">HOT</span>
+          <div class="audio-badge"><span class="abadge-top">TOP 10</span></div>
         </div>
       </div>
       <div class="notes-wrapper">
         <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Audio notes..."></textarea>
+        <textarea class="notes-area" placeholder="Audio notes…"></textarea>
       </div>
     </div>
   </div>
 
-  <!-- ── SECTION 6: Text Overlays (CLOSED) ── -->
-  <div class="acc teal-accent" id="acc-overlays">
+  <!-- SECTION 6: Text Overlays (CLOSED) -->
+  <div class="acc acc-teal" id="acc-overlays">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble bubble-teal">💬</div>
+      <div class="acc-icon-bubble ib-teal">💬</div>
       <div class="acc-meta">
         <div class="acc-label">On-Screen Text</div>
         <div class="acc-title">Text Overlays</div>
@@ -1241,44 +679,44 @@
       </div>
     </div>
     <div class="acc-body">
-      <div class="overlays-wrap">
+      <div class="overlays-list">
         <div class="overlay-row">
-          <span class="overlay-ts">0:01</span>
-          <span class="overlay-divider"></span>
-          <span class="overlay-text">"Calgary in April hits different 🌧"</span>
+          <div class="ov-ts">0:01</div>
+          <div class="ov-divider"></div>
+          <div class="ov-text">"–5°C · April 16 · East Village"</div>
         </div>
         <div class="overlay-row">
-          <span class="overlay-ts">0:04</span>
-          <span class="overlay-divider"></span>
-          <span class="overlay-text">"East Village RiverWalk · 8 AM · 4°C"</span>
+          <div class="ov-ts">0:04</div>
+          <div class="ov-divider"></div>
+          <div class="ov-text">"Spring in Calgary has other plans"</div>
         </div>
         <div class="overlay-row">
-          <span class="overlay-ts">0:12</span>
-          <span class="overlay-divider"></span>
-          <span class="overlay-text">"TTArtisan 40mm f/2 · f/2.8 · ISO 640"</span>
+          <div class="ov-ts">0:12</div>
+          <div class="ov-divider"></div>
+          <div class="ov-text">"Looking for the one frame that earns a print"</div>
         </div>
         <div class="overlay-row">
-          <span class="overlay-ts">0:22</span>
-          <span class="overlay-divider"></span>
-          <span class="overlay-text">"Canon Selphy CP1500 · KP-108IP 4×6""</span>
+          <div class="ov-ts">0:22</div>
+          <div class="ov-divider"></div>
+          <div class="ov-text">"Canon Selphy CP1500 · KP-108IP 4×6\""</div>
         </div>
         <div class="overlay-row">
-          <span class="overlay-ts">0:33</span>
-          <span class="overlay-divider"></span>
-          <span class="overlay-text">"printed. kept. ⬜"</span>
+          <div class="ov-ts">0:34</div>
+          <div class="ov-divider"></div>
+          <div class="ov-text">"keep this frame"</div>
         </div>
       </div>
       <div class="notes-wrapper">
         <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Overlay notes..."></textarea>
+        <textarea class="notes-area" placeholder="Overlay notes…"></textarea>
       </div>
     </div>
   </div>
 
-  <!-- ── SECTION 7: Growth Move (CLOSED) ── -->
-  <div class="acc green-accent" id="acc-growth">
+  <!-- SECTION 7: Growth (CLOSED) -->
+  <div class="acc acc-green" id="acc-growth">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble bubble-green">📈</div>
+      <div class="acc-icon-bubble ib-green">📈</div>
       <div class="acc-meta">
         <div class="acc-label">Strategy</div>
         <div class="acc-title">Growth Move of the Day</div>
@@ -1288,40 +726,40 @@
       </div>
     </div>
     <div class="acc-body">
-      <div class="growth-wrap">
+      <div class="growth-list">
         <div class="growth-row">
-          <div class="growth-dot dot-green">1</div>
-          <div class="growth-info">
-            <div class="growth-title">Reply to every comment in the first 60 minutes</div>
-            <div class="growth-body">In 2026, DM shares are the most heavily weighted signal for Reel distribution. Early comment replies signal niche authority and push the Reel into non-followers' feeds. Treat the first hour after posting as a live engagement session — reply fast, keep replies 2+ sentences to encourage thread depth.</div>
+          <div class="growth-dot gd1">1</div>
+          <div class="growth-body">
+            <div class="growth-title">Reply within 60 minutes — protect your reach ceiling</div>
+            <div class="growth-text">Instagram's 2026 algorithm weighs early engagement velocity above almost everything else. The first hour after posting is when the algorithm decides whether to push your Reel to new audiences. Replying to every comment in that window signals high-quality engagement and extends distribution. Set a phone reminder for 10:00 AM and 7:00 PM today.</div>
           </div>
         </div>
         <div class="growth-row">
-          <div class="growth-dot dot-purple">2</div>
-          <div class="growth-info">
-            <div class="growth-title">Write your first caption line as a search keyword, not a tease</div>
-            <div class="growth-body">Instagram now indexes captions more effectively than hashtags for discovery. Write your opening line as a natural search phrase: "Calgary street photography print — East Village RiverWalk April 2026." This surfaces your content to people actively searching location and photography terms, not just scrollers.</div>
+          <div class="growth-dot gd2">2</div>
+          <div class="growth-body">
+            <div class="growth-title">Use location keywords in your caption — not just hashtags</div>
+            <div class="growth-text">Instagram now surfaces Reels through keyword search, not hashtag follows. Natural language in captions outperforms tag spam in 2026. Write "East Village RiverWalk" and "Bow River" as full phrases in your caption text. These phrases get your Reel in front of Calgary locals searching for their city — your most likely early followers.</div>
           </div>
         </div>
         <div class="growth-row">
-          <div class="growth-dot dot-amber">3</div>
-          <div class="growth-info">
-            <div class="growth-title">Post a Story poll within 2 hours of the Reel going live</div>
-            <div class="growth-body">Ask "Which is better — the puddle reflection or the final print? 📸⬜" Story engagement feeds directly back into Reel reach. Cross-format activity (Reel + Story in the same session) triggers amplified distribution from the algorithm in 2026. Use 3–5 intentional hashtags in the Story too.</div>
+          <div class="growth-dot gd3">3</div>
+          <div class="growth-body">
+            <div class="growth-title">Post a Story at 7 PM showing the physical print</div>
+            <div class="growth-text">Stories posted 6–9 hours after a Reel boost the Reel's continued reach by driving a second wave of profile visits. Show the finished print in your hand, maybe next to the window — the physical artifact is the differentiator for @keepthisframe. This drives followers from the Reel to your profile and turns casual viewers into saves.</div>
           </div>
         </div>
       </div>
       <div class="notes-wrapper">
         <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Growth notes..."></textarea>
+        <textarea class="notes-area" placeholder="Strategy notes…"></textarea>
       </div>
     </div>
   </div>
 
-  <!-- ── SECTION 8: Caption & Hashtags (CLOSED) ── -->
-  <div class="acc pink-accent" id="acc-caption">
+  <!-- SECTION 8: Caption & Hashtags (CLOSED) -->
+  <div class="acc acc-pink" id="acc-caption">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble bubble-pink">🐾</div>
+      <div class="acc-icon-bubble ib-pink">🐾</div>
       <div class="acc-meta">
         <div class="acc-label">Post Copy</div>
         <div class="acc-title">Caption &amp; Hashtags</div>
@@ -1331,27 +769,25 @@
       </div>
     </div>
     <div class="acc-body">
-      <div class="caption-wrap">
-        <div class="caption-block">Calgary street photography print — East Village RiverWalk April 2026.
-
-April in Calgary doesn't give you golden hour. It gives you puddles. So this morning I was lying on the wet concrete of the East Village RiverWalk at 8 AM, watching the whole city appear upside-down in a puddle the size of a dinner plate. The rain had been falling since before I left home and my knees were soaked before I got the shot — but there it was: bare cottonwoods, the bridge, the grey sky, all of it shimmering in two centimetres of water.
-
-This is the TTArtisan 40mm at f/2.8, almost at ground level. Overcast sky is the best softbox you'll ever find, and spring rain is just the city telling you it's ready to be seen differently. I composed for the reflection first and let the real world fall into background.
-
-Then I walked home and printed it. Four inches by six inches of the city, upside down, in my hand. That's all this is. Every day. One moment. One print. ⬜</div>
-        <div class="hashtag-line">#KeepThisFrame #CalgaryPhotography #LumixS9 #TTArtisan #PhotoPrint #GoldenHour #SpringPhotography #CanonSelphy #PrintPhotography #CalgaryStreet #EastVillage #BowRiver #FilmLook #PhotoOfTheDay</div>
+      <div class="caption-block">
+        There's a kind of commitment that comes with going out when it's –5° and snowing in April. I wasn't expecting the East Village RiverWalk to give me much today, but that's usually when the frame shows up. The Bow was running dark and fast beneath a fresh coat of white, and the whole city felt muted — not silent, just hushed. The kind of quiet that happens between a storm's first hour and when everyone else figures out there won't be a break.<br><br>
+        The 40mm at f/5.6 saw it straight — no flattery, no drama. Just the railing, the river, the snow still falling. I wanted the frame to look exactly like standing there feels: a little cold, a little beautiful, completely worth it.<br><br>
+        Came home, fed it to the Selphy, watched the print slide out. Held it next to the window. That's the one. ⬜
+      </div>
+      <div class="hashtag-line">
+        #KeepThisFrame #CalgaryPhotography #LumixS9 #TTArtisan #CanonSelphy #PhotoPrint #BowRiver #EastVillageCalgary #CalgaryAB #PrintYourPhotos #SpringSnow #DailyPhoto #MoodyPhotography #CanadaPhotography
       </div>
       <div class="notes-wrapper">
         <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Caption notes..."></textarea>
+        <textarea class="notes-area" placeholder="Caption notes…"></textarea>
       </div>
     </div>
   </div>
 
-  <!-- ── SECTION 9: The Print (CLOSED) ── -->
-  <div class="acc amber-accent" id="acc-print">
+  <!-- SECTION 9: The Print (CLOSED) -->
+  <div class="acc acc-amber" id="acc-print">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble bubble-amber">🖨️</div>
+      <div class="acc-icon-bubble ib-amber">🖨️</div>
       <div class="acc-meta">
         <div class="acc-label">Canon Selphy CP1500</div>
         <div class="acc-title">The Print — Filming Guide</div>
@@ -1364,56 +800,56 @@ Then I walked home and printed it. Four inches by six inches of the city, upside
       <div class="print-grid">
         <div class="print-card">
           <div class="print-card-lbl">Paper &amp; Size</div>
-          <div class="print-card-val">Canon KP-108IP · 4×6" Glossy</div>
+          <div class="print-card-val">Canon KP-108IP</div>
+          <div class="print-card-sub">4×6" standard Selphy pack · 108 sheets</div>
         </div>
         <div class="print-card">
           <div class="print-card-lbl">Color Profile</div>
-          <div class="print-card-val">Vivid · Auto Correct Off</div>
+          <div class="print-card-val">Natural + Contrast +1</div>
+          <div class="print-card-sub">Preserves the cool silver-grey tone — avoid Vivid which adds unwanted warmth</div>
         </div>
         <div class="print-card">
           <div class="print-card-lbl">Mode &amp; Finish</div>
-          <div class="print-card-val">Borderless 4×6" · Glossy</div>
+          <div class="print-card-val">Standard Glossy</div>
+          <div class="print-card-sub">Glossy finish reflects the snowmelt puddle for beat 05 mirror shot</div>
         </div>
       </div>
-      <div class="print-note-block">
-        <div class="print-note-title">📽 Filming Instructions — Beats 04 &amp; 05</div>
-        <div class="print-note-body">For Beat 04 (Print Process): Set your phone to 0.5x ultra-wide and film the Selphy display showing the reflection image preview thumbnail. Shift to 2x zoom for the slow-motion paper feed — shoot at 240fps if available, slow to 30% in edit for maximum drama. The paper emerging from the slot is your payoff moment; hold the shot until the full print is visible.
-
-For Beat 05 (Print to World): Walk to the nearest puddle on the RiverWalk (or use a flat dark surface as a stand-in). Hold the finished print face-down approximately 2cm above the surface and angle your phone so the printed reflection and the live puddle reflection align in the same frame — the city upside-down twice. Cut to black on the precise frame where both images are in perfect symmetry.</div>
+      <div class="print-note">
+        <div class="print-note-title">Filming Beats 04 &amp; 05 — Director's Notes</div>
+        <div class="print-note-body">For beat 04, set your phone to 4K 120fps before the Selphy starts printing — you want the paper emergence in full slow motion. Duck all audio on this clip; the silence before the music swell lands harder than any SFX. Keep the Selphy label visible in the lower-right corner of frame so the gear is readable. For beat 05, take the finished print back outside to the RiverWalk immediately while conditions hold. Find a dark snowmelt puddle on the concrete path — look for the ones near the railing edges where the snow is thicker. Hold the print face-down horizontally at about 30cm above the water surface. The glossy finish will create a clean mirror reflection. Steady your hand and hold the shot for a full 3 seconds before the hard cut to black.</div>
       </div>
       <div class="notes-wrapper">
         <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Print notes..."></textarea>
+        <textarea class="notes-area" placeholder="Print notes…"></textarea>
       </div>
     </div>
   </div>
 
-</div>
+</main>
 
-<!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+<!-- FOOTER -->
 <footer class="site-footer">
-  <span class="brand-ft">keep this frame</span> · Daily Creator Brief · April 15, 2026 · Refreshes every morning at 7:00 AM MST
+  <p><em>keep this frame</em> &nbsp;·&nbsp; Daily Creator Brief &nbsp;·&nbsp; April 16, 2026 &nbsp;·&nbsp; Refreshes every morning at 7:00 AM MST</p>
 </footer>
 
 <script>
-  function toggleAcc(header) {
-    header.closest('.acc').classList.toggle('open');
-  }
+function toggleAcc(header) {
+  header.closest('.acc').classList.toggle('open');
+}
 
-  function updateGear() {
-    const all = document.querySelectorAll('.gc');
-    const done = Array.from(all).filter(c => c.checked).length;
-    const el = document.getElementById('gear-count');
-    el.textContent = done + ' / 10 packed';
-    el.className = 'gear-chip' + (done === all.length ? ' done' : '');
-  }
+function updateGear() {
+  const all = document.querySelectorAll('.gc');
+  const done = Array.from(all).filter(c => c.checked).length;
+  const el = document.getElementById('gear-count');
+  el.textContent = done + ' / 10 packed';
+  el.className = 'gear-chip' + (done === 10 ? ' done' : '');
+}
 
-  function toggleNotes(btn) {
-    const area = btn.nextElementSibling;
-    const open = area.classList.toggle('open');
-    btn.textContent = open ? '✕\u00A0 Close notes' : '✎\u00A0 Add notes';
-  }
+function toggleNotes(btn) {
+  const area = btn.nextElementSibling;
+  const open = area.classList.toggle('open');
+  btn.textContent = open ? '✕\u2002Close notes' : '✎\u2002Add notes';
+}
 </script>
-
 </body>
 </html>
