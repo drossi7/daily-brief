@@ -3,756 +3,714 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>keep this frame · Daily Creator Brief · April 16, 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<title>keep this frame · Daily Creator Brief · Apr 20, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg:#0C0C0C; --surface:#141414; --card:#1A1A1A;
-  --border:#272727; --border-light:#2E2E2E;
-  --body:#A8A09A; --strong:#D4CCC4; --muted:#585250;
-  --orange:#FF7143; --amber:#F5A623; --green:#3ECF8E;
-  --blue:#5B9CF6; --purple:#9B72FF; --pink:#F472B6;
-  --teal:#38BDF8; --red:#F87171;
+:root{
+  --bg:#0C0C0C;--surface:#141414;--card:#1A1A1A;--border:#272727;--border-light:#2E2E2E;
+  --body:#A8A09A;--strong:#D4CCC4;--muted:#585250;
+  --orange:#FF7143;--amber:#F5A623;--green:#3ECF8E;--blue:#5B9CF6;--purple:#9B72FF;--pink:#F472B6;--teal:#38BDF8;--red:#F87171;
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{font-size:14px;}
-body{background:var(--bg);color:var(--body);font-family:'Inter',sans-serif;line-height:1.6;min-height:100vh;}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--body);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
 
 /* HEADER */
-.site-header{background:#090909;text-align:center;padding:36px 0 28px;border-bottom:1px solid var(--border);}
-.site-header .dateline{font-family:'Outfit',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.24em;color:var(--muted);margin-bottom:12px;}
-.site-header .brand{font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(50px,7.5vw,76px);color:var(--strong);line-height:1;}
-.site-header .brand span{color:var(--orange);font-weight:700;}
-.site-header .subtitle{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);margin-top:10px;letter-spacing:0.04em;}
+.hdr{background:#090909;text-align:center;padding:36px 0 28px;border-bottom:1px solid var(--border)}
+.hdr .dateline{font-family:'Outfit',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.24em;color:var(--muted);margin-bottom:14px}
+.hdr .brand{font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(50px,7.5vw,76px);color:var(--strong);line-height:1;letter-spacing:-0.02em}
+.hdr .subtitle{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);margin-top:14px;letter-spacing:0.04em}
 
 /* DATE + TIP BAR */
-.date-tip-bar{display:flex;align-items:center;gap:28px;background:var(--card);border-bottom:1px solid var(--border);padding:18px 32px;}
-.dt-date{flex-shrink:0;border-right:1px solid var(--border);padding-right:28px;margin-right:4px;}
-.dt-day{font-family:'Outfit',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:var(--muted);margin-bottom:4px;}
-.dt-full{font-family:'Outfit',sans-serif;font-size:32px;font-weight:700;color:var(--strong);line-height:1;}
-.dt-tip{flex:1;}
-.dt-tip-label{font-family:'Outfit',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--amber);margin-bottom:5px;}
-.dt-tip-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--body);line-height:1.65;}
+.dt{display:flex;align-items:center;gap:28px;background:var(--card);border-bottom:1px solid var(--border);padding:18px 32px}
+.dt-date{flex-shrink:0;border-right:1px solid var(--border);padding-right:28px}
+.dt-day{font-family:'Outfit',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:var(--muted);margin-bottom:6px}
+.dt-full{font-family:'Outfit',sans-serif;font-size:32px;font-weight:700;color:var(--strong);line-height:1}
+.dt-tip{flex:1}
+.dt-tip-label{font-family:'Outfit',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--amber);margin-bottom:5px}
+.dt-tip-text{font-family:'Inter',sans-serif;font-size:13px;color:var(--body);line-height:1.65}
 
 /* WEATHER PANEL */
-.weather-panel{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;background:var(--surface);border-bottom:1px solid var(--border);}
-.wx-cell{padding:20px;border-right:1px solid var(--border);}
-.wx-cell:last-child{border-right:none;}
-.cell-label{font-size:9.5px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);margin-bottom:12px;font-family:'Outfit',sans-serif;}
-.wx-top{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
-.wx-icon-bubble{width:54px;height:54px;background:#1E1C1A;border-radius:14px;border:1px solid var(--border-light);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
-.wx-condition-title{font-family:'Outfit',sans-serif;font-size:17px;font-weight:700;color:var(--strong);line-height:1.2;}
-.wx-temp-line{font-size:12px;color:var(--muted);margin-top:4px;}
-.wx-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px;}
-.wx-metric-card{background:rgba(255,255,255,0.025);border:1px solid var(--border);border-radius:6px;padding:7px 6px;text-align:center;}
-.wx-metric-val{font-family:'Outfit',sans-serif;font-size:13.5px;font-weight:700;color:var(--strong);}
-.wx-metric-lbl{font-size:9px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-top:2px;}
-.wx-detail{font-size:12px;color:var(--muted);line-height:1.65;}
-.wx-badge{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:500;border-radius:6px;padding:4px 9px;margin-top:10px;}
-.badge-red{color:var(--red);border:1px solid rgba(248,113,113,0.35);background:rgba(248,113,113,0.08);}
-.badge-amber{color:var(--amber);border:1px solid rgba(245,166,35,0.35);background:rgba(245,166,35,0.08);}
-.badge-green{color:var(--green);border:1px solid rgba(62,207,142,0.35);background:rgba(62,207,142,0.08);}
+.wx{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;background:var(--surface);border-bottom:1px solid var(--border)}
+.wx-cell{padding:22px 24px;border-right:1px solid var(--border)}
+.wx-cell:last-child{border-right:none}
+.wx-title{font-family:'Outfit',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--muted);margin-bottom:14px}
+.wx-hero{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.wx-icon{width:44px;height:44px;border-radius:50%;background:#222;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.wx-cond{font-family:'Outfit',sans-serif;font-size:18px;font-weight:600;color:var(--strong);line-height:1.2}
+.wx-temp{font-family:'Outfit',sans-serif;font-size:36px;font-weight:300;color:var(--strong);line-height:1}
+.wx-metrics{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin:10px 0 10px}
+.wx-m{}
+.wx-m-label{font-family:'Outfit',sans-serif;font-size:9px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-bottom:3px}
+.wx-m-value{font-family:'Outfit',sans-serif;font-size:14px;color:var(--strong);font-weight:500}
+.wx-detail{font-size:12px;color:var(--body);line-height:1.6;margin-bottom:10px}
+.badge{display:inline-block;font-family:'Outfit',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;padding:4px 10px;border-radius:999px;font-weight:500}
+.badge-amber{background:rgba(245,166,35,0.15);color:var(--amber);border:1px solid rgba(245,166,35,0.3)}
+.badge-red{background:rgba(248,113,113,0.15);color:var(--red);border:1px solid rgba(248,113,113,0.3)}
+.badge-green{background:rgba(62,207,142,0.15);color:var(--green);border:1px solid rgba(62,207,142,0.3)}
+.badge-blue{background:rgba(91,156,246,0.15);color:var(--blue);border:1px solid rgba(91,156,246,0.3)}
+.badge-purple{background:rgba(155,114,255,0.15);color:var(--purple);border:1px solid rgba(155,114,255,0.3)}
 
-.sw-title-row{display:flex;align-items:center;gap:8px;margin-bottom:14px;}
-.sw-dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 3px rgba(245,166,35,0.2);}
-.sw-title{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--strong);}
-.sw-window{border-radius:8px;padding:10px 12px;margin-bottom:8px;}
-.sw-window.morning{background:rgba(245,166,35,0.05);border:1px solid rgba(245,166,35,0.18);}
-.sw-window.afternoon{background:rgba(91,156,246,0.05);border:1px solid rgba(91,156,246,0.18);}
-.sw-window-inner{display:flex;align-items:center;gap:8px;}
-.sw-time{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--strong);}
-.sw-lbl{font-size:11px;color:var(--muted);display:block;margin-top:2px;}
-.lt-row{display:flex;align-items:center;gap:10px;padding:9px 0;}
-.lt-row+.lt-row{border-top:1px solid #1C1C1C;}
-.lt-icon{font-size:20px;flex-shrink:0;}
-.lt-time{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;}
-.lt-event{font-size:11.5px;color:var(--muted);}
-.lt-blue{color:rgba(91,156,246,0.7);}
-.lt-gold{color:#D4B896;}
-.lt-amber{color:var(--amber);}
+.wx-dot{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.wx-dot span{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.wx-dot-txt{font-family:'Outfit',sans-serif;font-size:13px;color:var(--strong);font-weight:500}
+.wx-win{background:#0F0F0F;border:1px solid var(--border-light);border-radius:6px;padding:10px 12px;margin-bottom:8px}
+.wx-win.amber{border-left:3px solid var(--amber)}
+.wx-win.green{border-left:3px solid var(--green)}
+.wx-win-time{font-family:'Outfit',sans-serif;font-size:13px;color:var(--strong);font-weight:600;margin-bottom:2px}
+.wx-win-desc{font-size:11px;color:var(--body);line-height:1.4}
+
+.wx-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border-light)}
+.wx-row:last-of-type{border-bottom:none}
+.wx-row-lbl{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em}
+.wx-row-time{font-family:'Outfit',sans-serif;font-size:13px;font-weight:500}
+.t-blue{color:var(--blue)}
+.t-amber{color:var(--amber)}
+.t-orange{color:var(--orange)}
 
 /* POST TIMING BAR */
-.timing-bar{display:grid;grid-template-columns:120px 1fr 1fr 1fr;background:var(--surface);border-bottom:1px solid var(--border);}
-.timing-label-cell{padding:16px 20px;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;}
-.tl-small{font-size:9px;text-transform:uppercase;letter-spacing:0.18em;color:var(--muted);margin-bottom:4px;font-family:'Outfit',sans-serif;}
-.tl-title{font-size:12px;color:var(--strong);}
-.timing-pick{padding:14px 18px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:4px;}
-.timing-pick:last-child{border-right:none;}
-.pick-chip{display:inline-flex;width:fit-content;font-size:9.5px;font-weight:600;color:var(--blue);border:1px solid rgba(91,156,246,0.3);background:rgba(91,156,246,0.08);border-radius:5px;padding:2px 7px;letter-spacing:0.06em;margin-bottom:2px;}
-.pick-time{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;color:var(--strong);line-height:1.1;}
-.pick-sublabel{font-size:9.5px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);}
-.pick-desc{font-size:12px;color:var(--body);}
-.timing-note{padding:14px 18px;}
-.timing-note p{font-size:12px;color:var(--muted);line-height:1.65;}
+.pt{display:grid;grid-template-columns:120px 1fr 1fr 1fr;background:var(--surface);border-bottom:1px solid var(--border)}
+.pt-cell{padding:18px 22px;border-right:1px solid var(--border)}
+.pt-cell:last-child{border-right:none}
+.pt-label{font-family:'Outfit',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--muted);line-height:1.4}
+.pt-label strong{display:block;color:var(--strong);font-weight:600;font-size:11px;margin-top:4px;letter-spacing:0.14em}
+.pt-chip{display:inline-block;font-family:'Outfit',sans-serif;font-size:9px;text-transform:uppercase;letter-spacing:0.14em;padding:3px 8px;border-radius:4px;font-weight:600;margin-bottom:7px}
+.chip-orange{background:rgba(255,113,67,0.15);color:var(--orange)}
+.chip-purple{background:rgba(155,114,255,0.15);color:var(--purple)}
+.chip-teal{background:rgba(56,189,248,0.15);color:var(--teal)}
+.pt-time{font-family:'Outfit',sans-serif;font-size:24px;font-weight:600;color:var(--strong);line-height:1;margin-bottom:3px}
+.pt-sub{font-family:'Outfit',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-bottom:6px}
+.pt-desc{font-size:11.5px;color:var(--body);line-height:1.5}
+.pt-note{font-size:11.5px;color:var(--body);line-height:1.55}
+.pt-note em{color:var(--amber);font-style:normal;font-weight:500}
 
 /* MAIN */
-.main{max-width:1400px;margin:0 auto;padding:28px 24px 80px;display:flex;flex-direction:column;gap:10px;}
+.main{max-width:1400px;margin:0 auto;padding:28px 24px 80px;display:flex;flex-direction:column;gap:10px}
 
 /* ACCORDION */
-.acc{border:1px solid var(--border);border-radius:10px;background:var(--surface);overflow:hidden;}
-.acc-header{display:flex;align-items:center;gap:14px;padding:15px 18px;cursor:pointer;user-select:none;}
-.acc-header:hover{background:rgba(255,255,255,0.02);}
-.acc-icon-bubble{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
-.acc-meta{flex:1;}
-.acc-label{font-size:9.5px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);font-family:'Outfit',sans-serif;}
-.acc-title{font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:600;color:var(--strong);line-height:1.2;}
-.acc-right{display:flex;align-items:center;gap:10px;}
-.gear-chip{font-size:11px;color:var(--muted);border:1px solid var(--border);border-radius:5px;padding:3px 9px;font-family:'Outfit',sans-serif;font-weight:600;transition:all 0.2s;}
-.gear-chip.done{color:var(--green);border-color:rgba(62,207,142,0.4);background:rgba(62,207,142,0.08);}
-.chevron{font-size:13px;color:var(--muted);transition:transform 0.2s;display:inline-block;}
-.acc.open .chevron{transform:rotate(180deg);}
-.acc-body{display:none;border-top:1px solid var(--border);}
-.acc.open .acc-body{display:block;}
+.acc{border:1px solid var(--border);border-radius:10px;background:var(--surface);overflow:hidden;border-left:3px solid var(--border)}
+.acc.col-orange{border-left-color:var(--orange)}
+.acc.col-blue{border-left-color:var(--blue)}
+.acc.col-amber{border-left-color:var(--amber)}
+.acc.col-green{border-left-color:var(--green)}
+.acc.col-purple{border-left-color:var(--purple)}
+.acc.col-pink{border-left-color:var(--pink)}
+.acc.col-teal{border-left-color:var(--teal)}
+.acc-header{display:flex;align-items:center;gap:14px;padding:18px 22px;cursor:pointer;user-select:none;transition:background 0.15s}
+.acc-header:hover{background:#181818}
+.acc-icon{width:34px;height:34px;border-radius:50%;background:#222;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.acc-meta{flex:1}
+.acc-label{font-family:'Outfit',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--muted);margin-bottom:3px}
+.acc-title{font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;color:var(--strong)}
+.acc-right{display:flex;align-items:center;gap:14px}
+.gear-chip{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;padding:6px 12px;border-radius:6px;background:rgba(255,113,67,0.15);color:var(--orange);border:1px solid rgba(255,113,67,0.3)}
+.gear-chip.done{background:rgba(62,207,142,0.15);color:var(--green);border-color:rgba(62,207,142,0.3)}
+.chev{width:18px;height:18px;display:flex;align-items:center;justify-content:center;transition:transform 0.2s;color:var(--muted);font-size:14px}
+.acc.open .chev{transform:rotate(180deg)}
+.acc-body{display:none;padding:0 22px 22px;border-top:1px solid var(--border-light)}
+.acc.open .acc-body{display:block;padding-top:20px}
 
-/* NOTES */
-.notes-wrapper{border-top:1px solid var(--border);padding:10px 18px 14px;}
-.notes-toggle{background:none;border:none;font-size:12px;color:var(--muted);cursor:pointer;padding:0;font-family:'Inter',sans-serif;}
-.notes-toggle:hover{color:var(--body);}
-.notes-area{display:none;width:100%;min-height:72px;background:var(--card);border:1px solid var(--border);border-radius:7px;padding:10px;margin-top:8px;font-size:13px;font-family:'Inter',sans-serif;color:var(--strong);resize:vertical;outline:none;}
-.notes-area.open{display:block;}
-.notes-area:focus{border-color:var(--orange);}
+/* Notes */
+.notes-wrap{margin-top:20px;padding-top:16px;border-top:1px solid var(--border-light)}
+.notes-btn{font-family:'Outfit',sans-serif;font-size:11px;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px 0;text-transform:uppercase;letter-spacing:0.12em}
+.notes-btn:hover{color:var(--body)}
+.notes-ta{display:none;width:100%;margin-top:10px;background:#0F0F0F;border:1px solid var(--border);border-radius:6px;padding:12px;color:var(--body);font-family:'Inter',sans-serif;font-size:13px;resize:vertical;min-height:80px}
+.notes-ta:focus{outline:none;border-color:var(--orange)}
+.notes-ta.open{display:block}
 
-/* GEAR */
-.gear-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:20px 18px 4px;}
-.gear-col-header{font-size:9.5px;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);padding:0 8px 10px;font-family:'Outfit',sans-serif;}
-.gear-item{display:flex;align-items:flex-start;gap:9px;padding:7px 8px;border-radius:6px;cursor:pointer;transition:background 0.15s;}
-.gear-item:hover{background:rgba(255,255,255,0.03);}
-.gc{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--border-light);background:transparent;cursor:pointer;flex-shrink:0;margin-top:1px;appearance:none;-webkit-appearance:none;transition:all 0.15s;position:relative;}
-.gc:checked{background:var(--orange);border-color:var(--orange);}
-.gc:checked::after{content:'✓';position:absolute;top:-1px;left:2px;font-size:11px;color:#fff;font-weight:700;}
-.gear-name{font-size:13px;font-weight:600;color:var(--strong);line-height:1.3;}
-.gear-sub{font-size:11px;color:var(--muted);display:block;}
+/* S1 Gear */
+.gear-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.gear-col{background:#0F0F0F;border:1px solid var(--border-light);border-radius:8px;padding:14px}
+.gear-col-t{font-family:'Outfit',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:0.16em;color:var(--orange);margin-bottom:12px;font-weight:600}
+.gear-item{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:12.5px;color:var(--body)}
+.gear-item input{accent-color:var(--orange);cursor:pointer}
 
-/* SHOOT */
-.shoot-layout{display:grid;grid-template-columns:1fr 1fr;gap:0;}
-.shoot-left{padding:20px 22px;border-right:1px solid var(--border);}
-.shoot-right{padding:20px 22px;}
-.shoot-tag{display:inline-flex;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;border-radius:5px;padding:3px 9px;margin-bottom:14px;font-family:'Outfit',sans-serif;font-weight:600;}
-.tag-orange{color:var(--orange);background:rgba(255,113,67,0.1);border:1px solid rgba(255,113,67,0.25);}
-.tag-blue{color:var(--blue);background:rgba(91,156,246,0.1);border:1px solid rgba(91,156,246,0.25);}
-.shoot-concept-title{font-family:'Outfit',sans-serif;font-size:17px;font-weight:700;color:var(--strong);margin-bottom:14px;}
-.shoot-concept p{font-size:13.5px;color:var(--body);line-height:1.75;margin-bottom:12px;}
-.recipe-title{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--strong);margin-bottom:14px;}
-.recipe-row{padding:10px 0;border-bottom:1px solid var(--border);}
-.recipe-row:last-child{border-bottom:none;}
-.recipe-lbl{font-size:9.5px;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);font-family:'Outfit',sans-serif;margin-bottom:4px;}
-.recipe-val{font-size:13.5px;color:var(--body);}
+/* S2 Today's Shoot */
+.shoot-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:28px}
+.tag{display:inline-block;font-family:'Outfit',sans-serif;font-size:9px;text-transform:uppercase;letter-spacing:0.16em;padding:3px 9px;border-radius:4px;background:rgba(255,113,67,0.15);color:var(--orange);font-weight:600;margin-bottom:10px}
+.shoot-title{font-family:'Outfit',sans-serif;font-size:22px;font-weight:600;color:var(--strong);margin-bottom:14px;line-height:1.3}
+.shoot-p{font-size:13.5px;color:var(--body);line-height:1.7;margin-bottom:12px}
+.recipe-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border-light);gap:12px}
+.recipe-row:last-child{border-bottom:none}
+.recipe-k{font-family:'Outfit',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);flex-shrink:0;padding-top:2px}
+.recipe-v{font-size:12.5px;color:var(--strong);text-align:right;line-height:1.55}
 
-/* BEATS */
-.beats-list{display:flex;flex-direction:column;gap:8px;padding:18px;}
-.beat-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 16px;display:flex;gap:14px;}
-.beat-num{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;flex-shrink:0;width:32px;}
-.c-orange{color:var(--orange);} .c-green{color:var(--green);} .c-blue{color:var(--blue);} .c-amber{color:var(--amber);} .c-purple{color:var(--purple);}
-.beat-content{flex:1;}
-.beat-label-row{display:flex;align-items:center;gap:8px;margin-bottom:4px;}
-.beat-label{font-size:9.5px;text-transform:uppercase;letter-spacing:0.14em;font-family:'Outfit',sans-serif;font-weight:600;}
-.bl-orange{color:var(--orange);} .bl-green{color:var(--green);} .bl-blue{color:var(--blue);} .bl-amber{color:var(--amber);} .bl-purple{color:var(--purple);}
-.beat-timing{font-size:11px;color:var(--muted);}
-.beat-desc{font-size:13.5px;color:var(--body);margin-bottom:8px;}
-.beat-overlay{background:#0D0D0D;border:1px solid var(--border);border-radius:6px;padding:7px 11px;font-size:12.5px;font-style:italic;color:#6E6660;}
+/* S3 Beats */
+.beats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.beat{background:#0F0F0F;border:1px solid var(--border-light);border-radius:8px;padding:14px;border-top:3px solid var(--border)}
+.beat.b1{border-top-color:var(--orange)}
+.beat.b2{border-top-color:var(--green)}
+.beat.b3{border-top-color:var(--blue)}
+.beat.b4{border-top-color:var(--amber)}
+.beat.b5{border-top-color:var(--purple)}
+.beat-num{font-family:'Outfit',sans-serif;font-size:28px;font-weight:300;color:var(--strong);line-height:1;margin-bottom:4px}
+.beat-lbl{font-family:'Outfit',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-bottom:4px}
+.beat-lbl strong{color:var(--strong);font-weight:600;display:block;font-size:11px;margin-top:2px}
+.beat-time{font-family:'Outfit',sans-serif;font-size:11px;color:var(--amber);font-weight:500;margin:8px 0}
+.beat-desc{font-size:12px;color:var(--body);line-height:1.55;margin-bottom:10px}
+.beat-text{background:#060606;border:1px solid #1F1F1F;border-radius:4px;padding:8px;font-size:11px;color:var(--strong);font-style:italic;line-height:1.4}
+.beat-text-lbl{font-family:'Outfit',sans-serif;font-size:8px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-bottom:4px;font-style:normal}
 
-/* HOOKS */
-.hooks-list{display:flex;flex-direction:column;gap:8px;padding:18px;}
-.hook-row{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:13px 15px;display:flex;gap:13px;}
-.hook-num{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:var(--orange);flex-shrink:0;width:28px;}
-.hook-text{font-size:14px;font-style:italic;color:var(--strong);display:block;margin-bottom:5px;}
-.hook-note{font-size:12px;color:var(--muted);}
+/* S4 Hooks */
+.hook-row{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-light)}
+.hook-row:last-child{border-bottom:none}
+.hook-n{font-family:'Outfit',sans-serif;font-size:24px;font-weight:300;color:var(--orange);flex-shrink:0;width:32px;line-height:1}
+.hook-body{flex:1}
+.hook-txt{font-size:14px;font-style:italic;color:var(--strong);line-height:1.55;margin-bottom:6px}
+.hook-note{font-size:11.5px;color:var(--muted);line-height:1.55}
 
-/* AUDIO */
-.audio-list{display:flex;flex-direction:column;gap:8px;padding:18px;}
-.audio-row{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 15px;}
-.audio-bubble{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
-.ib-green{background:rgba(62,207,142,0.12);} .ib-purple{background:rgba(155,114,255,0.12);} .ib-amber{background:rgba(245,166,35,0.12);}
-.ib-orange{background:rgba(255,113,67,0.12);} .ib-blue{background:rgba(91,156,246,0.12);} .ib-teal{background:rgba(56,189,248,0.12);}
-.ib-pink{background:rgba(244,114,182,0.12);}
-.audio-info{flex:1;}
-.audio-track{font-size:13.5px;font-weight:600;color:var(--strong);}
-.audio-artist{font-size:12px;color:var(--muted);margin-bottom:3px;}
-.audio-use{font-size:12px;color:var(--body);}
-.audio-badge{margin-left:auto;}
-.abadge-trending{font-size:10px;color:var(--green);border:1px solid rgba(62,207,142,0.35);background:rgba(62,207,142,0.08);border-radius:5px;padding:3px 8px;font-weight:600;white-space:nowrap;}
-.abadge-niche{font-size:10px;color:var(--purple);border:1px solid rgba(155,114,255,0.35);background:rgba(155,114,255,0.08);border-radius:5px;padding:3px 8px;font-weight:600;white-space:nowrap;}
-.abadge-top{font-size:10px;color:var(--amber);border:1px solid rgba(245,166,35,0.35);background:rgba(245,166,35,0.08);border-radius:5px;padding:3px 8px;font-weight:600;white-space:nowrap;}
+/* S5 Audio */
+.audio-row{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--border-light)}
+.audio-row:last-child{border-bottom:none}
+.audio-bubble{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ab-purple{background:rgba(155,114,255,0.15);color:var(--purple)}
+.ab-blue{background:rgba(91,156,246,0.15);color:var(--blue)}
+.ab-pink{background:rgba(244,114,182,0.15);color:var(--pink)}
+.audio-body{flex:1}
+.audio-track{font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:var(--strong);margin-bottom:2px}
+.audio-artist{font-size:11.5px;color:var(--muted);margin-bottom:3px}
+.audio-use{font-size:12px;color:var(--body);line-height:1.5}
 
-/* OVERLAYS */
-.overlays-list{display:flex;flex-direction:column;gap:6px;padding:18px;}
-.overlay-row{background:var(--card);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;padding:9px 15px;}
-.ov-ts{font-size:10.5px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);min-width:82px;font-family:'Outfit',sans-serif;}
-.ov-divider{width:1px;height:22px;background:var(--border-light);margin:0 14px;flex-shrink:0;}
-.ov-text{font-size:13.5px;font-style:italic;color:var(--strong);}
+/* S6 Overlays */
+.ov-row{display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid var(--border-light)}
+.ov-row:last-child{border-bottom:none}
+.ov-time{font-family:'Outfit',sans-serif;font-size:12px;color:var(--teal);font-weight:600;width:70px;flex-shrink:0}
+.ov-div{width:1px;height:18px;background:var(--border);flex-shrink:0}
+.ov-text{font-size:13.5px;font-style:italic;color:var(--strong);line-height:1.5}
 
-/* GROWTH */
-.growth-list{display:flex;flex-direction:column;gap:10px;padding:18px;}
-.growth-row{display:flex;gap:14px;align-items:flex-start;}
-.growth-dot{width:27px;height:27px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:'Outfit',sans-serif;flex-shrink:0;}
-.gd1{background:rgba(62,207,142,0.15);color:var(--green);}
-.gd2{background:rgba(155,114,255,0.15);color:var(--purple);}
-.gd3{background:rgba(245,166,35,0.15);color:var(--amber);}
-.growth-title{font-size:13.5px;font-weight:600;color:var(--strong);margin-bottom:3px;}
-.growth-text{font-size:13px;color:var(--body);line-height:1.65;}
+/* S7 Growth */
+.gr-row{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-light)}
+.gr-row:last-child{border-bottom:none}
+.gr-dot{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;flex-shrink:0}
+.gd-green{background:rgba(62,207,142,0.15);color:var(--green);border:1px solid rgba(62,207,142,0.3)}
+.gd-purple{background:rgba(155,114,255,0.15);color:var(--purple);border:1px solid rgba(155,114,255,0.3)}
+.gd-amber{background:rgba(245,166,35,0.15);color:var(--amber);border:1px solid rgba(245,166,35,0.3)}
+.gr-body{flex:1}
+.gr-title{font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:var(--strong);margin-bottom:4px}
+.gr-text{font-size:12.5px;color:var(--body);line-height:1.6}
 
-/* CAPTION */
-.caption-block{font-size:14px;font-style:italic;line-height:1.85;color:var(--body);background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 18px;margin:18px 18px 10px;}
-.hashtag-line{font-size:12.5px;color:rgba(91,156,246,0.65);line-height:1.85;padding:0 18px 18px;}
+/* S8 Caption */
+.cap{background:#0F0F0F;border:1px solid var(--border-light);border-radius:8px;padding:18px;margin-bottom:14px}
+.cap p{font-size:14px;font-style:italic;color:var(--strong);line-height:1.85;margin-bottom:12px}
+.cap p:last-child{margin-bottom:0}
+.tags{font-size:12.5px;color:var(--blue);opacity:0.65;line-height:1.8}
 
-/* PRINT */
-.print-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:18px 18px 12px;}
-.print-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 16px;}
-.print-card-lbl{font-size:9.5px;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);font-family:'Outfit',sans-serif;margin-bottom:8px;}
-.print-card-val{font-size:14px;font-weight:600;color:var(--strong);margin-bottom:4px;}
-.print-card-sub{font-size:12px;color:var(--muted);}
-.print-note{margin:0 18px 18px;background:rgba(245,166,35,0.05);border:1px solid rgba(245,166,35,0.18);border-radius:8px;padding:14px 16px;}
-.print-note-title{font-size:12px;font-style:italic;font-weight:600;color:var(--amber);margin-bottom:6px;}
-.print-note-body{font-size:13px;color:var(--body);line-height:1.7;}
+/* S9 Print */
+.print-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
+.print-card{background:#0F0F0F;border:1px solid var(--border-light);border-radius:8px;padding:14px;border-top:3px solid var(--amber)}
+.print-lbl{font-family:'Outfit',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--amber);margin-bottom:8px;font-weight:600}
+.print-v{font-family:'Outfit',sans-serif;font-size:14px;color:var(--strong);font-weight:500;margin-bottom:6px}
+.print-sub{font-size:11.5px;color:var(--body);line-height:1.5}
+.print-note{background:#0F0F0F;border:1px solid var(--border-light);border-left:3px solid var(--amber);border-radius:6px;padding:14px;font-size:12.5px;color:var(--body);line-height:1.65}
+.print-note strong{color:var(--strong);font-weight:600}
 
 /* FOOTER */
-.site-footer{background:#090909;border-top:1px solid var(--border);padding:16px 24px;text-align:center;}
-.site-footer p{font-size:11.5px;color:var(--muted);}
-.site-footer em{font-family:'Outfit',sans-serif;font-style:italic;color:var(--orange);}
+.ftr{background:#090909;border-top:1px solid var(--border);padding:16px 24px;text-align:center;font-family:'Outfit',sans-serif;font-size:11px;color:var(--muted);letter-spacing:0.14em}
+.ftr strong{color:var(--body);font-weight:500}
 
-/* BORDER ACCENTS */
-.acc-orange{border-left:3px solid var(--orange);}
-.acc-blue{border-left:3px solid var(--blue);}
-.acc-purple{border-left:3px solid var(--purple);}
-.acc-teal{border-left:3px solid var(--teal);}
-.acc-green{border-left:3px solid var(--green);}
-.acc-pink{border-left:3px solid var(--pink);}
-.acc-amber{border-left:3px solid var(--amber);}
+@media (max-width:900px){
+  .wx{grid-template-columns:1fr 1fr}
+  .pt{grid-template-columns:1fr}
+  .gear-grid{grid-template-columns:repeat(2,1fr)}
+  .beats{grid-template-columns:1fr 1fr}
+  .shoot-grid{grid-template-columns:1fr}
+  .print-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 
 <!-- HEADER -->
-<header class="site-header">
-  <div class="dateline">Thursday · April 16, 2026 · Calgary, Alberta</div>
-  <div class="brand">keep this <span>frame</span></div>
-  <div class="subtitle">Daily Creator Brief &nbsp;·&nbsp; @keepthisframe &nbsp;·&nbsp; Lumix S9 &nbsp;·&nbsp; Canon Selphy CP1500</div>
-</header>
+<div class="hdr">
+  <div class="dateline">Monday · April 20, 2026 · Calgary, Alberta</div>
+  <div class="brand">keep this <span style="color:var(--orange);font-weight:700">frame</span></div>
+  <div class="subtitle">Daily Creator Brief — one frame, one print, one reel</div>
+</div>
 
 <!-- DATE + TIP BAR -->
-<div class="date-tip-bar">
+<div class="dt">
   <div class="dt-date">
-    <div class="dt-day">Thursday</div>
-    <div class="dt-full">April 16, 2026</div>
+    <div class="dt-day">Today</div>
+    <div class="dt-full">Apr 20</div>
   </div>
   <div class="dt-tip">
-    <div class="dt-tip-label">🐾 Dog Fact of the Day</div>
-    <div class="dt-tip-text">A dog's nose print is as unique as a human fingerprint — the pattern of ridges and creases is completely individual to each dog. No two are the same.</div>
+    <div class="dt-tip-label">◆ Selphy Tip of the Day</div>
+    <div class="dt-tip-text">For richest blacks on Selphy paper, keep your darkest values around RGB 10–15 rather than pure 0 — dye-sub paper renders near-black better than absolute black.</div>
   </div>
 </div>
 
 <!-- WEATHER PANEL -->
-<div class="weather-panel">
+<div class="wx">
   <div class="wx-cell">
-    <div class="cell-label">Today's Conditions</div>
-    <div class="wx-top">
-      <div class="wx-icon-bubble">❄️</div>
+    <div class="wx-title">Today's Conditions</div>
+    <div class="wx-hero">
+      <div class="wx-icon">🌤</div>
       <div>
-        <div class="wx-condition-title">April Snow Squall</div>
-        <div class="wx-temp-line">High –5°C &nbsp;/&nbsp; Low –8°C</div>
+        <div class="wx-cond">Sunny Morning, Showers Late</div>
       </div>
     </div>
+    <div class="wx-temp">18°C</div>
     <div class="wx-metrics">
-      <div class="wx-metric-card"><div class="wx-metric-val">–5°</div><div class="wx-metric-lbl">High °C</div></div>
-      <div class="wx-metric-card"><div class="wx-metric-val">–8°</div><div class="wx-metric-lbl">Low °C</div></div>
-      <div class="wx-metric-card"><div class="wx-metric-val">50</div><div class="wx-metric-lbl">Wind km/h</div></div>
-      <div class="wx-metric-card"><div class="wx-metric-val">70%</div><div class="wx-metric-lbl">Rain %</div></div>
+      <div class="wx-m"><div class="wx-m-label">High</div><div class="wx-m-value">18°C</div></div>
+      <div class="wx-m"><div class="wx-m-label">Low</div><div class="wx-m-value">6°C</div></div>
+      <div class="wx-m"><div class="wx-m-label">Wind</div><div class="wx-m-value">20 km/h</div></div>
+      <div class="wx-m"><div class="wx-m-label">Rain</div><div class="wx-m-value">30%</div></div>
     </div>
-    <div class="wx-detail">Heavy snow squalls persist through the morning with 3–5 cm accumulation expected. Gusty northerly winds to 50 km/h — temperatures remain well below seasonal norms all day.</div>
-    <div class="wx-badge badge-red">❄️ Snow Advisory</div>
+    <div class="wx-detail">Sunny start fading to a mix of sun and cloud through the afternoon. 30% chance of light showers late afternoon with gusty southwest winds to 40 km/h.</div>
+    <span class="badge badge-red">🌧 Rain Risk</span>
   </div>
 
   <div class="wx-cell">
-    <div class="cell-label">Best Shoot Window</div>
-    <div class="sw-title-row">
-      <div class="sw-dot"></div>
-      <div class="sw-title">Stay Home — Shoot There</div>
+    <div class="wx-title">Best Shoot Window</div>
+    <div class="wx-dot"><span></span><div class="wx-dot-txt">Prime Morning At Home</div></div>
+    <div class="wx-win amber">
+      <div class="wx-win-time">6:34 – 7:20 AM</div>
+      <div class="wx-win-desc">Morning golden hour — warm raking light through the kitchen window</div>
     </div>
-    <div class="sw-window morning">
-      <div class="sw-window-inner">
-        <span style="font-size:16px">☕</span>
-        <div>
-          <div class="sw-time">7:30 – 10:00 AM</div>
-          <span class="sw-lbl">Morning coffee light — snow falling outside the window</span>
-        </div>
-      </div>
+    <div class="wx-win green">
+      <div class="wx-win-time">7:20 – 10:00 AM</div>
+      <div class="wx-win-desc">Soft directional light, clear sky before clouds move in</div>
     </div>
-    <div class="sw-window afternoon" style="background:rgba(62,207,142,0.05);border:1px solid rgba(62,207,142,0.18);">
-      <div class="sw-window-inner">
-        <span style="font-size:16px">🌨</span>
-        <div>
-          <div class="sw-time">2:00 – 4:30 PM</div>
-          <span class="sw-lbl">Midday grey light — backyard or front step if it eases</span>
-        </div>
-      </div>
-    </div>
-    <div class="wx-badge badge-amber">☕ Best from your kitchen window</div>
+    <span class="badge badge-amber">⚠ Shoot Before Noon</span>
   </div>
 
   <div class="wx-cell">
-    <div class="cell-label">🌅 Morning Light</div>
-    <div class="lt-row">
-      <span class="lt-icon">🌫️</span>
-      <div>
-        <div class="lt-time lt-blue">6:13 AM</div>
-        <div class="lt-event">Blue Hour Begins</div>
-      </div>
-    </div>
-    <div class="lt-row">
-      <span class="lt-icon">☀️</span>
-      <div>
-        <div class="lt-time lt-gold">6:43 AM</div>
-        <div class="lt-event">Sunrise (MDT)</div>
-      </div>
-    </div>
-    <div class="lt-row">
-      <span class="lt-icon">🌤</span>
-      <div>
-        <div class="lt-time lt-amber">7:43 AM</div>
-        <div class="lt-event">Golden Hour Ends</div>
-      </div>
-    </div>
-    <div class="wx-badge badge-amber">⚠ Diffused Only — Snow Cover</div>
+    <div class="wx-title">🌅 Morning Light</div>
+    <div class="wx-row"><span class="wx-row-lbl">Blue Hour</span><span class="wx-row-time t-blue">5:59 AM</span></div>
+    <div class="wx-row"><span class="wx-row-lbl">Sunrise</span><span class="wx-row-time t-amber">6:34 AM</span></div>
+    <div class="wx-row"><span class="wx-row-lbl">Golden Ends</span><span class="wx-row-time t-orange">7:20 AM</span></div>
+    <div style="margin-top:12px"><span class="badge badge-amber">46 min golden</span></div>
   </div>
 
   <div class="wx-cell">
-    <div class="cell-label">🌇 Evening Light</div>
-    <div class="lt-row">
-      <span class="lt-icon">🌤</span>
-      <div>
-        <div class="lt-time lt-amber">7:27 PM</div>
-        <div class="lt-event">Golden Hour Begins</div>
-      </div>
-    </div>
-    <div class="lt-row">
-      <span class="lt-icon">🌅</span>
-      <div>
-        <div class="lt-time lt-gold">8:27 PM</div>
-        <div class="lt-event">Sunset (MDT)</div>
-      </div>
-    </div>
-    <div class="lt-row">
-      <span class="lt-icon">🌑</span>
-      <div>
-        <div class="lt-time lt-blue">8:57 PM</div>
-        <div class="lt-event">Blue Hour Ends</div>
-      </div>
-    </div>
-    <div class="wx-badge badge-green">✓ Prime Window If Clearing</div>
+    <div class="wx-title">🌇 Evening Light</div>
+    <div class="wx-row"><span class="wx-row-lbl">Golden Starts</span><span class="wx-row-time t-orange">7:57 PM</span></div>
+    <div class="wx-row"><span class="wx-row-lbl">Sunset</span><span class="wx-row-time t-amber">8:42 PM</span></div>
+    <div class="wx-row"><span class="wx-row-lbl">Blue Ends</span><span class="wx-row-time t-blue">9:17 PM</span></div>
+    <div style="margin-top:12px"><span class="badge badge-red">⚠ Clouds Moving In</span></div>
   </div>
 </div>
 
 <!-- POST TIMING BAR -->
-<div class="timing-bar">
-  <div class="timing-label-cell">
-    <div class="tl-small">Best Time</div>
-    <div class="tl-title">To Post Today</div>
+<div class="pt">
+  <div class="pt-cell">
+    <div class="pt-label">Post<strong>Timing</strong></div>
   </div>
-  <div class="timing-pick">
-    <div class="pick-chip">PICK 1</div>
-    <div class="pick-time">10:00 AM</div>
-    <div class="pick-sublabel">Thursday Morning</div>
-    <div class="pick-desc">High scroll velocity — people procrastinating at their desks</div>
+  <div class="pt-cell">
+    <span class="pt-chip chip-orange">Pick 1 · Morning</span>
+    <div class="pt-time">11:00 AM</div>
+    <div class="pt-sub">Commute Scroll</div>
+    <div class="pt-desc">Monday mid-morning hits the lunch-break lull — highest save rate of the week for slow, visual content.</div>
   </div>
-  <div class="timing-pick">
-    <div class="pick-chip">PICK 2</div>
-    <div class="pick-time">7:00 PM</div>
-    <div class="pick-sublabel">Thursday Evening</div>
-    <div class="pick-desc">Post-work couch time — strong save rates on cozy content</div>
+  <div class="pt-cell">
+    <span class="pt-chip chip-purple">Pick 2 · Evening</span>
+    <div class="pt-time">7:00 PM</div>
+    <div class="pt-sub">Wind-Down Scroll</div>
+    <div class="pt-desc">Monday evening audience is in cozy-rewind mode. Print-process Reels thrive in the 7–9 PM window.</div>
   </div>
-  <div class="timing-note">
-    <p>Reply to every comment within 60 minutes of posting — early engagement velocity is the single biggest factor in Instagram's 2026 reach algorithm.</p>
+  <div class="pt-cell">
+    <div class="pt-note"><em>Note:</em> DM shares are the heaviest-weighted algorithm signal in 2026. Ask one person directly to share today's Reel — that single send can 10x reach.</div>
   </div>
 </div>
 
 <!-- MAIN -->
-<main class="main">
+<div class="main">
 
-  <!-- S1: Gear (OPEN) -->
-  <div class="acc acc-orange open">
+  <!-- S1 GEAR CHECKLIST (OPEN) -->
+  <div class="acc col-orange open">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble ib-orange">🎒</div>
+      <div class="acc-icon">🎒</div>
       <div class="acc-meta">
-        <div class="acc-label">Pre-Shoot</div>
+        <div class="acc-label">Section 01</div>
         <div class="acc-title">Gear Checklist</div>
       </div>
       <div class="acc-right">
         <span class="gear-chip" id="gear-count">0 / 10 packed</span>
-        <span class="chevron">▲</span>
+        <span class="chev">▾</span>
       </div>
     </div>
     <div class="acc-body">
       <div class="gear-grid">
-        <div>
-          <div class="gear-col-header">Bag</div>
-          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"><div><div class="gear-name">Backpack</div><span class="gear-sub">Packed &amp; ready</span></div></label>
+        <div class="gear-col">
+          <div class="gear-col-t">Bag</div>
+          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"> Backpack</label>
         </div>
-        <div>
-          <div class="gear-col-header">Camera</div>
-          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"><div><div class="gear-name">Lumix S9</div><span class="gear-sub">Fully charged</span></div></label>
+        <div class="gear-col">
+          <div class="gear-col-t">Camera</div>
+          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"> Lumix S9 + battery</label>
         </div>
-        <div>
-          <div class="gear-col-header">Lenses</div>
-          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"><div><div class="gear-name">TTArtisan 40mm f/2</div><span class="gear-sub">Primary · today's pick</span></div></label>
-          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"><div><div class="gear-name">TTArtisan 75mm f/2</div><span class="gear-sub">Compression lens</span></div></label>
+        <div class="gear-col">
+          <div class="gear-col-t">Lenses</div>
+          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"> TTArtisan 40mm f/2</label>
+          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"> TTArtisan 75mm f/2</label>
         </div>
-        <div>
-          <div class="gear-col-header">Printer</div>
-          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"><div><div class="gear-name">Canon Selphy CP1500</div><span class="gear-sub">Tray inserted</span></div></label>
-          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"><div><div class="gear-name">KP-108IP Paper Pack</div><span class="gear-sub">4×6 Selphy pack</span></div></label>
-          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"><div><div class="gear-name">Selphy Battery</div><span class="gear-sub">Fully charged</span></div></label>
-          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"><div><div class="gear-name">Printer Tray</div><span class="gear-sub">Loaded &amp; seated</span></div></label>
+        <div class="gear-col">
+          <div class="gear-col-t">Printer</div>
+          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"> Canon Selphy CP1500</label>
+          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"> Canon KP-108IP paper</label>
+          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"> Selphy battery pack</label>
+          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"> Paper tray cassette</label>
         </div>
-        <div>
-          <div class="gear-col-header">Tripods</div>
-          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"><div><div class="gear-name">Compact Tripod</div><span class="gear-sub">Low-angle &amp; tabletop</span></div></label>
-          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"><div><div class="gear-name">Full-Height Tripod</div><span class="gear-sub">BTS rig</span></div></label>
+        <div class="gear-col">
+          <div class="gear-col-t">Tripods</div>
+          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"> Compact tabletop</label>
+          <label class="gear-item"><input type="checkbox" class="gc" onchange="updateGear()"> Full-height tripod</label>
         </div>
       </div>
-      <div class="notes-wrapper">
-        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Gear notes…"></textarea>
+      <div class="notes-wrap">
+        <button class="notes-btn" onclick="toggleNotes(this)">✎  Add notes</button>
+        <textarea class="notes-ta" placeholder="Notes on gear, what's missing, what to grab tomorrow..."></textarea>
       </div>
     </div>
   </div>
 
-  <!-- S2: Today's Shoot (OPEN) -->
-  <div class="acc acc-orange open">
+  <!-- S2 TODAY'S SHOOT (OPEN) -->
+  <div class="acc col-orange open">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble ib-orange">📍</div>
+      <div class="acc-icon">📷</div>
       <div class="acc-meta">
-        <div class="acc-label">Today's Shoot</div>
-        <div class="acc-title">Coffee Steam Against the Window Snow</div>
+        <div class="acc-label">Section 02</div>
+        <div class="acc-title">Today's Shoot</div>
       </div>
-      <div class="acc-right"><span class="chevron">▲</span></div>
+      <div class="acc-right">
+        <span class="chev">▾</span>
+      </div>
     </div>
     <div class="acc-body">
-      <div class="shoot-layout">
-        <div class="shoot-left">
-          <div class="shoot-tag tag-orange">The Moment</div>
-          <div class="shoot-concept-title">Your kitchen. No travel required.</div>
-          <div class="shoot-concept">
-            <p>Find the window with the best view of the snow — ideally one where flakes are still falling, or fresh accumulation sits on the outer sill. Set your mug down on the table or windowsill so the window fills the background cleanly. The TTArtisan 40mm at f/2 will render the cup and rising steam sharp while the snow and sky behind the glass go beautifully soft. Look for the steam catching the flat grey morning light — cold windows and warm coffee create a natural updraft that's visible from the right angle.</p>
-            <p>This frame isn't about the coffee. It's about the feeling of being warm inside while Calgary does this outside. Get low — shooting from counter height keeps the window large and the composition honest. If the dogs wander into the background, let them blur in there. Expose for the window (the brightest element) and let the interior read slightly dark — you want that warm-vs-cold tension, not a blown white background. The mood you're after is: quiet, early, the city hasn't started yet.</p>
-          </div>
+      <div class="shoot-grid">
+        <div>
+          <span class="tag">The Moment</span>
+          <div class="shoot-title">First Light Across The Kitchen Floor</div>
+          <p class="shoot-p">You know the stripe. Around 6:50 AM the sun clears the neighbour's roofline and a single diagonal of warm light drops across the kitchen floor. This morning is the first clear-sky Monday in a run of grey — use it. Get down low, camera on the floor plane, and wait for the stripe to land where you want it. Place your coffee mug inside the light, or let one of the dogs wander into it. Do not chase. Let the light come to you.</p>
+          <p class="shoot-p">Compose with the stripe as a diagonal leading line — kitchen floor tiles or hardwood grain running with or against it. The highlight falls off fast, so meter for the brightest part of the stripe and let the shadow side collapse to deep charcoal. This is a negative space frame: one warm band of light, everything else quiet. Shoot, review, print, post. Clouds roll in by late afternoon so the window is sharp and short.</p>
         </div>
-        <div class="shoot-right">
-          <div class="shoot-tag tag-blue">Settings</div>
-          <div class="recipe-title">Camera Recipe</div>
-          <div class="recipe-row">
-            <div class="recipe-lbl">Primary Lens</div>
-            <div class="recipe-val">TTArtisan 40mm f/2 — minimum 35cm focus lets you get right up to the rim, steam in sharp focus, snow blurred behind</div>
-          </div>
-          <div class="recipe-row">
-            <div class="recipe-lbl">Secondary Option</div>
-            <div class="recipe-val">TTArtisan 75mm f/2 — from the far end of the kitchen for full compression, window completely abstract</div>
-          </div>
-          <div class="recipe-row">
-            <div class="recipe-lbl">Exposure Settings</div>
-            <div class="recipe-val">f/2 · ISO 800 · 1/200s — expose for the window, let interior go warm and moody. Shoot RAW.</div>
-          </div>
-          <div class="recipe-row">
-            <div class="recipe-lbl">BTS Filming</div>
-            <div class="recipe-val">Compact tripod on the counter behind you at 4K — capture composing + focus ring turning + shutter + LCD reveal</div>
-          </div>
+        <div>
+          <span class="tag">Settings</span>
+          <div class="recipe-row"><div class="recipe-k">Primary</div><div class="recipe-v">TTArtisan 40mm f/2<br><span style="color:var(--muted);font-size:11px">35cm min focus — fills frame with the mug</span></div></div>
+          <div class="recipe-row"><div class="recipe-k">Secondary</div><div class="recipe-v">TTArtisan 75mm f/2<br><span style="color:var(--muted);font-size:11px">For compression of the light stripe from across the room</span></div></div>
+          <div class="recipe-row"><div class="recipe-k">Exposure</div><div class="recipe-v">f/2.8 · 1/400s · ISO 400<br><span style="color:var(--muted);font-size:11px">Meter highlights, let shadows fall to charcoal</span></div></div>
+          <div class="recipe-row"><div class="recipe-k">Profile</div><div class="recipe-v">Cinelike D2 + warm LUT<br><span style="color:var(--muted);font-size:11px">Real-time LUT preview on LCD</span></div></div>
+          <div class="recipe-row"><div class="recipe-k">BTS Rig</div><div class="recipe-v">Phone on tabletop tripod<br><span style="color:var(--muted);font-size:11px">Low angle, catching your hands + the stripe</span></div></div>
         </div>
       </div>
-      <div class="notes-wrapper">
-        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Shoot notes…"></textarea>
+      <div class="notes-wrap">
+        <button class="notes-btn" onclick="toggleNotes(this)">✎  Add notes</button>
+        <textarea class="notes-ta" placeholder="Shoot notes, what worked, what didn't, angle ideas..."></textarea>
       </div>
     </div>
   </div>
 
-  <!-- S3: Reel Structure (OPEN) -->
-  <div class="acc acc-blue open">
+  <!-- S3 REEL STRUCTURE (OPEN) -->
+  <div class="acc col-blue open">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble ib-blue">🎬</div>
+      <div class="acc-icon">🎬</div>
       <div class="acc-meta">
-        <div class="acc-label">Reel Structure</div>
-        <div class="acc-title">Beat-by-Beat Sequence</div>
+        <div class="acc-label">Section 03</div>
+        <div class="acc-title">Reel Structure — 5 Beats</div>
       </div>
-      <div class="acc-right"><span class="chevron">▲</span></div>
+      <div class="acc-right">
+        <span class="chev">▾</span>
+      </div>
     </div>
     <div class="acc-body">
-      <div class="beats-list">
-        <div class="beat-card">
-          <div class="beat-num c-orange">01</div>
-          <div class="beat-content">
-            <div class="beat-label-row"><span class="beat-label bl-orange">Hook</span><span class="beat-timing">0–2s</span></div>
-            <div class="beat-desc">Extreme close-up — just steam rising from the mug, nothing else. No context, no label, just the curl of steam against grey morning light. Music drops on the first frame.</div>
-            <div class="beat-overlay">"–5° outside. Coffee inside."</div>
-          </div>
+      <div class="beats">
+        <div class="beat b1">
+          <div class="beat-num">01</div>
+          <div class="beat-lbl">Hook<strong>0 – 2s</strong></div>
+          <div class="beat-time">Hard cut · Music drops</div>
+          <div class="beat-desc">Extreme close-up: the coffee mug's edge sitting inside the warm light stripe. Steam catching in the beam. No context. Music hits.</div>
+          <div class="beat-text"><div class="beat-text-lbl">On-Screen</div>one stripe of light</div>
         </div>
-        <div class="beat-card">
-          <div class="beat-num c-green">02</div>
-          <div class="beat-content">
-            <div class="beat-label-row"><span class="beat-label bl-green">Scene Reveal</span><span class="beat-timing">3–7s</span></div>
-            <div class="beat-desc">Pull back to show Dario standing in the kitchen, mug in hand, snowy window filling the background. The dogs might be visible. This is the whole frame — home, morning, winter.</div>
-            <div class="beat-overlay">"Home · Calgary, AB"</div>
-          </div>
+        <div class="beat b2">
+          <div class="beat-num">02</div>
+          <div class="beat-lbl">Scene Reveal<strong>3 – 7s</strong></div>
+          <div class="beat-time">Slow pull back</div>
+          <div class="beat-desc">Wider frame: Dario crouched on the kitchen floor with the Lumix, stripe of sun across the hardwood, dog watching from the doorway.</div>
+          <div class="beat-text"><div class="beat-text-lbl">On-Screen</div>first clear morning in a week</div>
         </div>
-        <div class="beat-card">
-          <div class="beat-num c-blue">03</div>
-          <div class="beat-content">
-            <div class="beat-label-row"><span class="beat-label bl-blue">The Shot</span><span class="beat-timing">8–18s</span></div>
-            <div class="beat-desc">BTS: Dario composing low at counter height, manual focus ring turning slowly, steam in frame. Long beat of stillness. Shutter fires. Immediate pan to LCD — the image on screen.</div>
-            <div class="beat-overlay">"Found the shot before 8 AM"</div>
-          </div>
+        <div class="beat b3">
+          <div class="beat-num">03</div>
+          <div class="beat-lbl">The Shot<strong>8 – 18s</strong></div>
+          <div class="beat-time">BTS + shutter + LCD</div>
+          <div class="beat-desc">Over-the-shoulder of composing on the S9. Hand rotates focus ring. Shutter fires. Cut to LCD reveal — the frame in-camera with the warm LUT applied.</div>
+          <div class="beat-text"><div class="beat-text-lbl">On-Screen</div>f/2.8 · 1/400 · ISO 400</div>
         </div>
-        <div class="beat-card">
-          <div class="beat-num c-amber">04</div>
-          <div class="beat-content">
-            <div class="beat-label-row"><span class="beat-label bl-amber">Print Process</span><span class="beat-timing">19–30s</span></div>
-            <div class="beat-desc">Cut to the Selphy on the kitchen counter. Display lights up, paper begins emerging. Duck the music, let the silence sit. Film at 4K 120fps for a clean slow-motion paper reveal.</div>
-            <div class="beat-overlay">"Canon Selphy CP1500 · KP-108IP 4×6\""</div>
-          </div>
+        <div class="beat b4">
+          <div class="beat-num">04</div>
+          <div class="beat-lbl">Print<strong>19 – 30s</strong></div>
+          <div class="beat-time">Slow-mo · music ducks</div>
+          <div class="beat-desc">Camera to Selphy screen. The four-pass print in slow motion — cyan, magenta, yellow, laminate. Paper emerges on the final pass.</div>
+          <div class="beat-text"><div class="beat-text-lbl">On-Screen</div>47 seconds · 4 passes · dye-sub</div>
         </div>
-        <div class="beat-card">
-          <div class="beat-num c-purple">05</div>
-          <div class="beat-content">
-            <div class="beat-label-row"><span class="beat-label bl-purple">Print to World</span><span class="beat-timing">31–38s</span></div>
-            <div class="beat-desc">Take the finished print and hold it up against the actual kitchen window — the same snowy view now behind the print. Frame within a frame. The real thing behind the preserved thing. Hold for three seconds. Hard cut to black.</div>
-            <div class="beat-overlay">"keep this frame"</div>
-          </div>
+        <div class="beat b5">
+          <div class="beat-num">05</div>
+          <div class="beat-lbl">Print to World<strong>31 – 38s</strong></div>
+          <div class="beat-time">Hard cut to black</div>
+          <div class="beat-desc">Finished print held inside the same stripe of light on the kitchen floor. The print matches the scene it came from. Cut. Black.</div>
+          <div class="beat-text"><div class="beat-text-lbl">On-Screen</div>keep this frame ⬜</div>
         </div>
       </div>
-      <div class="notes-wrapper">
-        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Reel notes…"></textarea>
+      <div class="notes-wrap">
+        <button class="notes-btn" onclick="toggleNotes(this)">✎  Add notes</button>
+        <textarea class="notes-ta" placeholder="Edit notes, pacing thoughts, cut timing..."></textarea>
       </div>
     </div>
   </div>
 
-  <!-- S4: Hooks (CLOSED) -->
-  <div class="acc acc-orange">
+  <!-- S4 HOOKS (CLOSED) -->
+  <div class="acc col-orange">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble ib-orange">✏️</div>
+      <div class="acc-icon">🪝</div>
       <div class="acc-meta">
-        <div class="acc-label">Copy</div>
+        <div class="acc-label">Section 04</div>
         <div class="acc-title">Scroll-Stopping Hooks</div>
       </div>
-      <div class="acc-right"><span class="chevron">▲</span></div>
+      <div class="acc-right">
+        <span class="chev">▾</span>
+      </div>
     </div>
     <div class="acc-body">
-      <div class="hooks-list">
-        <div class="hook-row">
-          <div class="hook-num">1</div>
-          <div>
-            <span class="hook-text">"–5° outside. Coffee inside. This is the shot."</span>
-            <span class="hook-note">Direct, no setup needed. The contrast says everything — cold vs. warm, outside vs. in, harsh vs. cozy. Stops the scroll cold (pun intended) and works with the steam visual perfectly.</span>
-          </div>
-        </div>
-        <div class="hook-row">
-          <div class="hook-num">2</div>
-          <div>
-            <span class="hook-text">"I don't leave the house to find beautiful moments. They're just… here."</span>
-            <span class="hook-note">Brand philosophy in one line. Makes the viewer look around their own space differently. High save rate — people bookmark this kind of permission to slow down and notice things.</span>
-          </div>
-        </div>
-        <div class="hook-row">
-          <div class="hook-num">3</div>
-          <div>
-            <span class="hook-text">"Everyone's dreading this weather. I'm photographing it through the kitchen window."</span>
-            <span class="hook-note">Perspective flip — turns a universal Calgary nuisance into a creative advantage. Instantly relatable to anyone in a cold city. Strong comment bait: "same" / "I need to try this."</span>
-          </div>
+      <div class="hook-row">
+        <div class="hook-n">01</div>
+        <div class="hook-body">
+          <div class="hook-txt">"If you wait for this stripe of light every morning, you'll see your kitchen for the first time in years."</div>
+          <div class="hook-note">Sensory + promise. Leans into the April 2026 "hold on for a payoff" hook pattern — patience as value.</div>
         </div>
       </div>
-      <div class="notes-wrapper">
-        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Hook notes…"></textarea>
+      <div class="hook-row">
+        <div class="hook-n">02</div>
+        <div class="hook-body">
+          <div class="hook-txt">"I don't shoot at landmarks. I shoot wherever the light lands. Today it landed here."</div>
+          <div class="hook-note">Negative-hook framing — reframes a common expectation (travel for photos) into the brand thesis. High save rate.</div>
+        </div>
+      </div>
+      <div class="hook-row">
+        <div class="hook-n">03</div>
+        <div class="hook-body">
+          <div class="hook-txt">"This is the first sunny morning in Calgary in six days. Everything depends on the next forty-six minutes."</div>
+          <div class="hook-note">Time-pressure hook with a specific number. Specificity is the 2026 currency for believability.</div>
+        </div>
+      </div>
+      <div class="notes-wrap">
+        <button class="notes-btn" onclick="toggleNotes(this)">✎  Add notes</button>
+        <textarea class="notes-ta" placeholder="Which hook tested best? New hook ideas..."></textarea>
       </div>
     </div>
   </div>
 
-  <!-- S5: Audio (CLOSED) -->
-  <div class="acc acc-purple">
+  <!-- S5 AUDIO (CLOSED) -->
+  <div class="acc col-purple">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble ib-purple">🎵</div>
+      <div class="acc-icon">🎵</div>
       <div class="acc-meta">
-        <div class="acc-label">Trending Sounds</div>
+        <div class="acc-label">Section 05</div>
         <div class="acc-title">Audio Picks</div>
       </div>
-      <div class="acc-right"><span class="chevron">▲</span></div>
+      <div class="acc-right">
+        <span class="chev">▾</span>
+      </div>
     </div>
     <div class="acc-body">
-      <div class="audio-list">
-        <div class="audio-row">
-          <div class="audio-bubble ib-amber">♪</div>
-          <div class="audio-info">
-            <div class="audio-track">DAISIES</div>
-            <div class="audio-artist">Justin Bieber</div>
-            <div class="audio-use">Warm and gentle — creates a tender emotional contrast with the harsh cold outside. Makes a steaming mug by a snowy window feel worth preserving. Currently Top 10 on Reels.</div>
-          </div>
-          <div class="audio-badge"><span class="abadge-top">TOP 10</span></div>
+      <div class="audio-row">
+        <div class="audio-bubble ab-blue">🎼</div>
+        <div class="audio-body">
+          <div class="audio-track">Seaside Eyes (Instrumental)</div>
+          <div class="audio-artist">Bertie Newman</div>
+          <div class="audio-use">Currently running on reflective, slow-light, still-life content. Warm intro fits the light-stripe reveal. Let it breathe under beats 01–03, duck at 19s for the print.</div>
         </div>
-        <div class="audio-row">
-          <div class="audio-bubble ib-purple">♪</div>
-          <div class="audio-info">
-            <div class="audio-track">Seaside Eyes (Instrumental)</div>
-            <div class="audio-artist">Bertie Newman</div>
-            <div class="audio-use">Quiet and reflective — mirrors the soft silence of a heavy snow morning perfectly. Underused in this niche; stands out against the high-energy tracks flooding the feed right now.</div>
-          </div>
-          <div class="audio-badge"><span class="abadge-niche">NICHE PICK</span></div>
-        </div>
-        <div class="audio-row">
-          <div class="audio-bubble ib-green">♪</div>
-          <div class="audio-info">
-            <div class="audio-track">House Tour</div>
-            <div class="audio-artist">Sabrina Carpenter</div>
-            <div class="audio-use">Trending hard for home and domestic content — the title is literally on-brand for a kitchen window Reel. High current usage means good algorithmic momentum riding alongside it.</div>
-          </div>
-          <div class="audio-badge"><span class="abadge-trending">TRENDING</span></div>
-        </div>
+        <span class="badge badge-green">TRENDING</span>
       </div>
-      <div class="notes-wrapper">
-        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Audio notes…"></textarea>
+      <div class="audio-row">
+        <div class="audio-bubble ab-purple">🌀</div>
+        <div class="audio-body">
+          <div class="audio-track">Love/Paranoia (slowed)</div>
+          <div class="audio-artist">Tame Impala</div>
+          <div class="audio-use">Tame Impala is having a moment this April — slowed cuts are running on aesthetic home content. The bassline fits the stripe-of-light mood beat.</div>
+        </div>
+        <span class="badge badge-purple">TOP 10</span>
+      </div>
+      <div class="audio-row">
+        <div class="audio-bubble ab-pink">🎤</div>
+        <div class="audio-body">
+          <div class="audio-track">Pretty Little Baby</div>
+          <div class="audio-artist">Connie Francis (revived audio)</div>
+          <div class="audio-use">Universal feel-good audio — 1.5M+ Reels already. Use only if you lean into the dogs-in-the-stripe-of-light cut. Optional Plan B.</div>
+        </div>
+        <span class="badge badge-amber">NICHE PICK</span>
+      </div>
+      <div class="notes-wrap">
+        <button class="notes-btn" onclick="toggleNotes(this)">✎  Add notes</button>
+        <textarea class="notes-ta" placeholder="Which audio worked? Save for later..."></textarea>
       </div>
     </div>
   </div>
 
-  <!-- S6: Overlays (CLOSED) -->
-  <div class="acc acc-teal">
+  <!-- S6 TEXT OVERLAYS (CLOSED) -->
+  <div class="acc col-teal">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble ib-teal">💬</div>
+      <div class="acc-icon">📝</div>
       <div class="acc-meta">
-        <div class="acc-label">On-Screen Text</div>
+        <div class="acc-label">Section 06</div>
         <div class="acc-title">Text Overlays</div>
       </div>
-      <div class="acc-right"><span class="chevron">▲</span></div>
+      <div class="acc-right">
+        <span class="chev">▾</span>
+      </div>
     </div>
     <div class="acc-body">
-      <div class="overlays-list">
-        <div class="overlay-row"><div class="ov-ts">0:01</div><div class="ov-divider"></div><div class="ov-text">"–5°C · April 16 · Home"</div></div>
-        <div class="overlay-row"><div class="ov-ts">0:04</div><div class="ov-divider"></div><div class="ov-text">"The whole city is buried and I made coffee"</div></div>
-        <div class="overlay-row"><div class="ov-ts">0:12</div><div class="ov-divider"></div><div class="ov-text">"Found the shot before 8 AM"</div></div>
-        <div class="overlay-row"><div class="ov-ts">0:22</div><div class="ov-divider"></div><div class="ov-text">"Canon Selphy CP1500 · KP-108IP 4×6\""</div></div>
-        <div class="overlay-row"><div class="ov-ts">0:34</div><div class="ov-divider"></div><div class="ov-text">"keep this frame"</div></div>
+      <div class="ov-row">
+        <div class="ov-time">0:00 – 0:02</div>
+        <div class="ov-div"></div>
+        <div class="ov-text">one stripe of light</div>
       </div>
-      <div class="notes-wrapper">
-        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Overlay notes…"></textarea>
+      <div class="ov-row">
+        <div class="ov-time">0:03 – 0:07</div>
+        <div class="ov-div"></div>
+        <div class="ov-text">first clear morning in a week</div>
+      </div>
+      <div class="ov-row">
+        <div class="ov-time">0:08 – 0:18</div>
+        <div class="ov-div"></div>
+        <div class="ov-text">f/2.8 · 1/400 · ISO 400 — meter the bright, let the dark fall</div>
+      </div>
+      <div class="ov-row">
+        <div class="ov-time">0:19 – 0:30</div>
+        <div class="ov-div"></div>
+        <div class="ov-text">47 seconds · 4 passes · dye-sub</div>
+      </div>
+      <div class="ov-row">
+        <div class="ov-time">0:31 – 0:38</div>
+        <div class="ov-div"></div>
+        <div class="ov-text">keep this frame ⬜</div>
+      </div>
+      <div class="notes-wrap">
+        <button class="notes-btn" onclick="toggleNotes(this)">✎  Add notes</button>
+        <textarea class="notes-ta" placeholder="Overlay notes, font, positioning..."></textarea>
       </div>
     </div>
   </div>
 
-  <!-- S7: Growth (CLOSED) -->
-  <div class="acc acc-green">
+  <!-- S7 GROWTH (CLOSED) -->
+  <div class="acc col-green">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble ib-green">📈</div>
+      <div class="acc-icon">📈</div>
       <div class="acc-meta">
-        <div class="acc-label">Strategy</div>
-        <div class="acc-title">Growth Move of the Day</div>
+        <div class="acc-label">Section 07</div>
+        <div class="acc-title">Growth Move</div>
       </div>
-      <div class="acc-right"><span class="chevron">▲</span></div>
+      <div class="acc-right">
+        <span class="chev">▾</span>
+      </div>
     </div>
     <div class="acc-body">
-      <div class="growth-list">
-        <div class="growth-row">
-          <div class="growth-dot gd1">1</div>
-          <div>
-            <div class="growth-title">Reply to every comment in the first 60 minutes</div>
-            <div class="growth-text">The algorithm's reach ceiling for your post is largely determined in the first hour. Every reply in that window is a new engagement signal that tells Instagram this content is worth distributing. Set a reminder for 10 AM when you post. Don't let it sit.</div>
-          </div>
-        </div>
-        <div class="growth-row">
-          <div class="growth-dot gd2">2</div>
-          <div>
-            <div class="growth-title">Use location phrases in your caption — not just hashtags</div>
-            <div class="growth-text">Instagram now surfaces Reels via keyword search, and natural language in captions outperforms hashtag stacking. Write "Calgary kitchen window" and "April snow morning" as actual phrases in your caption text. These get you in front of Calgarians searching for their city — your most likely early audience.</div>
-          </div>
-        </div>
-        <div class="growth-row">
-          <div class="growth-dot gd3">3</div>
-          <div>
-            <div class="growth-title">Post a Story at 7 PM showing the physical print</div>
-            <div class="growth-text">Stories posted 6–9 hours after a Reel push a second reach wave by driving profile visits from your Story audience into the Reel. Hold the print next to the window, or just on the counter. The physical artifact is @keepthisframe's differentiator — show it off as often as possible.</div>
-          </div>
+      <div class="gr-row">
+        <div class="gr-dot gd-green">1</div>
+        <div class="gr-body">
+          <div class="gr-title">Send the Reel to one real person in DM</div>
+          <div class="gr-text">In 2026, sends via DM are the single most heavily weighted signal for Reel distribution. Pick one Calgary creator or photography friend and send today's Reel directly with a one-line note. One send beats ten passive likes.</div>
         </div>
       </div>
-      <div class="notes-wrapper">
-        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Strategy notes…"></textarea>
+      <div class="gr-row">
+        <div class="gr-dot gd-purple">2</div>
+        <div class="gr-body">
+          <div class="gr-title">Put the hook keywords into the caption</div>
+          <div class="gr-text">Hashtags no longer support follows — caption keywords are now more effective for discovery. Put "kitchen morning light," "Calgary home photography," and "Canon Selphy print" into the first line. SEO over tag-spam.</div>
+        </div>
+      </div>
+      <div class="gr-row">
+        <div class="gr-dot gd-amber">3</div>
+        <div class="gr-body">
+          <div class="gr-title">Save yesterday's print as a carousel recap</div>
+          <div class="gr-text">Carousels get 12% more engagement and drive more saves than any other format. Once a week, pin a 5-card carousel of the week's prints. Reels for reach, carousels for depth — the 2026 double-stack.</div>
+        </div>
+      </div>
+      <div class="notes-wrap">
+        <button class="notes-btn" onclick="toggleNotes(this)">✎  Add notes</button>
+        <textarea class="notes-ta" placeholder="Who did you DM? Which keywords landed..."></textarea>
       </div>
     </div>
   </div>
 
-  <!-- S8: Caption (CLOSED) -->
-  <div class="acc acc-pink">
+  <!-- S8 CAPTION (CLOSED) -->
+  <div class="acc col-pink">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble ib-pink">🐾</div>
+      <div class="acc-icon">✍︎</div>
       <div class="acc-meta">
-        <div class="acc-label">Post Copy</div>
+        <div class="acc-label">Section 08</div>
         <div class="acc-title">Caption &amp; Hashtags</div>
       </div>
-      <div class="acc-right"><span class="chevron">▲</span></div>
+      <div class="acc-right">
+        <span class="chev">▾</span>
+      </div>
     </div>
     <div class="acc-body">
-      <div class="caption-block">
-        Didn't leave the house today. Didn't need to. The snow was doing something outside the kitchen window that I've seen a hundred times and still can't look away from — flat grey morning light, a fresh couple of centimetres on the outer sill, the whole street like it doesn't exist yet. I made coffee and set the mug down. That was the frame, already there, waiting.<br><br>
-        The 40mm at f/2 made the steam the subject and let everything outside go soft. That's the tension I wanted — warm in here, entirely not warm out there. Calgary does this thing in April where it snows like it's January and then acts like nothing happened, and I want to document all of it. From the kitchen. Before anyone else is awake.<br><br>
-        Fed it to the Selphy while the mug was still warm. Watched the print slide out. Held it up against the same window. Same steam, same snow, same quiet morning — except now it's permanent. ⬜
+      <div class="cap">
+        <p>First clear morning in a week. I was pouring coffee and watched the sun clear the neighbour's roof and drop one stripe of warm light across the kitchen floor. Put the mug down. Got the camera. Got on the floor.</p>
+        <p>Forty-six minutes of golden light and I only needed one frame. TTArtisan 40mm wide open-ish, metered for the bright side, let the rest fall to charcoal. The mug inside the stripe. The dog in the doorway watching me act like a person who drops to the floor for a single band of light. Which I am.</p>
+        <p>Printed it on the Selphy while the light was still there. Held the print inside the same stripe of light it came from. That's the whole thing. The beauty was already here. I just waited long enough to see it. ⬜</p>
       </div>
-      <div class="hashtag-line">
-        #KeepThisFrame #CalgaryLife #CalgaryCreator #LumixS9 #TTArtisan #CanonSelphy #PhotoPrint #PrintYourPhotos #EverydayMoments #DailyPhoto #MorningCoffee #CalgaryWinter #AprilSnow #CozySeason
-      </div>
-      <div class="notes-wrapper">
-        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Caption notes…"></textarea>
+      <div class="tags">#KeepThisFrame #CalgaryLife #CalgaryCreator #LumixS9 #TTArtisan #CanonSelphy #PhotoPrint #PrintYourPhotos #EverydayMoments #DailyPhoto #MorningLight #KitchenLight #HomePhotography #QuietMoments</div>
+      <div class="notes-wrap">
+        <button class="notes-btn" onclick="toggleNotes(this)">✎  Add notes</button>
+        <textarea class="notes-ta" placeholder="Caption edits, alt versions..."></textarea>
       </div>
     </div>
   </div>
 
-  <!-- S9: Print (CLOSED) -->
-  <div class="acc acc-amber">
+  <!-- S9 PRINT (CLOSED) -->
+  <div class="acc col-amber">
     <div class="acc-header" onclick="toggleAcc(this)">
-      <div class="acc-icon-bubble ib-amber">🖨️</div>
+      <div class="acc-icon">🖼</div>
       <div class="acc-meta">
-        <div class="acc-label">Canon Selphy CP1500</div>
-        <div class="acc-title">The Print — Filming Guide</div>
+        <div class="acc-label">Section 09</div>
+        <div class="acc-title">The Print</div>
       </div>
-      <div class="acc-right"><span class="chevron">▲</span></div>
+      <div class="acc-right">
+        <span class="chev">▾</span>
+      </div>
     </div>
     <div class="acc-body">
       <div class="print-grid">
         <div class="print-card">
-          <div class="print-card-lbl">Paper &amp; Size</div>
-          <div class="print-card-val">Canon KP-108IP</div>
-          <div class="print-card-sub">4×6" standard Selphy pack · 108 sheets</div>
+          <div class="print-lbl">Paper &amp; Size</div>
+          <div class="print-v">Canon KP-108IP</div>
+          <div class="print-sub">Glossy 4×6" dye-sub. One full cartridge = 108 prints. Fresh tray — don't feed curled stock.</div>
         </div>
         <div class="print-card">
-          <div class="print-card-lbl">Color Profile</div>
-          <div class="print-card-val">Natural + Contrast +1</div>
-          <div class="print-card-sub">Don't add warmth — the cold-vs-warm tension is the whole image. Natural preserves it.</div>
+          <div class="print-lbl">Color Profile</div>
+          <div class="print-v">Warm LUT + Cinelike D2</div>
+          <div class="print-sub">Export sRGB, darkest values RGB 10–15 (not 0) — dye-sub renders near-black richer than absolute black.</div>
         </div>
         <div class="print-card">
-          <div class="print-card-lbl">Mode &amp; Finish</div>
-          <div class="print-card-val">Standard Glossy</div>
-          <div class="print-card-sub">Glossy finish catches window light for beat 05</div>
+          <div class="print-lbl">Mode &amp; Finish</div>
+          <div class="print-v">Borderless · Glossy Laminate</div>
+          <div class="print-sub">Standard quality, borderless. Laminate pass is the 4th — that's the satisfying slow-mo beat.</div>
         </div>
       </div>
       <div class="print-note">
-        <div class="print-note-title">Filming Beats 04 &amp; 05 — Director's Notes</div>
-        <div class="print-note-body">For beat 04: set your phone to 4K 120fps before the Selphy starts. Duck all audio — the silence under the slow-motion paper emergence is more powerful than any music. Keep the Selphy display visible so the gear is readable. For beat 05: take the finished print directly to the kitchen window — the same one in the shot. Hold it up so the snowy view fills the background behind the print, creating a frame-within-a-frame of the same scene, real vs. preserved. Hold still for a full 3 seconds. Hard cut to black. This is the most important beat in the whole Reel — give it the time it deserves.</div>
+        <strong>Filming beats 04 – 05:</strong> Set phone on a tabletop tripod beside the Selphy at a low 3/4 angle. Start recording before you hit print on the printer. Lock exposure on the paper slot. Record at 60fps so you can slow the laminate pass to 0.5×. For beat 05, carry the finished print to the kitchen floor stripe, hold it inside the same light it was made from, hold for two full seconds, hard cut. If the stripe of light has moved by then, crouch lower — the sun is tracking west fast.
       </div>
-      <div class="notes-wrapper">
-        <button class="notes-toggle" onclick="toggleNotes(this)">✎&nbsp; Add notes</button>
-        <textarea class="notes-area" placeholder="Print notes…"></textarea>
+      <div class="notes-wrap">
+        <button class="notes-btn" onclick="toggleNotes(this)">✎  Add notes</button>
+        <textarea class="notes-ta" placeholder="Print results, cartridge count, issues..."></textarea>
       </div>
     </div>
   </div>
 
-</main>
+</div>
 
-<footer class="site-footer">
-  <p><em>keep this frame</em> &nbsp;·&nbsp; Daily Creator Brief &nbsp;·&nbsp; April 16, 2026 &nbsp;·&nbsp; Refreshes every morning at 7:00 AM MST</p>
-</footer>
+<!-- FOOTER -->
+<div class="ftr">
+  <strong>keep this frame</strong> · Daily Creator Brief · April 20, 2026 · Refreshes every morning at 7:00 AM MST
+</div>
 
 <script>
 function toggleAcc(header){header.closest('.acc').classList.toggle('open');}
 function updateGear(){const all=document.querySelectorAll('.gc');const done=Array.from(all).filter(c=>c.checked).length;const el=document.getElementById('gear-count');el.textContent=done+' / 10 packed';el.className='gear-chip'+(done===10?' done':'');}
-function toggleNotes(btn){const area=btn.nextElementSibling;const open=area.classList.toggle('open');btn.textContent=open?'✕\u2002Close notes':'✎\u2002Add notes';}
+function toggleNotes(btn){const open=btn.nextElementSibling.classList.toggle('open');btn.textContent=open?'✕  Close notes':'✎  Add notes';}
 </script>
+
 </body>
 </html>
